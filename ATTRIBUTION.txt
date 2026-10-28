@@ -11,8 +11,9 @@ The provenance JSON files in assets/ retain source URLs, archive members and has
 
 Visual design reference:
 https://orbia-bench.github.io/
-The publication version uses page-specific styles in foundation.css rather than
-the reference site's stylesheet files. ORBIA branding, media and results are not included.
+Overview and leaderboard layouts are adapted from the user-supplied ORBIA
+OverviewStats and Leaderboard templates. leaderboard.css derives from the supplied
+Leaderboard.css. LCVN data and evaluation metrics are used throughout.
 
 Fonts:
 Mulish, Inter and Source Serif 4 are bundled under the SIL Open Font License.

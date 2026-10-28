@@ -72,7 +72,7 @@
       protocol:'LCVN-WM (k = 4), validation seen. Compare the seven language / action / time combinations reported in Table 3.',
       insight:'All three signals together give the strongest SR (0.43). With time retained, adding actions raises SR from 0.12 to 0.35; adding language then raises it to 0.43.'}
   };
-  let view='navigation',scope='val_seen',metric='sr',display='chart',filter='all';
+  let view='navigation',scope='val_seen',metric='sr',display='table',filter='all';
   const resultTabs=$$('[data-results]');
   const family=r=>r.method.startsWith('LCVN-Uni')?'uni':r.method.startsWith('LCVN-WM')?'wm':'baseline';
   function rowLabel(r){
@@ -113,7 +113,7 @@
       return `<div class="metric-row ${family(r)} ${r.method.includes('w/o ins')?'ablated':''}" data-row-id="${r.id}"><div class="metric-label"><strong>${esc(rowLabel(r))}</strong><span>${esc(rowDetail(r))}</span></div><div class="metric-track" aria-hidden="true">${reported?`<div class="metric-bar" style="width:${Math.max(0,c.value/max*100)}%"></div>`:''}</div><span class="metric-value ${win?'metric-best':''}">${reported?esc(c.raw):'—'}${win?'<span class="sr-only">, best reported value in this view</span>':''}</span></div>`;
     }).join('');
     const columns=t.columns.filter(c=>c.key.startsWith(scope+'.'));
-    $('#results-table').innerHTML=`<caption>${esc(t.label+' · '+v.scopes[scope])}</caption><thead><tr><th scope="col">Model / configuration</th><th scope="col">Context k</th>${columns.map(c=>`<th scope="col" ${c.metric===metric?'class="selected-metric"':''}>${esc(metrics[c.metric].short)} ${metrics[c.metric].higher?'↑':'↓'}</th>`).join('')}</tr></thead><tbody>`+rows.map(r=>`<tr data-row-id="${r.id}"><th scope="row">${esc(rowLabel(r))}${view==='language'?`<small>${esc(r.method)}</small>`:''}</th><td>${r.k}</td>${columns.map(c=>`<td ${c.metric===metric?'class="selected-metric"':''}>${r.cells[c.key]?.status==='reported'?esc(r.cells[c.key].raw):'—'}</td>`).join('')}</tr>`).join('')+'</tbody>';
+    renderLeaderboard();
     $('#results-chart').hidden=display!=='chart';$('#results-table-wrap').hidden=display!=='table';
     let details=[];
     if(view==='navigation')details.push('Navigation compares predicted action trajectories with recorded trajectories. Validation seen is in-domain; validation unseen comes from TartanDrive; test mixes seen-source and unseen-source data.');
@@ -125,9 +125,45 @@
     details.push('Values retain the published precision and table order. Exact evaluated sample/window counts and uncertainty estimates are not separately reported. This page does not rerun the models.');
     $('#results-details').innerHTML=details.map(p=>'<p>'+esc(p)+'</p>').join('')+'<a href="assets/paper-results-provenance.json" download>Download values and cell-level sources ↓</a>';
   }
-  wireTabs(resultTabs,b=>{view=b.dataset.results;scope=Object.keys(views[view].scopes)[0];metric=views[view].metric;selectTabs(resultTabs,b);$('#results-panel').setAttribute('aria-labelledby',b.id);setControls();renderResults();});
+  let search='',sortMetric='sr',ascending=false,selected=new Set(),onlySelected=false,expanded=null;
+  const currentColumns=()=>tables[views[view].table].columns.filter(c=>c.key.startsWith(scope+'.'));
+  function leaderboardRows(){
+    const key=scope+'.'+sortMetric;
+    return visibleRows().filter(r=>(r.method+' '+rowLabel(r)+' '+rowDetail(r)).toLowerCase().includes(search.toLowerCase())&&(!onlySelected||selected.has(r.id))).slice().sort((a,b)=>{
+      const av=a.cells[key]?.value,bv=b.cells[key]?.value;
+      if(av==null)return bv==null?0:1;if(bv==null)return -1;
+      return (ascending?1:-1)*(av-bv);
+    });
+  }
+  function renderLeaderboard(){
+    const columns=currentColumns();
+    if(!columns.some(c=>c.metric===sortMetric)){sortMetric=metric;ascending=!metrics[metric].higher;}
+    const rows=leaderboardRows();
+    const rank=(r,c)=>{const value=r.cells[c.key]?.value;if(value==null)return 0;const values=[...new Set(visibleRows().map(x=>x.cells[c.key]?.value).filter(x=>typeof x==='number'))].sort((a,b)=>metrics[c.metric].higher?b-a:a-b);return values.indexOf(value)+1;};
+    $('#results-table').innerHTML=`<caption>${esc(tables[views[view].table].label+' · '+views[view].scopes[scope])} · ${rows.length} configurations</caption><thead><tr><th class="lb-model-heading" scope="col">Model / configuration</th>${columns.map(c=>`<th scope="col" aria-sort="${c.metric===sortMetric?(ascending?'ascending':'descending'):'none'}"><button data-sort="${c.metric}" title="${esc(metrics[c.metric].name)}">${esc(metrics[c.metric].short)} ${metrics[c.metric].higher?'↑':'↓'} <span aria-hidden="true">⇅</span></button></th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr class="lb-row ${selected.has(r.id)?'selected':''}"><th scope="row"><div class="lb-model"><input type="checkbox" data-select="${r.id}" aria-label="Select ${esc(rowLabel(r)+' '+rowDetail(r))}" ${selected.has(r.id)?'checked':''}><button data-expand="${r.id}" aria-expanded="${expanded===r.id}"><span>${esc(rowLabel(r))}<small>${esc(rowDetail(r))}</small></span><span aria-hidden="true">${expanded===r.id?'⌃':'⌄'}</span></button></div></th>${columns.map(c=>{const pos=rank(r,c);return `<td class="lb-value"><span class="${pos>0&&pos<=3?'lb-top lb-top-'+pos:''}">${r.cells[c.key]?.status==='reported'?esc(r.cells[c.key].raw):'—'}</span></td>`;}).join('')}</tr>${expanded===r.id?`<tr><td colspan="${columns.length+1}"><div class="lb-detail"><strong>${esc(r.method)} · context k = ${r.k}</strong><p>${esc(views[view].protocol)}</p>${(r.notes||[]).map(n=>`<p>${esc(n)}</p>`).join('')}<a href="${tables[views[view].table].source}" target="_blank" rel="noopener">View paper source ↗</a></div></td></tr>`:''}`).join('')||`<tr><td class="lb-empty" colspan="${columns.length+1}">No configurations match these filters. <button id="leaderboard-reset">Reset filters</button></td></tr>`}</tbody>`;
+    $('#leaderboard-selection').hidden=selected.size===0;
+    $('#leaderboard-count').textContent=selected.size+' selected';
+    $('#leaderboard-only').textContent=onlySelected?'Show all models':'Show selected only';
+    $('#leaderboard-panel').hidden=display!=='table';
+  }
+  $('#leaderboard-search').addEventListener('input',e=>{search=e.target.value;renderLeaderboard();});
+  $('#results-table').addEventListener('click',e=>{
+    const sort=e.target.closest('[data-sort]'),expand=e.target.closest('[data-expand]');
+    if(sort){if(sortMetric===sort.dataset.sort)ascending=!ascending;else{sortMetric=sort.dataset.sort;ascending=!metrics[sortMetric].higher;}renderLeaderboard();}
+    if(expand){expanded=expanded===expand.dataset.expand?null:expand.dataset.expand;renderLeaderboard();}
+    if(e.target.id==='leaderboard-reset'){search='';onlySelected=false;filter='all';$('#leaderboard-search').value='';$('#results-models').value='all';renderResults();}
+  });
+  $('#results-table').addEventListener('change',e=>{const id=e.target.dataset.select;if(id){selected.has(id)?selected.delete(id):selected.add(id);if(!selected.size)onlySelected=false;renderLeaderboard();}});
+  $('#leaderboard-only').addEventListener('click',()=>{onlySelected=!onlySelected;renderLeaderboard();});
+  $('#leaderboard-clear').addEventListener('click',()=>{selected.clear();onlySelected=false;renderLeaderboard();});
+  $('#leaderboard-export').addEventListener('click',()=>{
+    const cols=currentColumns(),quote=v=>'"'+String(v).replaceAll('"','""')+'"';
+    const records=[['Model / configuration','Context k','Evaluation setting',...cols.map(c=>metrics[c.metric].short)],...leaderboardRows().map(r=>[rowLabel(r),r.k,views[view].scopes[scope],...cols.map(c=>r.cells[c.key]?.status==='reported'?r.cells[c.key].raw:'')])];
+    const url=URL.createObjectURL(new Blob([records.map(r=>r.map(quote).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8;'}));const a=document.createElement('a');a.href=url;a.download=`lcvn-${view}-${scope}.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  });
+  wireTabs(resultTabs,b=>{selected.clear();onlySelected=false;expanded=null;view=b.dataset.results;scope=Object.keys(views[view].scopes)[0];metric=views[view].metric;selectTabs(resultTabs,b);$('#results-panel').setAttribute('aria-labelledby',b.id);setControls();renderResults();});
   $('#results-scope').addEventListener('change',e=>{scope=e.target.value;setControls();renderResults();});
-  $('#results-metric').addEventListener('change',e=>{metric=e.target.value;renderResults();});
+  $('#results-metric').addEventListener('change',e=>{metric=e.target.value;sortMetric=metric;ascending=!metrics[metric].higher;renderResults();});
   $('#results-models').addEventListener('change',e=>{filter=e.target.value;renderResults();});
   $$('[data-results-display]').forEach(b=>b.addEventListener('click',()=>{display=b.dataset.resultsDisplay;$$('[data-results-display]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderResults();}));
   setControls();renderResults();
