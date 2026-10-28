@@ -1,0 +1,788 @@
+{
+  "dataset": "https://huggingface.co/datasets/fly1113/LCVN",
+  "status": "Recorded ground truth, no generated model outputs",
+  "episodes": [
+    {
+      "id": "outdoor",
+      "source_archive": "val_unseen.tar",
+      "source_archive_lfs_sha256": "f4da7552df485b4ad7c026eafa6bf300dcdcdb6486d1af239671f248d6d61b55",
+      "frames_count": 17,
+      "instructions": {
+        "concise": {
+          "style": "concise",
+          "raw_field_name": "instruction",
+          "archive_member_pkl": "val_unseen/20210826_40_0001_02_0/traj_data.pkl",
+          "sha256": "a5364782d4d1dd6e27f21f814ea4a52ee07481a87e8e8777ffe3459d8c17f9a3",
+          "text": "Drive straight along the dirt path, and stop at the end of the path."
+        },
+        "intricate": {
+          "style": "intricate",
+          "raw_field_name": "instruction",
+          "archive_member_pkl": "val_unseen/20210826_40_0001_02_1/traj_data.pkl",
+          "sha256": "77551b8cab8cce7fbc648f83c28af3371685914b5ebe2c1047a516c516b54990",
+          "text": "Proceed forward on the narrow, rocky dirt trail surrounded by tall green grass and dense trees on both sides. The path leads directly up a gentle slope towards a clearing in the distance. Continue driving straight along this single track, maintaining a steady course through the vegetation, and stop once you reach the end of the visible trail near the top of the incline."
+        },
+        "landmark": {
+          "style": "landmark",
+          "raw_field_name": "instruction",
+          "archive_member_pkl": "val_unseen/20210826_40_0001_02_2/traj_data.pkl",
+          "sha256": "543cfefdadcf52a229883581023492662800f42027e50afa07e1a3ec32ea63a8",
+          "text": "Drive straight along the dirt path bordered by tall grass and trees. Continue following the track as it heads uphill towards the clearing, and stop at the end of the path."
+        }
+      },
+      "position_source": "val_unseen/20210826_40_0001_02_0/traj_data.pkl",
+      "position_field": "position",
+      "positions": [
+        [
+          236.54556274414062,
+          174.0057830810547
+        ],
+        [
+          236.06005859375,
+          174.39776611328125
+        ],
+        [
+          235.69070434570312,
+          174.69192504882812
+        ],
+        [
+          235.1402587890625,
+          175.1111297607422
+        ],
+        [
+          234.6583251953125,
+          175.52870178222656
+        ],
+        [
+          234.1703643798828,
+          175.9478302001953
+        ],
+        [
+          233.74530029296875,
+          176.31732177734375
+        ],
+        [
+          233.25912475585938,
+          176.74928283691406
+        ],
+        [
+          232.829345703125,
+          177.1358184814453
+        ],
+        [
+          232.39825439453125,
+          177.5082244873047
+        ],
+        [
+          231.90402221679688,
+          177.94497680664062
+        ],
+        [
+          231.46133422851562,
+          178.33587646484375
+        ],
+        [
+          230.9525909423828,
+          178.7834014892578
+        ],
+        [
+          230.51329040527344,
+          179.18417358398438
+        ],
+        [
+          230.0048065185547,
+          179.65000915527344
+        ],
+        [
+          229.5821990966797,
+          180.0749969482422
+        ],
+        [
+          229.17958068847656,
+          180.507080078125
+        ]
+      ],
+      "display_transform": "Preserve both coordinate axes and aspect ratio; translate and scale to fit the route canvas; invert screen y. No rotation or interpolation.",
+      "position_units": "Not established from metadata; no metric units claimed.",
+      "frames": [
+        {
+          "frame_index": 0,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0000.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0000.jpg",
+          "size_bytes": 261548,
+          "sha256": "bf9d71c6b3f1ef28727b7ac62cba73a91b6f12b276cd4d6ce3e7d6dc428e8936",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 1,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0001.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0001.jpg",
+          "size_bytes": 258504,
+          "sha256": "d714baa3abcbe6eb6a323215059f3b1a0ca485271568094ff1008dcf9f3bf58c",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 2,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0002.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0002.jpg",
+          "size_bytes": 256703,
+          "sha256": "a93aba26cdaefb2cdda165bb6213ca983d79afa150a0988a8379673835244d54",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 3,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0003.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0003.jpg",
+          "size_bytes": 257925,
+          "sha256": "30c5ac2fac9f74cc4b50a4b9ca31a6c903812d28e15e7a1353369e8926aaaf2f",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 4,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0004.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0004.jpg",
+          "size_bytes": 260622,
+          "sha256": "02fbcc41fac2a9431cb41ea5b2bbfba39d6d4bd8b6c1c1b4f673233b09635b40",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 5,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0005.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0005.jpg",
+          "size_bytes": 261127,
+          "sha256": "a3352c4caf96857f5e263e47cef2596031b0101007544bca0cefff267b51a532",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 6,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0006.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0006.jpg",
+          "size_bytes": 260182,
+          "sha256": "03839dca4ed975bf176cb92df1752b27d1b4bb278a5586c8a0bc518905508342",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 7,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0007.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0007.jpg",
+          "size_bytes": 263589,
+          "sha256": "f87778f09e5e9348c3ee8c7dd8cd3ff2a32bb11ee44448fa47874f339b242ec4",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 8,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0008.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0008.jpg",
+          "size_bytes": 263900,
+          "sha256": "beca7c2ef30be8013253de36241600593c969d3b18eedf61029ad3be08a55097",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 9,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0009.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0009.jpg",
+          "size_bytes": 262894,
+          "sha256": "86a2c277bc0bb8c215746c5abd38019f0deea176cee100714c551ddc568eb886",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 10,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0010.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0010.jpg",
+          "size_bytes": 261682,
+          "sha256": "9f98a83e7ba27da82d177e1bf550f66deb545cb7faf22f865cec93426f37fa20",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 11,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0011.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0011.jpg",
+          "size_bytes": 261854,
+          "sha256": "211b257be4744ce395c1f8e12360d7b43f429f6a1905c560de7852199f4eb416",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 12,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0012.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0012.jpg",
+          "size_bytes": 260829,
+          "sha256": "51e0775349c7328fed0b6e7a0553b7de9d234a71446d672e7ce0edb17c8f4768",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 13,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0013.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0013.jpg",
+          "size_bytes": 261877,
+          "sha256": "5c0aee736c3d886d2d8ca08df62093e3904d12c1a068466b2772134527a59727",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 14,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0014.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0014.jpg",
+          "size_bytes": 261983,
+          "sha256": "79453c65ec2ba586e06572635ebabcbc9fb085e9f4681b16f31565f6fb067057",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 15,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0015.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0015.jpg",
+          "size_bytes": 260361,
+          "sha256": "9370e89677d21be7ad2100ebe711ed7bc3c31aa35fb0be8212015a011bc7247b",
+          "dimensions": [
+            1024,
+            544
+          ]
+        },
+        {
+          "frame_index": 16,
+          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0016.jpg",
+          "archive_member": "val_unseen/20210826_40_0001_02_0/0016.jpg",
+          "size_bytes": 256771,
+          "sha256": "b13a0ce38b6ff1f5d7a5f87f79cf4a0acf39ac103a922de0d2084958a4c9a054",
+          "dimensions": [
+            1024,
+            544
+          ]
+        }
+      ]
+    },
+    {
+      "id": "indoor",
+      "source_archive": "val_seen.tar",
+      "source_archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "frames_count": 30,
+      "instructions": {
+        "concise": {
+          "style": "concise",
+          "suffix": "_0",
+          "archive_member_pkl": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/traj_data.pkl",
+          "raw_field_name": "instruction",
+          "sha256": "cdc3e7e3fbbddf5da7d33111facc19b5d8410ab414a24396da7f4266ec4401c6",
+          "text": "Walk straight down the hallway, turn left at the corner, and stop near the end of the corridor."
+        },
+        "intricate": {
+          "style": "intricate",
+          "suffix": "_1",
+          "archive_member_pkl": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_1/traj_data.pkl",
+          "raw_field_name": "instruction",
+          "sha256": "770e4712ce8421d26ddd605a218c77192b9f9a9455afaa8798c744fed9e1a671",
+          "text": "Start by walking straight down a long, carpeted hallway with large windows on the right and white walls on the left. As you proceed, you will pass several office-like structures and a blue recycling bin on the right. Continue forward until you reach a distinct corner where the hallway bends. Turn left at this corner and walk a short distance further down the new section of the hallway, then stop."
+        },
+        "landmark": {
+          "style": "landmark",
+          "suffix": "_2",
+          "archive_member_pkl": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_2/traj_data.pkl",
+          "raw_field_name": "instruction",
+          "sha256": "2ef10fe437e1d7d04ed2d0828839a804c357dac07654ed1cc817f3ac0885a3ab",
+          "text": "Walk straight down the hallway, passing a blue recycling bin on your right. Continue until you reach the corner where the hallway turns, then turn left and stop near the end of the corridor."
+        }
+      },
+      "position_source": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/traj_data.pkl",
+      "position_field": "position",
+      "positions": [
+        [
+          4.010645389556885,
+          -6.9892048835754395
+        ],
+        [
+          4.1192193031311035,
+          -6.8702006340026855
+        ],
+        [
+          4.2266340255737305,
+          -6.703389644622803
+        ],
+        [
+          4.374752998352051,
+          -6.494469165802002
+        ],
+        [
+          4.492917060852051,
+          -6.306358337402344
+        ],
+        [
+          4.593562126159668,
+          -6.139938831329346
+        ],
+        [
+          4.664331912994385,
+          -5.89121150970459
+        ],
+        [
+          4.725629806518555,
+          -5.6842875480651855
+        ],
+        [
+          4.733676433563232,
+          -5.41004753112793
+        ],
+        [
+          4.680199146270752,
+          -5.260918617248535
+        ],
+        [
+          4.544586658477783,
+          -5.068394184112549
+        ],
+        [
+          4.334335803985596,
+          -4.908846855163574
+        ],
+        [
+          4.171571254730225,
+          -4.763747215270996
+        ],
+        [
+          4.016472339630127,
+          -4.638472557067871
+        ],
+        [
+          3.781209945678711,
+          -4.475179195404053
+        ],
+        [
+          3.614645004272461,
+          -4.381838798522949
+        ],
+        [
+          3.3630261421203613,
+          -4.251852989196777
+        ],
+        [
+          3.1508796215057373,
+          -4.108814239501953
+        ],
+        [
+          3.0315639972686768,
+          -3.9547970294952393
+        ],
+        [
+          2.849694013595581,
+          -3.7685329914093018
+        ],
+        [
+          2.690786123275757,
+          -3.6241042613983154
+        ],
+        [
+          2.5228540897369385,
+          -3.4378762245178223
+        ],
+        [
+          2.317046880722046,
+          -3.255671739578247
+        ],
+        [
+          2.1518707275390625,
+          -3.0584774017333984
+        ],
+        [
+          1.951698899269104,
+          -2.879188060760498
+        ],
+        [
+          1.7571582794189453,
+          -2.7335000038146973
+        ],
+        [
+          1.5967018604278564,
+          -2.6179358959198
+        ],
+        [
+          1.3670530319213867,
+          -2.420020818710327
+        ],
+        [
+          1.2212673425674438,
+          -2.288504123687744
+        ],
+        [
+          1.0944942235946655,
+          -2.1484477519989014
+        ]
+      ],
+      "display_transform": "Preserve both coordinate axes and aspect ratio; translate and scale to fit the route canvas; invert screen y. No rotation or interpolation.",
+      "position_units": "Not established from metadata; no metric units claimed.",
+      "frames": [
+        {
+          "frame_index": 0,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/00.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/0.jpg",
+          "size_bytes": 7195,
+          "sha256": "9efa0f4088330fd0149f4dfcc84049813fd48cfc7e34a6a47de3e5dee41a9654",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 1,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/01.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/1.jpg",
+          "size_bytes": 7927,
+          "sha256": "c40bdb770a2e681db8709edf2f10d5cfdbdc2ab3f5fdab2a2bd9a2bdec62befe",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 2,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/02.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/2.jpg",
+          "size_bytes": 8132,
+          "sha256": "7bce8fccee2b0fb1013a57594cf98053981839df7e328d89194165f3da4165f4",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 3,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/03.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/3.jpg",
+          "size_bytes": 8017,
+          "sha256": "7aca8c9a60c3ff4760c615646602d480720e9ca40e46c30efa7e7a4f7860915f",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 4,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/04.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/4.jpg",
+          "size_bytes": 7896,
+          "sha256": "180517f2ff0ae270b14d61505ef3fc464e028beaacfe9a4852344afc4158c935",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 5,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/05.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/5.jpg",
+          "size_bytes": 7956,
+          "sha256": "b7edf2cf36ab0377f5c1d6433cc0658d059fe425e3555b635e1c749590e1a381",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 6,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/06.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/6.jpg",
+          "size_bytes": 8072,
+          "sha256": "03dc83790ee11405f9370d95d06dd11a8348ad566d273325e277f88bfe336ee8",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 7,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/07.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/7.jpg",
+          "size_bytes": 8056,
+          "sha256": "1bb42332c14e47cfc293c9ca21dba42420ce9296264ab03c39664e39735e27e8",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 8,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/08.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/8.jpg",
+          "size_bytes": 7951,
+          "sha256": "5b4319c45efee662ee11321320556a8a8664803768e5c593b11859f72063f04a",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 9,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/09.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/9.jpg",
+          "size_bytes": 7391,
+          "sha256": "e5b57f2f14ebc86276045bc9b482bfba409d374d069fd9af153c3543551cbce3",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 10,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/10.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/10.jpg",
+          "size_bytes": 7212,
+          "sha256": "84875b044af931724f7739f1d9913ea11d90fc7dd0da137e22bdb217761063c8",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 11,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/11.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/11.jpg",
+          "size_bytes": 6483,
+          "sha256": "63bc5fad11db63478242aaf729d7a55c40c43c9e47b4d9a6527dc69e7aadb2a7",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 12,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/12.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/12.jpg",
+          "size_bytes": 5625,
+          "sha256": "57855b78796f28d77532b847dbd4d8ecc9e7bad9d3462f86eb25405b42cf677d",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 13,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/13.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/13.jpg",
+          "size_bytes": 6408,
+          "sha256": "52a7f0766c267fe02ecb43b5e743847c5374c5588ee5169f939ae0664d4a71cb",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 14,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/14.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/14.jpg",
+          "size_bytes": 6415,
+          "sha256": "01905fb015ebbc33613b05404b37c1dabcca2ec607b51071353d7eff59440195",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 15,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/15.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/15.jpg",
+          "size_bytes": 6612,
+          "sha256": "023cdbc9d59fa159d26c0ad1690e08e1290056d2e365e6c5fe43d69c6d2fb8bf",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 16,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/16.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/16.jpg",
+          "size_bytes": 6518,
+          "sha256": "e463535ea8803fe21abb9472a7b8374c8ad6796792ae648e903f32352eb22943",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 17,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/17.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/17.jpg",
+          "size_bytes": 6493,
+          "sha256": "0411b6f8f466cb3c0877f6e25505a236788e8dc1df9959719dae8a086f04031f",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 18,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/18.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/18.jpg",
+          "size_bytes": 6926,
+          "sha256": "caa089630d9a3e8751554d2168d128185d85048ac94a970ab53f997d4880fe55",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 19,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/19.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/19.jpg",
+          "size_bytes": 6773,
+          "sha256": "8facb4441f094aa875d268d319c1e9ea0fd871f770539cc79edd5a59121f7c9e",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 20,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/20.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/20.jpg",
+          "size_bytes": 7162,
+          "sha256": "fc62778c894d4282151b5437e8212f373b03d322764ef41b460712f310d66234",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 21,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/21.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/21.jpg",
+          "size_bytes": 6983,
+          "sha256": "02d78b5a26c1986f3b895d4602e8ab9be7e9ac0938cabccf5260b59ebca0480c",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 22,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/22.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/22.jpg",
+          "size_bytes": 6956,
+          "sha256": "a08ba370ea1b889faa91cb7b615fc88e947caa267f16934cab38806426d74f6e",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 23,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/23.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/23.jpg",
+          "size_bytes": 6960,
+          "sha256": "012022d0f1ccd5ebeded9777336f75cf08bce0a5158ce3fe02b6174be182e9e2",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 24,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/24.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/24.jpg",
+          "size_bytes": 5623,
+          "sha256": "e02bbff4fdd5d8abc95be492d5d4cb3f3c67499b902c3f91b6a1ff38fa50355f",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 25,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/25.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/25.jpg",
+          "size_bytes": 6876,
+          "sha256": "31c576b3d183651c03f6b970bef75c992e41de8cd736287224f705da5a664157",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 26,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/26.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/26.jpg",
+          "size_bytes": 7163,
+          "sha256": "d594590e1a26eaee074b0beb65cbf7b84a9bacc162a525b167b4ecccf2f14ca5",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 27,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/27.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/27.jpg",
+          "size_bytes": 7099,
+          "sha256": "3eed2a6c2c23a138e7ba5dc8fc74b02d21b0f7acf8381fada3a637c6640edf1d",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 28,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/28.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/28.jpg",
+          "size_bytes": 7238,
+          "sha256": "febe019651ff31687ffb6d9e507493165333aa6505d5e87c71f54eebf8d53e83",
+          "dimensions": [
+            160,
+            120
+          ]
+        },
+        {
+          "frame_index": 29,
+          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/29.jpg",
+          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/29.jpg",
+          "size_bytes": 7163,
+          "sha256": "ae6122c50d17132b651caeb266213c9da7c7c1f724336d982e62bb991ec062c7",
+          "dimensions": [
+            160,
+            120
+          ]
+        }
+      ]
+    }
+  ]
+}

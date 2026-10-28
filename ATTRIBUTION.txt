@@ -1,0 +1,21 @@
+LCVN project page
+
+Paper and figures:
+https://arxiv.org/abs/2603.26741
+https://arxiv.org/html/2603.26741v2
+https://github.com/UWMILab/LCVN
+
+Recorded images, positions and instructions:
+https://huggingface.co/datasets/fly1113/LCVN
+The provenance JSON files in assets/ retain source URLs, archive members and hashes.
+
+Visual design reference:
+https://orbia-bench.github.io/
+The publication version uses page-specific styles in foundation.css rather than
+the reference site's stylesheet files. ORBIA branding, media and results are not included.
+
+Fonts:
+Mulish, Inter and Source Serif 4 are bundled under the SIL Open Font License.
+See the corresponding notices in assets/fonts/.
+
+Paper figures and dataset media retain their respective source rights.

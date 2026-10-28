@@ -1,0 +1,248 @@
+{
+  "dataset": "https://huggingface.co/datasets/fly1113/LCVN",
+  "checked_date": "2026-10-28",
+  "images": [
+    {
+      "file": "assets/hero/scene-01.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/0.jpg",
+      "http_range": "bytes=4608-12046",
+      "tar_header_offset": 4096,
+      "dimensions": {
+        "width": 160,
+        "height": 120
+      },
+      "bytes": 7439,
+      "sha256": "7ba5958b8672f3f5dd787b32e32bafbc9153301946badc1e86cc5d45bf089b12"
+    },
+    {
+      "file": "assets/hero/scene-02.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_2/8.jpg",
+      "http_range": "bytes=1051648-1060850",
+      "tar_header_offset": 1051136,
+      "dimensions": {
+        "width": 160,
+        "height": 120
+      },
+      "bytes": 9203,
+      "sha256": "3a609fae7fcae1f7ace30030fbd4b57bb1808bda13d38182433000b1ffb35ee3"
+    },
+    {
+      "file": "assets/hero/scene-03.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/Feb-09-2023-bww8-intloss_00000042_17_10_0_1/7.jpg",
+      "http_range": "bytes=209722880-209731542",
+      "tar_header_offset": 209722368,
+      "dimensions": {
+        "width": 160,
+        "height": 120
+      },
+      "bytes": 8663,
+      "sha256": "0eee30652924c95a55b33548202bc42f993556c0345b2bf2ac62342666f617b6"
+    },
+    {
+      "file": "assets/hero/scene-04.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/jackal_2019-08-02-16-43-37_7_r00_0_0_2/23.jpg",
+      "http_range": "bytes=524339200-524416059",
+      "tar_header_offset": 524338688,
+      "dimensions": {
+        "width": 640,
+        "height": 480
+      },
+      "bytes": 76860,
+      "sha256": "25e85bbc7447210cc90e274dfdaae6bbd4c2d4a36f5cf725e3e94c1b61b373b2"
+    },
+    {
+      "file": "assets/hero/scene-05.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/jackal_2019-08-08-13-55-45_14_r01_1_0_1/20.jpg",
+      "http_range": "bytes=1048621568-1048707898",
+      "tar_header_offset": 1048621056,
+      "dimensions": {
+        "width": 640,
+        "height": 480
+      },
+      "bytes": 86331,
+      "sha256": "7b242f5fc7c9855cffb7383eb177abc7070c6a0392bdd2ac028a2a7dd72251b8"
+    },
+    {
+      "file": "assets/hero/scene-06.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_1/19.jpg",
+      "http_range": "bytes=2097186304-2097273578",
+      "tar_header_offset": 2097185792,
+      "dimensions": {
+        "width": 640,
+        "height": 480
+      },
+      "bytes": 87275,
+      "sha256": "a02ab179feceac0c5d76fdf6b998b7c2d39d7e91bdcba612c4af33294dab9968"
+    },
+    {
+      "file": "assets/hero/scene-07.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/jackal_2019-09-19-14-09-01_6_r03_1_0_2/12.jpg",
+      "http_range": "bytes=4194311680-4194391489",
+      "tar_header_offset": 4194311168,
+      "dimensions": {
+        "width": 640,
+        "height": 480
+      },
+      "bytes": 79810,
+      "sha256": "80c742e27f429172c48113821e00a5974c25d51f1e4642cc518e0a36c43c12c6"
+    },
+    {
+      "file": "assets/hero/scene-08.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/no5vcF_20_0_0_0_0/12.jpg",
+      "http_range": "bytes=6081744896-6081753053",
+      "tar_header_offset": 6081744384,
+      "dimensions": {
+        "width": 160,
+        "height": 120
+      },
+      "bytes": 8158,
+      "sha256": "070c91abdb6b4e79c45889a02244f1c7fa570a3e978122ce9a4b6ff90d524c5d"
+    },
+    {
+      "file": "assets/hero/scene-09.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/random_mdps_A_Spot_AHG_AHG_Mon_Nov_8_27_30_0_0_2/11.jpg",
+      "http_range": "bytes=6291486208-6291518709",
+      "tar_header_offset": 6291485696,
+      "dimensions": {
+        "width": 320,
+        "height": 240
+      },
+      "bytes": 32502,
+      "sha256": "a36e91c875b818c1fadee2cab8adefc59b6f6112629f04ef48b919fa9dd4e81c"
+    },
+    {
+      "file": "assets/hero/scene-10.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/random_mdps_A_Spot_Fountain_Library_Mon_Nov_8_26_1_2_0_1/12.jpg",
+      "http_range": "bytes=6501190144-6501224151",
+      "tar_header_offset": 6501189632,
+      "dimensions": {
+        "width": 320,
+        "height": 240
+      },
+      "bytes": 34008,
+      "sha256": "a2d15b7189e6f45b3de9f3c607655ca9fa734e8e58556d30c6fa0a635b9e0c1c"
+    },
+    {
+      "file": "assets/hero/scene-11.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/random_mdps_B_Jackal_Library_Sanjac_Sat_Nov_13_88_0_24_0_1/2.jpg",
+      "http_range": "bytes=6815759360-6815788911",
+      "tar_header_offset": 6815758848,
+      "dimensions": {
+        "width": 320,
+        "height": 240
+      },
+      "bytes": 29552,
+      "sha256": "d9138c76654e1dad2f4cac9d773046791dd69b74ca620e2ef5533d643dcc8024"
+    },
+    {
+      "file": "assets/hero/scene-12.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_11_0_2/3.jpg",
+      "http_range": "bytes=7025488384-7025523297",
+      "tar_header_offset": 7025487872,
+      "dimensions": {
+        "width": 320,
+        "height": 240
+      },
+      "bytes": 34914,
+      "sha256": "36bac66b5b227e11a31a180e47b2f77cae2727b308b7b55ba849921ab2081955"
+    },
+    {
+      "file": "assets/hero/scene-13.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/sim30hF_0_0_0_0_2/13.jpg",
+      "http_range": "bytes=7340033024-7340037684",
+      "tar_header_offset": 7340032512,
+      "dimensions": {
+        "width": 160,
+        "height": 120
+      },
+      "bytes": 4661,
+      "sha256": "58e27d31f8b0d905b0a4441a22f72baba59c4c73d124dbfae103cad6037bf5c1"
+    },
+    {
+      "file": "assets/hero/scene-14.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "archive_file": "val_seen.tar",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
+      "archive_member": "val_seen/sim6hF_1_15_0_0_2/20.jpg",
+      "http_range": "bytes=7392472064-7392481437",
+      "tar_header_offset": 7392471552,
+      "dimensions": {
+        "width": 160,
+        "height": 120
+      },
+      "bytes": 9374,
+      "sha256": "83287301b5bee40409a9368daad49dbd1f57ec6f7c9f179933f8b62c7babfe8b"
+    },
+    {
+      "file": "assets/hero/scene-15.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_unseen.tar",
+      "archive_file": "val_unseen.tar",
+      "archive_lfs_sha256": "f4da7552df485b4ad7c026eafa6bf300dcdcdb6486d1af239671f248d6d61b55",
+      "archive_member": "val_unseen/20210826_40_0001_02_0/0000.jpg",
+      "http_range": "bytes=512-262059",
+      "tar_header_offset": 0,
+      "dimensions": {
+        "width": 1024,
+        "height": 544
+      },
+      "bytes": 261548,
+      "sha256": "bf9d71c6b3f1ef28727b7ac62cba73a91b6f12b276cd4d6ce3e7d6dc428e8936"
+    },
+    {
+      "file": "assets/hero/scene-16.jpg",
+      "source_url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_unseen.tar",
+      "archive_file": "val_unseen.tar",
+      "archive_lfs_sha256": "f4da7552df485b4ad7c026eafa6bf300dcdcdb6486d1af239671f248d6d61b55",
+      "archive_member": "val_unseen/20210826_40_0001_09_1/0009.jpg",
+      "http_range": "bytes=52471296-52730663",
+      "tar_header_offset": 52470784,
+      "dimensions": {
+        "width": 1024,
+        "height": 544
+      },
+      "bytes": 259368,
+      "sha256": "58c7d1e0269ae72f75f29574e3fff9ead8e8489b9f406c9c545d188800b6dc4e"
+    }
+  ],
+  "total_saved_jpeg_bytes": 1029666,
+  "notes": "Original JPEG payloads. Neutral numeric filenames avoid unverified per-image platform/source attributions. Includes 2 images also used in the trajectory player. No model-generated images."
+}

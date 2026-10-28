@@ -1,0 +1,112 @@
+{
+  "checked_date": "2026-10-28",
+  "repo_commit": "e6a52e65901a10e4581a0431944aad6e56355ef7",
+  "sources": [
+    {
+      "file": "task.png",
+      "url": "https://arxiv.org/html/2603.26741v2/hl.png",
+      "sha256": "75cb150728364211339747efcd197b7d638ff742dda6a598eecc13be10eb7a75",
+      "bytes": 811161
+    },
+    {
+      "file": "wm-ac.png",
+      "url": "https://arxiv.org/html/2603.26741v2/overall.png",
+      "sha256": "2a63c9149ae674eae46caca1b8093dffb143ed1831487696fc68bce8c6362077",
+      "bytes": 232651
+    },
+    {
+      "file": "uni.png",
+      "url": "https://arxiv.org/html/2603.26741v2/uni.png",
+      "sha256": "439231c29c41f2ba8491d654b471857cf077ddc97b8820c3b6b917c88fbbc830",
+      "bytes": 88333
+    },
+    {
+      "archive": "val_seen.tar",
+      "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_seen.tar",
+      "download": "first 8 MiB only",
+      "used_scenes": {
+        "val_seen/Dec-06-2022-bww8_00000000_0_16_0_0": {
+          "frames": [
+            "0.jpg",
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            "6.jpg",
+            "7.jpg",
+            "8.jpg",
+            "9.jpg"
+          ],
+          "texts": [
+            "Walk straight down the hallway and stop near the end."
+          ]
+        }
+      },
+      "notes": "Original JPEG frames from complete used trajectory only. Display playback is 2.5 frames/s, not claimed source timing. Additional range-download content is excluded.",
+      "archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1"
+    },
+    {
+      "archive": "val_unseen.tar",
+      "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/main/val_unseen.tar",
+      "download": "first 8 MiB only",
+      "used_scenes": {
+        "val_unseen/20210826_40_0001_02_0": {
+          "frames": [
+            "0000.jpg",
+            "0001.jpg",
+            "0002.jpg",
+            "0003.jpg",
+            "0004.jpg",
+            "0005.jpg",
+            "0006.jpg",
+            "0007.jpg",
+            "0008.jpg",
+            "0009.jpg",
+            "0010.jpg",
+            "0011.jpg",
+            "0012.jpg",
+            "0013.jpg",
+            "0014.jpg",
+            "0015.jpg",
+            "0016.jpg"
+          ],
+          "texts": [
+            "Drive straight along the dirt path, and stop at the end of the path."
+          ]
+        }
+      },
+      "notes": "Original JPEG frames from complete used trajectory only. Display playback is 2.5 frames/s, not claimed source timing. Additional range-download content is excluded.",
+      "archive_lfs_sha256": "f4da7552df485b4ad7c026eafa6bf300dcdcdb6486d1af239671f248d6d61b55"
+    }
+  ],
+  "frame_hashes": {
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0012.jpg": "51e0775349c7328fed0b6e7a0553b7de9d234a71446d672e7ce0edb17c8f4768",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0006.jpg": "03839dca4ed975bf176cb92df1752b27d1b4bb278a5586c8a0bc518905508342",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0007.jpg": "f87778f09e5e9348c3ee8c7dd8cd3ff2a32bb11ee44448fa47874f339b242ec4",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0013.jpg": "5c0aee736c3d886d2d8ca08df62093e3904d12c1a068466b2772134527a59727",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0005.jpg": "a3352c4caf96857f5e263e47cef2596031b0101007544bca0cefff267b51a532",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0011.jpg": "211b257be4744ce395c1f8e12360d7b43f429f6a1905c560de7852199f4eb416",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0010.jpg": "9f98a83e7ba27da82d177e1bf550f66deb545cb7faf22f865cec93426f37fa20",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0004.jpg": "02fbcc41fac2a9431cb41ea5b2bbfba39d6d4bd8b6c1c1b4f673233b09635b40",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0000.jpg": "bf9d71c6b3f1ef28727b7ac62cba73a91b6f12b276cd4d6ce3e7d6dc428e8936",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0014.jpg": "79453c65ec2ba586e06572635ebabcbc9fb085e9f4681b16f31565f6fb067057",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0015.jpg": "9370e89677d21be7ad2100ebe711ed7bc3c31aa35fb0be8212015a011bc7247b",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0001.jpg": "d714baa3abcbe6eb6a323215059f3b1a0ca485271568094ff1008dcf9f3bf58c",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0003.jpg": "30c5ac2fac9f74cc4b50a4b9ca31a6c903812d28e15e7a1353369e8926aaaf2f",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0002.jpg": "a93aba26cdaefb2cdda165bb6213ca983d79afa150a0988a8379673835244d54",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0016.jpg": "b13a0ce38b6ff1f5d7a5f87f79cf4a0acf39ac103a922de0d2084958a4c9a054",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0009.jpg": "86a2c277bc0bb8c215746c5abd38019f0deea176cee100714c551ddc568eb886",
+    "assets/samples/val_unseen/20210826_40_0001_02_0/0008.jpg": "beca7c2ef30be8013253de36241600593c969d3b18eedf61029ad3be08a55097",
+    "assets/samples/val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/8.jpg": "e6677e4b0bd36157382772ffe3f8fde64f242434e941a5de721f03aebefc96b6",
+    "assets/samples/val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/9.jpg": "023cdfcf04cf444fc4884a45b055fb1e2d82c2358becc4855296ec5fa3197972",
+    "assets/samples/val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/4.jpg": "d821c81698232767e77089d98a30f7d70fa47b222ec72b9853d7c92386a58403",
+    "assets/samples/val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/5.jpg": "ff2f3de1bff9c8aaae430e98370a96ada906f280f6caf0e080d3bd5f9fa972d3",
+    "assets/samples/val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/7.jpg": "c361fa6ca8774d30bed602dc566b7b4bba1c01bb5a83dd0d29f7d27f3bec42ba",
+    "assets/samples/val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/6.jpg": "859db2b8eea051a531a9c14097a2775ae0017e6f56f2d93879e74fc0f4469f2e",
+    "assets/samples/val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/2.jpg": "f89d4b906f300c71d3981058d86672959c2da9b3ee3d2e037d3c94150d082b35",
+    "assets/samples/val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/3.jpg": "3c3c99024bfdefdf6eee92802000ca1448b5fe375e8c88f3de817e3789a48d2c",
+    "assets/samples/val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/1.jpg": "03835a642e6ed84bdb2d544313aa5d6cdccfdaac5936cd501fadd4386ce8b4cf",
+    "assets/samples/val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/0.jpg": "7ba5958b8672f3f5dd787b32e32bafbc9153301946badc1e86cc5d45bf089b12"
+  }
+}

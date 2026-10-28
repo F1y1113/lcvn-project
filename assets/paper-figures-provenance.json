@@ -1,0 +1,276 @@
+{
+  "paper": "https://arxiv.org/html/2603.26741v2",
+  "figure_count": 6,
+  "figures": [
+    {
+      "id": "S1.F1",
+      "caption": "Figure 1: Language-Conditioned Visual Navigation (LCVN). Given only an initial egocentric observation and a language instruction, the agent generates the entire future trajectory without environmental feedback, imagining intermediate states (➀–➃) along the described route. LCVN-WM + LCVN-AC imagines future latent observations and selects actions within the imagined latent space, while LCVN-Uni jointly predicts the next action and observation in a single autoregressive pass, conditioned on both visual and language inputs.",
+      "source": {
+        "document": "paper_html",
+        "element_id": "S1.F1",
+        "url": "https://arxiv.org/html/2603.26741v2#S1.F1",
+        "line": 309,
+        "xpath": "/html/body/div[2]/div[2]/article/section[1]/figure"
+      },
+      "assets": [
+        {
+          "url": "https://arxiv.org/html/2603.26741v2/hl.png",
+          "resolved_url": "https://arxiv.org/html/2603.26741v2/hl.png",
+          "bytes": 811161,
+          "sha256": "75cb150728364211339747efcd197b7d638ff742dda6a598eecc13be10eb7a75",
+          "content_type": "image/png",
+          "last_modified": "Thu, 01 Oct 2026 01:24:50 GMT",
+          "etag": "\"CM/X0sHUl5cDEAE=\"",
+          "retrieved_on": "2026-10-28",
+          "byte_preserving": true,
+          "width": 1509,
+          "height": 808,
+          "format": "PNG",
+          "html_image_id": "S1.F1.g1",
+          "website_path": "assets/task.png"
+        }
+      ],
+      "kind": "task_overview_with_published_qualitative_predictions",
+      "contains_model_predictions": true,
+      "contains_ground_truth": true,
+      "prediction_status": "Image explicitly labels Predicted Obs. vs. GT and Predicted Traj. vs. GT; model rows surround a central GT row.",
+      "notes": "Useful for a published-example comparison. No underlying per-frame files/trajectory coordinates are supplied here; do not digitize approximate curves as measurements. Split is not specified in the caption.",
+      "used_on_website": true
+    },
+    {
+      "id": "S4.F2",
+      "caption": "Figure 2: Language-conditioned world model (LCVN-WM) and associated LCVN-AC. Phase 1: LCVN-WM is trained with Diffusion Forcing (Chen et al., 2024; Song et al., 2025) to predict future latent observations from noisy context latents at independent noise levels, conditioned on actions, instruction, and time shift. Phase 2: LCVN-AC is trained in LCVN-WM’s latent space, aligning expert and learner plans via KL divergence and optimizing an actor–critic objective with intrinsic rewards that measure agreement between predicted and expert latent rollouts. Inference: LCVN-WM predicts the next latent observation, on which LCVN-AC conditions to generate the next action.",
+      "source": {
+        "document": "paper_html",
+        "element_id": "S4.F2",
+        "url": "https://arxiv.org/html/2603.26741v2#S4.F2",
+        "line": 378,
+        "xpath": "/html/body/div[2]/div[2]/article/section[4]/figure"
+      },
+      "assets": [
+        {
+          "url": "https://arxiv.org/html/2603.26741v2/overall.png",
+          "resolved_url": "https://arxiv.org/html/2603.26741v2/overall.png",
+          "bytes": 232651,
+          "sha256": "2a63c9149ae674eae46caca1b8093dffb143ed1831487696fc68bce8c6362077",
+          "content_type": "image/png",
+          "last_modified": "Thu, 01 Oct 2026 01:24:50 GMT",
+          "etag": "\"CMqx68HUl5cDEAE=\"",
+          "retrieved_on": "2026-10-28",
+          "byte_preserving": true,
+          "width": 2032,
+          "height": 729,
+          "format": "PNG",
+          "html_image_id": "S4.F2.g1",
+          "website_path": "assets/wm-ac.png"
+        }
+      ],
+      "kind": "method_architecture",
+      "contains_model_predictions": false,
+      "contains_ground_truth": false,
+      "prediction_status": "Schematic latent predictions only; no empirical predicted RGB sequence.",
+      "notes": "WM/AC training and inference diagram, not a result or dataset statistics figure.",
+      "used_on_website": true
+    },
+    {
+      "id": "S4.F3",
+      "caption": "Figure 3: LCVN-Uni architecture. LCVN-Uni unifies navigation planning and world modeling within an autoregressive MLLM backbone. Actions \\hat{a}_{t}, instructions I, and observations o_{s},\\hat{o}_{t} are tokenized by bin, BPE, and VQ tokenizers, respectively, then fused into a unified sequence.",
+      "source": {
+        "document": "paper_html",
+        "element_id": "S4.F3",
+        "url": "https://arxiv.org/html/2603.26741v2#S4.F3",
+        "line": 520,
+        "xpath": "/html/body/div[2]/div[2]/article/section[4]/section[3]/figure"
+      },
+      "assets": [
+        {
+          "url": "https://arxiv.org/html/2603.26741v2/uni.png",
+          "resolved_url": "https://arxiv.org/html/2603.26741v2/uni.png",
+          "bytes": 88333,
+          "sha256": "439231c29c41f2ba8491d654b471857cf077ddc97b8820c3b6b917c88fbbc830",
+          "content_type": "image/png",
+          "last_modified": "Thu, 01 Oct 2026 01:24:50 GMT",
+          "etag": "\"CM+/+MHUl5cDEAE=\"",
+          "retrieved_on": "2026-10-28",
+          "byte_preserving": true,
+          "width": 1044,
+          "height": 585,
+          "format": "PNG",
+          "html_image_id": "S4.F3.g1",
+          "website_path": "assets/uni.png"
+        }
+      ],
+      "kind": "method_architecture",
+      "contains_model_predictions": false,
+      "contains_ground_truth": false,
+      "prediction_status": "Token/architecture schematic only; no empirical predicted RGB sequence.",
+      "notes": "Autoregressive multimodal model schematic, not a qualitative result.",
+      "used_on_website": true
+    },
+    {
+      "id": "S5.F4",
+      "caption": "Figure 4: Qualitative Comparisons on LCVN val seen split across NWM and LCVN agents. LCVN agents exhibit stronger sensitivity to directional changes and are less prone to losing landmarks during world modeling.",
+      "source": {
+        "document": "paper_html",
+        "element_id": "S5.F4",
+        "url": "https://arxiv.org/html/2603.26741v2#S5.F4",
+        "line": 552,
+        "xpath": "/html/body/div[2]/div[2]/article/section[5]/figure"
+      },
+      "assets": [
+        {
+          "url": "https://arxiv.org/html/2603.26741v2/visual.png",
+          "resolved_url": "https://arxiv.org/html/2603.26741v2/visual.png",
+          "bytes": 1958252,
+          "sha256": "ff9e985ad70f296d4221dbdd85eeb73d60daadac50cdc9ac054d929e6177c525",
+          "content_type": "image/png",
+          "last_modified": "Thu, 01 Oct 2026 01:24:51 GMT",
+          "etag": "\"CLa5iMLUl5cDEAE=\"",
+          "retrieved_on": "2026-10-28",
+          "byte_preserving": true,
+          "width": 2029,
+          "height": 782,
+          "format": "PNG",
+          "html_image_id": "S5.F4.g1",
+          "website_path": "assets/paper/visual.png"
+        }
+      ],
+      "kind": "published_qualitative_model_comparison",
+      "contains_model_predictions": true,
+      "contains_ground_truth": false,
+      "split": "val_seen",
+      "model_rows": [
+        "NWM + LCVN-AC",
+        "LCVN-Uni",
+        "LCVN-WM + LCVN-AC"
+      ],
+      "prediction_status": "Three model-output rows, two cases, four displayed panels per case. No GT row is shown.",
+      "panel_browsing": {
+        "allowed": "Reference the original image with SVG viewBox to select its existing panels",
+        "display_labels": [
+          "Sample 1",
+          "Sample 2",
+          "Sample 3",
+          "Sample 4"
+        ],
+        "label_basis": "UI display order only; the figure supplies no absolute frame numbers",
+        "synchronization": "Synchronized column selection, not verified alignment to the same physical time/execution step across models",
+        "retain": [
+          "Model identity",
+          "Case instruction",
+          "Original arrows/landmark boxes",
+          "Full figure and original caption access",
+          "Right-case Uni failure note"
+        ]
+      },
+      "notes": "Keep right-case failure: Uni turns in the correct direction but fails to synthesize the corridor/white door. Columns lack exact timestep IDs; label displayed panel 1-4, not t=1..4. Exact action-conditioning protocol for this qualitative figure is not separately specified; do not silently equate it to Table 2 GT-action evaluation.",
+      "failure_sources": [
+        {
+          "document": "paper_html",
+          "element_id": "S5.SS2.p3.1",
+          "url": "https://arxiv.org/html/2603.26741v2#S5.SS2.p3.1",
+          "line": 2009,
+          "xpath": "/html/body/div[2]/div[2]/article/section[5]/section[2]/div[3]/p"
+        }
+      ],
+      "used_on_website": true
+    },
+    {
+      "id": "S5.F5",
+      "caption": "Figure 5: Qualitative comparisons of language guidance showcase both baselines better preserve semantic consistency across states with language guidance.",
+      "source": {
+        "document": "paper_html",
+        "element_id": "S5.F5",
+        "url": "https://arxiv.org/html/2603.26741v2#S5.F5",
+        "line": 2021,
+        "xpath": "/html/body/div[2]/div[2]/article/section[5]/section[3]/figure[1]"
+      },
+      "assets": [
+        {
+          "url": "https://arxiv.org/html/2603.26741v2/visual_compare2.png",
+          "resolved_url": "https://arxiv.org/html/2603.26741v2/visual_compare2.png",
+          "bytes": 2788776,
+          "sha256": "ba54944a04f32866c5e358f6649fa7dad452d5361770132cd48d7b9dd43ad671",
+          "content_type": "image/png",
+          "last_modified": "Thu, 01 Oct 2026 01:24:51 GMT",
+          "etag": "\"CKCKlsLUl5cDEAE=\"",
+          "retrieved_on": "2026-10-28",
+          "byte_preserving": true,
+          "width": 2048,
+          "height": 1833,
+          "format": "PNG",
+          "html_image_id": "S5.F5.g1",
+          "website_path": "assets/paper/visual_compare2.png"
+        }
+      ],
+      "kind": "published_qualitative_language_ablation",
+      "contains_model_predictions": true,
+      "contains_ground_truth": false,
+      "split": null,
+      "model_rows": [
+        "LCVN-Uni (w/o ins)",
+        "LCVN-Uni (with ins)",
+        "LCVN-WM (w/o ins)",
+        "LCVN-WM (with ins)"
+      ],
+      "displayed_time_labels": [
+        "t-1",
+        "t",
+        "t+1",
+        "t+2"
+      ],
+      "panel_browsing": {
+        "allowed": "Reference the original image with SVG viewBox to select its existing panels",
+        "label_basis": "Keep the published relative labels t-1, t, t+1, t+2; no invented absolute frame IDs",
+        "synchronization": "Column-wise comparison of published panels; no claim of a reconstructed complete rollout or exactly matched physical state across variants",
+        "retain": [
+          "Model identity",
+          "with/without instruction condition",
+          "Original instruction",
+          "Full figure and original caption access"
+        ]
+      },
+      "prediction_status": "Four generated-observation rows with/without language. No GT row is shown.",
+      "notes": "Caption does not name a split. Use only published discrete panels; columns are relative labels, not a complete video. Uni w/o ins removes language only from observation prediction. Do not claim framewise temporal alignment suitable for a pixel-perfect GT wipe.",
+      "used_on_website": true
+    },
+    {
+      "id": "A1.F1",
+      "caption": "Figure A1: Overview of annotation pipeline of the LCVN dataset.",
+      "source": {
+        "document": "paper_html",
+        "element_id": "A1.F1",
+        "url": "https://arxiv.org/html/2603.26741v2#A1.F1",
+        "line": 2606,
+        "xpath": "/html/body/div[2]/div[2]/article/section[9]/section[4]/figure[1]"
+      },
+      "assets": [
+        {
+          "url": "https://arxiv.org/html/2603.26741v2/lcvn_anno_pipeline.png",
+          "resolved_url": "https://arxiv.org/html/2603.26741v2/lcvn_anno_pipeline.png",
+          "bytes": 658832,
+          "sha256": "7fb8a5d72d78306537ed29ed44c944374955f5762f6a94d83d7a678a6b7aa4a5",
+          "content_type": "image/png",
+          "last_modified": "Thu, 01 Oct 2026 01:24:50 GMT",
+          "etag": "\"CK+F38HUl5cDEAE=\"",
+          "retrieved_on": "2026-10-28",
+          "byte_preserving": true,
+          "width": 1679,
+          "height": 989,
+          "format": "PNG",
+          "html_image_id": "A1.F1.g1",
+          "website_path": "assets/paper/lcvn_anno_pipeline.png"
+        }
+      ],
+      "kind": "dataset_annotation_pipeline",
+      "contains_model_predictions": false,
+      "contains_ground_truth": true,
+      "prediction_status": "Recorded example frames and odometry map; generated instruction text followed by human verification. No LCVN navigation/world-model predictions.",
+      "notes": "Contains dataset-source and preprocessing information; the small map is one trajectory, not a distribution/statistical plot. No standalone dataset statistics figure exists among the 7 figures.",
+      "used_on_website": true
+    }
+  ],
+  "image_total_bytes": 6538005,
+  "no_standalone_dataset_statistics_plot": true,
+  "rights_as_source": "arXiv.org perpetual non-exclusive license (paper HTML); no additional reuse license inferred."
+}
