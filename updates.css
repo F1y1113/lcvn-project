@@ -7,3 +7,5 @@
 #benchmark{max-width:1120px}.lb-table{min-width:1240px;table-layout:fixed}.lb-table .lb-row th,.lb-table .lb-model-heading{width:240px;min-width:240px;max-width:240px}.lb-table thead th button{white-space:normal;text-align:right;justify-content:flex-end;font-size:12px}.lb-group-head th{height:38px}.lb-table th,.lb-table td{padding:16px 9px}@media(max-width:700px){.lb-table .lb-row th,.lb-table .lb-model-heading{width:200px;min-width:200px;max-width:200px}}
 
 .paper-method{min-width:0}.paper-method .figure-zoom{height:280px;display:flex;align-items:center;justify-content:center}.paper-method .figure-zoom img{max-height:100%;width:100%;object-fit:contain}.footer-bottom{justify-content:flex-end}@media(max-width:760px){.paper-methods{grid-template-columns:1fr}.paper-method .figure-zoom{height:auto;min-height:180px}.paper-method .figure-zoom img{max-height:360px}}
+
+@media(min-width:900px){#methods>.head-row{grid-template-columns:max-content minmax(0,1fr);gap:40px}#methods>.head-row h2{white-space:nowrap}}
