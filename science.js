@@ -49,122 +49,36 @@
   renderEvidence();
 
   const tables=window.LCVN_PAPER_RESULTS.tables;
-  const metrics={
-    sr:{name:'Success rate',short:'SR',higher:true,unit:'',note:'SR is shown as the reported fraction (0–1). Success: final goal distance is smaller than the agent’s average step size.'},
-    ate:{name:'Absolute trajectory error',short:'ATE',higher:false,unit:'',note:'Trajectory-level action error. Values retain the paper’s reporting scale; its tables do not specify a physical unit.'},
-    rpe:{name:'Relative pose error',short:'RPE',higher:false,unit:'',note:'Relative-motion error. Values retain the paper’s reporting scale; its tables do not specify a physical unit.'},
-    ssim:{name:'Structural similarity',short:'SSIM',higher:true,unit:'',note:'Structural similarity to recorded observations. Visual fidelity and navigation success are evaluated separately.'},
-    psnr:{name:'Peak signal-to-noise ratio',short:'PSNR',higher:true,unit:'dB',note:'Pixel-level reconstruction quality, reported in dB. Higher values indicate closer image reconstruction.'},
-    lpips:{name:'Perceptual distance',short:'LPIPS',higher:false,unit:'',note:'Learned perceptual image distance. Lower values indicate closer visual predictions.'},
-    dreamsim:{name:'DreamSim distance',short:'DreamSim',higher:false,unit:'',note:'Perceptual similarity evaluated as a distance. Lower values indicate closer alignment.'}
-  };
-  const views={
-    navigation:{table:0,title:'From one view to a complete route',scopes:{val_seen:'Validation seen',val_unseen:'Validation unseen',test:'Test'},metric:'sr',
-      protocol:'Offline action-sequence prediction, starting from the initial image and instruction. No intermediate environmental feedback.',
-      insight:'The two paradigms have complementary strengths. WM + AC (k = 4) has the highest seen-environment SR; Uni (k = 2) has the highest unseen-environment and test SR in Table 1.'},
-    imagination:{table:1,title:'How closely does the imagined future match?',scopes:{rollout8:'Open-loop rollout · @8',one_step:'Single-frame prediction'},metric:'ssim',
-      protocol:'Validation seen. Visual prediction is evaluated using recorded ground-truth actions, separately from agent-predicted navigation.',
-      insight:'LCVN-WM leads structural and pixel-level fidelity, while LCVN-Uni has the lowest DreamSim distance. A visually faithful rollout and a successful navigation plan measure different properties.'},
-    language:{table:3,title:'Which kind of instruction helps?',scopes:{navigation:'Navigation · validation seen',one_step:'Imagination · single frame',rollout8:'Imagination · @8'},metric:'sr',
-      protocol:'Instruction-style ablation on validation seen: LCVN-Uni (k = 2) and LCVN-WM (k = 4). Table 4 is a separate experiment from Tables 1–2.',
-      insight:'Landmark-based instructions produce the highest SR for both paradigms (0.47). Concise instructions outperform Intricate in SR, but that ordering does not hold for every metric.'},
-    conditioning:{table:2,title:'What does each conditioning signal contribute?',scopes:{navigation:'Navigation · validation seen',one_step:'Imagination · single frame',rollout8:'Imagination · @8'},metric:'sr',
-      protocol:'LCVN-WM (k = 4), validation seen. Compare the seven language / action / time combinations reported in Table 3.',
-      insight:'All three signals together give the strongest SR (0.43). With time retained, adding actions raises SR from 0.12 to 0.35; adding language then raises it to 0.43.'}
-  };
-  let view='navigation',scope='val_seen',metric='sr',display='table',filter='all';
-  const resultTabs=$$('[data-results]');
-  const family=r=>r.method.startsWith('LCVN-Uni')?'uni':r.method.startsWith('LCVN-WM')?'wm':'baseline';
-  function rowLabel(r){
-    if(view==='conditioning')return Object.entries(r.conditioning).filter(([,v])=>v).map(([k])=>k[0].toUpperCase()+k.slice(1)).join(' + ');
-    if(view==='language')return r.style==='Landmark.'?'Landmark-based':r.style;
-    return r.method;
+  const metrics=[
+    {key:'sr',name:'Success rate',label:'SR',higher:true,group:'Planning',note:'Fraction of episodes whose final predicted position satisfies the endpoint criterion.'},
+    {key:'ate',name:'Absolute trajectory error',label:'ATE',higher:false,group:'Planning',note:'Global error between aligned predicted and recorded poses; dataset coordinate units.'},
+    {key:'rpe',name:'Relative pose error',label:'RPE',higher:false,group:'Planning',note:'Relative-motion error between consecutive predicted and recorded poses.'},
+    {key:'route',name:'Full-route fidelity',label:'Full-route fidelity',higher:true,group:'Planning',note:'Similarity of the entire ordered route, with excess travel penalized.'},
+    {key:'heading',name:'Heading and turn fidelity',label:'Heading & turn fidelity',higher:true,group:'Planning',note:'Agreement in facing direction and the direction, location and amount of turns.'},
+    {key:'ssim',name:'Structural similarity',label:'SSIM',higher:true,group:'Imagination',note:'Structural similarity between predicted and recorded observations.'},
+    {key:'psnr',name:'Peak signal-to-noise ratio',label:'PSNR (dB)',higher:true,group:'Imagination',note:'Pixel reconstruction quality, measured in dB.'},
+    {key:'lpips',name:'Learned perceptual image patch similarity',label:'LPIPS',higher:false,group:'Imagination',note:'Learned perceptual distance; lower is better.'},
+    {key:'dreamsim',name:'DreamSim distance',label:'DreamSim',higher:false,group:'Imagination',note:'Perceptual distance to the recorded observation; lower is better.'}
+  ];
+  let split='val_seen',protocol='one_step',query='',sort='sr',ascending=false,selected=new Set(),only=false,expanded=null;
+  const splitNames={val_seen:'Validation seen',val_unseen:'Validation unseen',test:'Test'};
+  const rows=tables[0].rows.map(r=>({...r,image:tables[1].rows.find(v=>v.method===r.method.replace(' + LCVN-AC','')&&v.k===r.k)}));
+  function cell(row,m){return m.group==='Planning'?row.cells[split+'.'+m.key]:(split==='val_seen'?row.image?.cells[protocol+'.'+m.key]:null);}
+  function shown(){const m=metrics.find(m=>m.key===sort);return rows.filter(r=>(r.method+' k = '+r.k).toLowerCase().includes(query.toLowerCase())&&(!only||selected.has(r.id))).sort((a,b)=>{const av=cell(a,m)?.value,bv=cell(b,m)?.value;if(av==null)return bv==null?0:1;if(bv==null)return -1;return (ascending?1:-1)*(av-bv);});}
+  function render(){
+    const visible=shown();
+    const ranks=Object.fromEntries(metrics.map(m=>[m.key,[...new Set(rows.map(r=>cell(r,m)?.value).filter(v=>typeof v==='number'))].sort((a,b)=>m.higher?b-a:a-b)]));
+    $('#results-table').innerHTML=`<caption class="sr-only">${splitNames[split]} · ${protocol==='one_step'?'single-frame':'rollout @8'} visual prediction</caption><thead><tr class="lb-group-head"><th rowspan="2" scope="col" class="lb-model-heading">Model</th><th colspan="5" scope="colgroup">Planning</th><th colspan="4" scope="colgroup">Imagination · ${protocol==='one_step'?'single frame':'rollout @8'}</th></tr><tr>${metrics.map(m=>`<th scope="col" aria-sort="${sort===m.key?(ascending?'ascending':'descending'):'none'}"><button data-sort="${m.key}" title="${esc(m.name+' — '+m.note)}">${esc(m.label)} ${m.higher?'↑':'↓'}<span aria-hidden="true">⇅</span></button></th>`).join('')}</tr></thead><tbody>${visible.map(r=>`<tr class="lb-row ${selected.has(r.id)?'selected':''}"><th scope="row"><div class="lb-model"><input type="checkbox" data-select="${r.id}" aria-label="Select ${esc(r.method)} context ${r.k}" ${selected.has(r.id)?'checked':''}><button data-expand="${r.id}" aria-expanded="${expanded===r.id}"><span>${esc(r.method)}<small>Context k = ${r.k}</small></span><span aria-hidden="true">${expanded===r.id?'⌃':'⌄'}</span></button></div></th>${metrics.map(m=>{const c=cell(r,m),rank=c?.status==='reported'?ranks[m.key].indexOf(c.value)+1:0;return `<td class="lb-value"><span class="${rank>0&&rank<=3?'lb-top lb-top-'+rank:''}" ${!rank?'title="Not reported"':''}>${rank?esc(c.raw):'—'}</span></td>`;}).join('')}</tr>${expanded===r.id?`<tr><td colspan="10"><div class="lb-detail"><strong>${esc(r.method)} · context k = ${r.k}</strong>${r.notes.map(n=>`<p>${esc(n)}</p>`).join('')}<p>${r.image?'Visual metrics refer to '+esc(r.image.method)+' with the same context size, evaluated using recorded actions.':'Visual prediction metrics are not reported for this model.'}</p><a href="${tables[0].source}" target="_blank" rel="noopener">Paper source ↗</a></div></td></tr>`:''}`).join('')||'<tr><td colspan="10" class="lb-empty">No matching models. <button data-reset>Reset filters</button></td></tr>'}</tbody>`;
+    $('#leaderboard-selection').hidden=!selected.size;$('#leaderboard-count').textContent=selected.size+' selected';$('#leaderboard-only').textContent=only?'Show all models':'Show selected only';
+    $('#leaderboard-note').textContent=split==='val_seen'?'Paper-reported scores. Full-route fidelity and heading and turn fidelity are not reported; visual scores use recorded actions.':'Paper-reported navigation scores. Full-route fidelity, heading and turn fidelity, and visual scores for this split are not reported.';
   }
-  function rowDetail(r){return view==='language'?`${r.method} · k = ${r.k}`:view==='conditioning'?'LCVN-WM · k = 4':`k = ${r.k}`;}
-  function visibleRows(){const rows=tables[views[view].table].rows;return filter==='full'&&(view==='navigation'||view==='imagination')?rows.filter(r=>!r.method.includes('w/o ins')):rows;}
-  function setControls(){
-    const v=views[view],t=tables[v.table];
-    $('#results-scope-caption').textContent=view==='navigation'?'Evaluation split':'Evaluation setting';
-    $('#results-scope').innerHTML=Object.entries(v.scopes).map(([k,name])=>`<option value="${k}" ${k===scope?'selected':''}>${name}</option>`).join('');
-    const available=t.columns.filter(c=>c.key.startsWith(scope+'.')).map(c=>c.metric);
-    if(!available.includes(metric))metric=available.includes('sr')?'sr':available.includes('ssim')?'ssim':available[0];
-    $('#results-metric').innerHTML=available.map(k=>`<option value="${k}" ${k===metric?'selected':''}>${metrics[k].short} ${metrics[k].higher?'↑':'↓'} — ${metrics[k].name}</option>`).join('');
-    $('#results-model-label').hidden=view==='language'||view==='conditioning';
-  }
-  function axisMaximum(values){
-    if(['sr','ssim','lpips','dreamsim'].includes(metric))return Math.max(1,...values);
-    const max=Math.max(...values),order=10**Math.floor(Math.log10(max||1)),step=order/2;
-    return Math.ceil(max/step)*step;
-  }
-  function renderResults(){
-    const v=views[view],t=tables[v.table],m=metrics[metric],rows=visibleRows(),key=scope+'.'+metric;
-    const presentFamilies=new Set(rows.map(family));
-    [...$('#results-legend').children].slice(0,3).forEach((el,i)=>{el.hidden=display==='table'||!presentFamilies.has(['baseline','uni','wm'][i]);});
-    $('#results-kicker').textContent=t.label+' · paper-reported';$('#results-title').textContent=v.title;
-    $('#results-protocol').textContent=v.protocol;
-    $('#results-direction').textContent=m.short+(m.unit?' ('+m.unit+')':'')+' · '+(m.higher?'Higher is better ↑':'Lower is better ↓');
-    $('#results-metric-note').textContent=m.note;$('#results-insight').textContent=v.insight;
-    $('#results-source').textContent='Paper '+t.label+' ↗';$('#results-source').href=t.source;
-    const values=rows.map(r=>r.cells[key]?.value).filter(x=>typeof x==='number'&&Number.isFinite(x));
-    const max=axisMaximum(values),best=m.higher?Math.max(...values):Math.min(...values);
-    const axisValue=x=>String(Number(x.toFixed(3)));
-    $('#results-chart').innerHTML=`<div class="chart-axis"><span>Model / configuration</span><div><span>0</span><span>${axisValue(max/2)}</span><span>${axisValue(max)}</span></div><span>${esc(m.short)}</span></div>`+rows.map(r=>{
-      const c=r.cells[key],reported=c&&c.status==='reported'&&typeof c.value==='number',win=reported&&c.value===best;
-      return `<div class="metric-row ${family(r)} ${r.method.includes('w/o ins')?'ablated':''}" data-row-id="${r.id}"><div class="metric-label"><strong>${esc(rowLabel(r))}</strong><span>${esc(rowDetail(r))}</span></div><div class="metric-track" aria-hidden="true">${reported?`<div class="metric-bar" style="width:${Math.max(0,c.value/max*100)}%"></div>`:''}</div><span class="metric-value ${win?'metric-best':''}">${reported?esc(c.raw):'—'}${win?'<span class="sr-only">, best reported value in this view</span>':''}</span></div>`;
-    }).join('');
-    const columns=t.columns.filter(c=>c.key.startsWith(scope+'.'));
-    renderLeaderboard();
-    $('#results-chart').hidden=display!=='chart';$('#results-table-wrap').hidden=display!=='table';
-    let details=[];
-    if(view==='navigation')details.push('Navigation compares predicted action trajectories with recorded trajectories. Validation seen is in-domain; validation unseen comes from TartanDrive; test mixes seen-source and unseen-source data.');
-    if(view==='imagination'||(view==='language'||view==='conditioning')&&scope!=='navigation')details.push('Imagination uses recorded ground-truth actions. Single-frame prediction and open-loop rollout @8 are separate protocols; @8 reports the eighth predicted step, not an average of the first eight steps. These scores do not measure closed-loop robot success.');
-    if(view==='navigation'||view==='imagination')details.push('k is the context size. LCVN-Uni at k = 4 uses fewer visual tokens than at k = 1 or 2; this is not a context-only change at fixed visual resolution. Baselines are retrained on LCVN. “(lang)” denotes the paper’s language-conditioned adaptations.');
-    if(view!=='conditioning')details.push('“w/o ins” for LCVN-Uni removes instructions only from its observation-prediction substep; for LCVN-WM it removes language conditioning.');
-    if(view==='language')details.push('The paper abbreviates Landmark-based as “Landmark.” in Table 4. Values here are from this ablation, not substituted into the main-comparison tables.');
-    if(view==='conditioning')details.push('Action conditioning refers to the world-model input. In imagination, disabling it removes that input despite the ground-truth-action evaluation protocol. The all-signals-off combination is not reported and is not assigned a zero score.');
-    details.push('Values retain the published precision and table order. Exact evaluated sample/window counts and uncertainty estimates are not separately reported. This page does not rerun the models.');
-    $('#results-details').innerHTML=details.map(p=>'<p>'+esc(p)+'</p>').join('')+'<a href="assets/paper-results-provenance.json" download>Download values and cell-level sources ↓</a>';
-  }
-  let search='',sortMetric='sr',ascending=false,selected=new Set(),onlySelected=false,expanded=null;
-  const currentColumns=()=>tables[views[view].table].columns.filter(c=>c.key.startsWith(scope+'.'));
-  function leaderboardRows(){
-    const key=scope+'.'+sortMetric;
-    return visibleRows().filter(r=>(r.method+' '+rowLabel(r)+' '+rowDetail(r)).toLowerCase().includes(search.toLowerCase())&&(!onlySelected||selected.has(r.id))).slice().sort((a,b)=>{
-      const av=a.cells[key]?.value,bv=b.cells[key]?.value;
-      if(av==null)return bv==null?0:1;if(bv==null)return -1;
-      return (ascending?1:-1)*(av-bv);
-    });
-  }
-  function renderLeaderboard(){
-    const columns=currentColumns();
-    if(!columns.some(c=>c.metric===sortMetric)){sortMetric=metric;ascending=!metrics[metric].higher;}
-    const rows=leaderboardRows();
-    const rank=(r,c)=>{const value=r.cells[c.key]?.value;if(value==null)return 0;const values=[...new Set(visibleRows().map(x=>x.cells[c.key]?.value).filter(x=>typeof x==='number'))].sort((a,b)=>metrics[c.metric].higher?b-a:a-b);return values.indexOf(value)+1;};
-    $('#results-table').innerHTML=`<caption>${esc(tables[views[view].table].label+' · '+views[view].scopes[scope])} · ${rows.length} configurations</caption><thead><tr><th class="lb-model-heading" scope="col">Model / configuration</th>${columns.map(c=>`<th scope="col" aria-sort="${c.metric===sortMetric?(ascending?'ascending':'descending'):'none'}"><button data-sort="${c.metric}" title="${esc(metrics[c.metric].name)}">${esc(metrics[c.metric].short)} ${metrics[c.metric].higher?'↑':'↓'} <span aria-hidden="true">⇅</span></button></th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr class="lb-row ${selected.has(r.id)?'selected':''}"><th scope="row"><div class="lb-model"><input type="checkbox" data-select="${r.id}" aria-label="Select ${esc(rowLabel(r)+' '+rowDetail(r))}" ${selected.has(r.id)?'checked':''}><button data-expand="${r.id}" aria-expanded="${expanded===r.id}"><span>${esc(rowLabel(r))}<small>${esc(rowDetail(r))}</small></span><span aria-hidden="true">${expanded===r.id?'⌃':'⌄'}</span></button></div></th>${columns.map(c=>{const pos=rank(r,c);return `<td class="lb-value"><span class="${pos>0&&pos<=3?'lb-top lb-top-'+pos:''}">${r.cells[c.key]?.status==='reported'?esc(r.cells[c.key].raw):'—'}</span></td>`;}).join('')}</tr>${expanded===r.id?`<tr><td colspan="${columns.length+1}"><div class="lb-detail"><strong>${esc(r.method)} · context k = ${r.k}</strong><p>${esc(views[view].protocol)}</p>${(r.notes||[]).map(n=>`<p>${esc(n)}</p>`).join('')}<a href="${tables[views[view].table].source}" target="_blank" rel="noopener">View paper source ↗</a></div></td></tr>`:''}`).join('')||`<tr><td class="lb-empty" colspan="${columns.length+1}">No configurations match these filters. <button id="leaderboard-reset">Reset filters</button></td></tr>`}</tbody>`;
-    $('#leaderboard-selection').hidden=selected.size===0;
-    $('#leaderboard-count').textContent=selected.size+' selected';
-    $('#leaderboard-only').textContent=onlySelected?'Show all models':'Show selected only';
-    $('#leaderboard-panel').hidden=display!=='table';
-  }
-  $('#leaderboard-search').addEventListener('input',e=>{search=e.target.value;renderLeaderboard();});
-  $('#results-table').addEventListener('click',e=>{
-    const sort=e.target.closest('[data-sort]'),expand=e.target.closest('[data-expand]');
-    if(sort){if(sortMetric===sort.dataset.sort)ascending=!ascending;else{sortMetric=sort.dataset.sort;ascending=!metrics[sortMetric].higher;}renderLeaderboard();}
-    if(expand){expanded=expanded===expand.dataset.expand?null:expand.dataset.expand;renderLeaderboard();}
-    if(e.target.id==='leaderboard-reset'){search='';onlySelected=false;filter='all';$('#leaderboard-search').value='';$('#results-models').value='all';renderResults();}
-  });
-  $('#results-table').addEventListener('change',e=>{const id=e.target.dataset.select;if(id){selected.has(id)?selected.delete(id):selected.add(id);if(!selected.size)onlySelected=false;renderLeaderboard();}});
-  $('#leaderboard-only').addEventListener('click',()=>{onlySelected=!onlySelected;renderLeaderboard();});
-  $('#leaderboard-clear').addEventListener('click',()=>{selected.clear();onlySelected=false;renderLeaderboard();});
-  $('#leaderboard-export').addEventListener('click',()=>{
-    const cols=currentColumns(),quote=v=>'"'+String(v).replaceAll('"','""')+'"';
-    const records=[['Model / configuration','Context k','Evaluation setting',...cols.map(c=>metrics[c.metric].short)],...leaderboardRows().map(r=>[rowLabel(r),r.k,views[view].scopes[scope],...cols.map(c=>r.cells[c.key]?.status==='reported'?r.cells[c.key].raw:'')])];
-    const url=URL.createObjectURL(new Blob([records.map(r=>r.map(quote).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8;'}));const a=document.createElement('a');a.href=url;a.download=`lcvn-${view}-${scope}.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-  });
-  wireTabs(resultTabs,b=>{selected.clear();onlySelected=false;expanded=null;view=b.dataset.results;scope=Object.keys(views[view].scopes)[0];metric=views[view].metric;selectTabs(resultTabs,b);$('#results-panel').setAttribute('aria-labelledby',b.id);setControls();renderResults();});
-  $('#results-scope').addEventListener('change',e=>{scope=e.target.value;setControls();renderResults();});
-  $('#results-metric').addEventListener('change',e=>{metric=e.target.value;sortMetric=metric;ascending=!metrics[metric].higher;renderResults();});
-  $('#results-models').addEventListener('change',e=>{filter=e.target.value;renderResults();});
-  $$('[data-results-display]').forEach(b=>b.addEventListener('click',()=>{display=b.dataset.resultsDisplay;$$('[data-results-display]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderResults();}));
-  setControls();renderResults();
+  const tabs=$$('[data-split]');function choose(b){split=b.dataset.split;selectTabs(tabs,b);$('#split-results').setAttribute('aria-labelledby',b.id);render();}wireTabs(tabs,choose);
+  $('#image-protocol').addEventListener('change',e=>{protocol=e.target.value;render();});
+  $('#leaderboard-search').addEventListener('input',e=>{query=e.target.value;render();});
+  $('#results-table').addEventListener('click',e=>{const s=e.target.closest('[data-sort]'),x=e.target.closest('[data-expand]');if(s){ascending=sort===s.dataset.sort?!ascending:!metrics.find(m=>m.key===s.dataset.sort).higher;sort=s.dataset.sort;render();}if(x){expanded=expanded===x.dataset.expand?null:x.dataset.expand;render();}if(e.target.closest('[data-reset]')){query='';only=false;$('#leaderboard-search').value='';render();}});
+  $('#results-table').addEventListener('change',e=>{const id=e.target.dataset.select;if(!id)return;selected.has(id)?selected.delete(id):selected.add(id);if(!selected.size)only=false;render();});
+  $('#leaderboard-only').addEventListener('click',()=>{only=!only;render();});$('#leaderboard-clear').addEventListener('click',()=>{selected.clear();only=false;render();});
+  $('#leaderboard-export').addEventListener('click',()=>{const quote=v=>'"'+String(v).replaceAll('"','""')+'"';const data=[['Model','Context k','Split','Visual protocol',...metrics.map(m=>m.name)],...shown().map(r=>[r.method,r.k,split,protocol,...metrics.map(m=>cell(r,m)?.status==='reported'?cell(r,m).raw:'')])];const url=URL.createObjectURL(new Blob([data.map(r=>r.map(quote).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8;'}));const a=document.createElement('a');a.href=url;a.download=`lcvn-${split}-${protocol}.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+  $('#leaderboard-metric-definitions').innerHTML=metrics.map(m=>`<article><h4>${esc(m.name)} ${m.higher?'↑':'↓'}</h4><p>${esc(m.note)}</p></article>`).join('');render();
+
 })();
