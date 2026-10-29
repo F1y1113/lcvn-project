@@ -171,3 +171,5 @@ body svg text{fill:#333!important}
 #citation .citation-panel pre{font-size:15px!important}#citation .citation-panel button,#copy-status{font-size:14px}
 @media(max-width:760px){.hero-authors{font-size:14px}.hero-affiliations{font-size:13px}.hero-eyebrow{font-size:12px;letter-spacing:.06em}.hero-credit{font-size:12px}.episode-source-label,.episode-source strong,.episode-scenes button{font-size:13px}.episode-image-foot,.recorded-badge,.episode-image-foot .recorded-badge,.compare-toggle{font-size:12px}.episode-visual>.timeline-toolbar{grid-template-columns:32px 49px minmax(0,1fr) 47px}.episode-visual .timeline-copy strong,.episode-visual #episode-progress{font-size:13px}.lb-table{font-size:14px}.lb-submit,.lb-download{font-size:14px}#citation .citation-panel pre{font-size:14px!important}.footer-names{font-size:14px}}
 #worldnav .challenge-sub{color:#555!important}
+
+.paper-method>.figure-zoom[data-zoom-src="assets/wm-ac.png"]{width:calc(100% + 32px);margin-inline:-16px;padding:0}@media(max-width:760px){.paper-method>.figure-zoom[data-zoom-src="assets/wm-ac.png"]{width:calc(100% + 16px);margin-inline:-8px}}
