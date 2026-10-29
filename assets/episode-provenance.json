@@ -1,788 +1,2927 @@
 {
-  "dataset": "https://huggingface.co/datasets/fly1113/LCVN",
-  "status": "Recorded ground truth, no generated model outputs",
+  "dataset": "fly1113/LCVN",
+  "url": "https://huggingface.co/datasets/fly1113/LCVN",
+  "display": "Recorded observations and positions; no model predictions or interpolated frames.",
+  "position_units": "Not inferred. Routes are uniformly scaled for display.",
+  "playback": "One recorded observation per second for browsing; original acquisition timestamps are not provided.",
   "episodes": [
     {
-      "id": "outdoor",
-      "source_archive": "val_unseen.tar",
-      "source_archive_lfs_sha256": "f4da7552df485b4ad7c026eafa6bf300dcdcdb6486d1af239671f248d6d61b55",
-      "frames_count": 17,
-      "instructions": {
-        "concise": {
-          "style": "concise",
-          "raw_field_name": "instruction",
-          "archive_member_pkl": "val_unseen/20210826_40_0001_02_0/traj_data.pkl",
-          "sha256": "a5364782d4d1dd6e27f21f814ea4a52ee07481a87e8e8777ffe3459d8c17f9a3",
-          "text": "Drive straight along the dirt path, and stop at the end of the path."
-        },
-        "intricate": {
-          "style": "intricate",
-          "raw_field_name": "instruction",
-          "archive_member_pkl": "val_unseen/20210826_40_0001_02_1/traj_data.pkl",
-          "sha256": "77551b8cab8cce7fbc648f83c28af3371685914b5ebe2c1047a516c516b54990",
-          "text": "Proceed forward on the narrow, rocky dirt trail surrounded by tall green grass and dense trees on both sides. The path leads directly up a gentle slope towards a clearing in the distance. Continue driving straight along this single track, maintaining a steady course through the vegetation, and stop once you reach the end of the visible trail near the top of the incline."
-        },
-        "landmark": {
-          "style": "landmark",
-          "raw_field_name": "instruction",
-          "archive_member_pkl": "val_unseen/20210826_40_0001_02_2/traj_data.pkl",
-          "sha256": "543cfefdadcf52a229883581023492662800f42027e50afa07e1a3ec32ea63a8",
-          "text": "Drive straight along the dirt path bordered by tall grass and trees. Continue following the track as it heads uphill towards the clearing, and stop at the end of the path."
-        }
+      "id": "outdoor-grass-arc",
+      "name": "Across the lawn",
+      "category": "outdoor",
+      "split": "val_seen",
+      "trajectory": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0",
+      "native_dimensions": {
+        "width": 640,
+        "height": 480
       },
-      "position_source": "val_unseen/20210826_40_0001_02_0/traj_data.pkl",
-      "position_field": "position",
-      "positions": [
-        [
-          236.54556274414062,
-          174.0057830810547
-        ],
-        [
-          236.06005859375,
-          174.39776611328125
-        ],
-        [
-          235.69070434570312,
-          174.69192504882812
-        ],
-        [
-          235.1402587890625,
-          175.1111297607422
-        ],
-        [
-          234.6583251953125,
-          175.52870178222656
-        ],
-        [
-          234.1703643798828,
-          175.9478302001953
-        ],
-        [
-          233.74530029296875,
-          176.31732177734375
-        ],
-        [
-          233.25912475585938,
-          176.74928283691406
-        ],
-        [
-          232.829345703125,
-          177.1358184814453
-        ],
-        [
-          232.39825439453125,
-          177.5082244873047
-        ],
-        [
-          231.90402221679688,
-          177.94497680664062
-        ],
-        [
-          231.46133422851562,
-          178.33587646484375
-        ],
-        [
-          230.9525909423828,
-          178.7834014892578
-        ],
-        [
-          230.51329040527344,
-          179.18417358398438
-        ],
-        [
-          230.0048065185547,
-          179.65000915527344
-        ],
-        [
-          229.5821990966797,
-          180.0749969482422
-        ],
-        [
-          229.17958068847656,
-          180.507080078125
-        ]
-      ],
-      "display_transform": "Preserve both coordinate axes and aspect ratio; translate and scale to fit the route canvas; invert screen y. No rotation or interpolation.",
-      "position_units": "Not established from metadata; no metric units claimed.",
+      "frame_count": 27,
       "frames": [
         {
-          "frame_index": 0,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0000.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0000.jpg",
-          "size_bytes": 261548,
-          "sha256": "bf9d71c6b3f1ef28727b7ac62cba73a91b6f12b276cd4d6ce3e7d6dc428e8936",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 0,
+          "file": "assets/episodes/outdoor-grass-arc/0.jpg",
+          "position": [
+            79.47346599028113,
+            30.17895497237214
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/0.jpg",
+          "range": [
+            3141803520,
+            3141880765
+          ],
+          "bytes": 77246,
+          "sha256": "3545fa2ace775ef6e8a3b666b37898191a90e268c8b8b4f6f438c706975fcf69"
         },
         {
-          "frame_index": 1,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0001.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0001.jpg",
-          "size_bytes": 258504,
-          "sha256": "d714baa3abcbe6eb6a323215059f3b1a0ca485271568094ff1008dcf9f3bf58c",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 1,
+          "file": "assets/episodes/outdoor-grass-arc/1.jpg",
+          "position": [
+            79.31478145070841,
+            30.4042185770989
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/1.jpg",
+          "range": [
+            3141882368,
+            3141979469
+          ],
+          "bytes": 97102,
+          "sha256": "6dee241a61f718e2f728793665e55c0ce6100308a851d5da34724e24aa4b42b1"
         },
         {
-          "frame_index": 2,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0002.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0002.jpg",
-          "size_bytes": 256703,
-          "sha256": "a93aba26cdaefb2cdda165bb6213ca983d79afa150a0988a8379673835244d54",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 2,
+          "file": "assets/episodes/outdoor-grass-arc/2.jpg",
+          "position": [
+            79.14417460120866,
+            30.597704791575936
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/2.jpg",
+          "range": [
+            3141981184,
+            3142078023
+          ],
+          "bytes": 96840,
+          "sha256": "553d4c356be8f3c626a3426b43481a6db86e7b5dcc3b50c28dd9944295673851"
         },
         {
-          "frame_index": 3,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0003.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0003.jpg",
-          "size_bytes": 257925,
-          "sha256": "30c5ac2fac9f74cc4b50a4b9ca31a6c903812d28e15e7a1353369e8926aaaf2f",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 3,
+          "file": "assets/episodes/outdoor-grass-arc/3.jpg",
+          "position": [
+            78.9296754566387,
+            30.77685568972581
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/3.jpg",
+          "range": [
+            3142080000,
+            3142180206
+          ],
+          "bytes": 100207,
+          "sha256": "a3ae53af5a56f518a6d6f91e86586c8ba4da3ec5ed4877423512dff3056942ef"
         },
         {
-          "frame_index": 4,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0004.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0004.jpg",
-          "size_bytes": 260622,
-          "sha256": "02fbcc41fac2a9431cb41ea5b2bbfba39d6d4bd8b6c1c1b4f673233b09635b40",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 4,
+          "file": "assets/episodes/outdoor-grass-arc/4.jpg",
+          "position": [
+            78.69081416345459,
+            30.942575514420955
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/4.jpg",
+          "range": [
+            3142181888,
+            3142287205
+          ],
+          "bytes": 105318,
+          "sha256": "e0ddd7c0dfc7eb3995721c3bab3ca967d540519ac005d47bf03934433430295d"
         },
         {
-          "frame_index": 5,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0005.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0005.jpg",
-          "size_bytes": 261127,
-          "sha256": "a3352c4caf96857f5e263e47cef2596031b0101007544bca0cefff267b51a532",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 5,
+          "file": "assets/episodes/outdoor-grass-arc/5.jpg",
+          "position": [
+            78.47009522991239,
+            31.065056378569462
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/5.jpg",
+          "range": [
+            3142288896,
+            3142395011
+          ],
+          "bytes": 106116,
+          "sha256": "393946f67187b33e6a326b995e432347935b37183ff1b90fba0b35f64e6a0b01"
         },
         {
-          "frame_index": 6,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0006.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0006.jpg",
-          "size_bytes": 260182,
-          "sha256": "03839dca4ed975bf176cb92df1752b27d1b4bb278a5586c8a0bc518905508342",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 6,
+          "file": "assets/episodes/outdoor-grass-arc/6.jpg",
+          "position": [
+            78.22520157508738,
+            31.16987800365408
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/6.jpg",
+          "range": [
+            3142396928,
+            3142503403
+          ],
+          "bytes": 106476,
+          "sha256": "8a5049ce73f358ba1df0d8d4c277c3da980eab014b1e5816af68652b5abb1fb7"
         },
         {
-          "frame_index": 7,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0007.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0007.jpg",
-          "size_bytes": 263589,
-          "sha256": "f87778f09e5e9348c3ee8c7dd8cd3ff2a32bb11ee44448fa47874f339b242ec4",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 7,
+          "file": "assets/episodes/outdoor-grass-arc/7.jpg",
+          "position": [
+            77.9734460767233,
+            31.255373462787734
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/7.jpg",
+          "range": [
+            3142504960,
+            3142617563
+          ],
+          "bytes": 112604,
+          "sha256": "1931c791685390608c51232d5f1162ead85c1b9b33917de94ced8f4b3557b180"
         },
         {
-          "frame_index": 8,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0008.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0008.jpg",
-          "size_bytes": 263900,
-          "sha256": "beca7c2ef30be8013253de36241600593c969d3b18eedf61029ad3be08a55097",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 8,
+          "file": "assets/episodes/outdoor-grass-arc/8.jpg",
+          "position": [
+            77.71652207950403,
+            31.31467108983045
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/8.jpg",
+          "range": [
+            3142619136,
+            3142727658
+          ],
+          "bytes": 108523,
+          "sha256": "cd400d02a5eb712a7cb98e11f94e3f5c02efff45bb0e83239d7da580430aa375"
         },
         {
-          "frame_index": 9,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0009.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0009.jpg",
-          "size_bytes": 262894,
-          "sha256": "86a2c277bc0bb8c215746c5abd38019f0deea176cee100714c551ddc568eb886",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 9,
+          "file": "assets/episodes/outdoor-grass-arc/9.jpg",
+          "position": [
+            77.46441882829467,
+            31.337989689849973
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/9.jpg",
+          "range": [
+            3142729216,
+            3142843584
+          ],
+          "bytes": 114369,
+          "sha256": "bb50965d8fea79e38547b061a6634017283285174935f707d0880889ce414279"
         },
         {
-          "frame_index": 10,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0010.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0010.jpg",
-          "size_bytes": 261682,
-          "sha256": "9f98a83e7ba27da82d177e1bf550f66deb545cb7faf22f865cec93426f37fa20",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 10,
+          "file": "assets/episodes/outdoor-grass-arc/10.jpg",
+          "position": [
+            77.22003971112298,
+            31.31938159134623
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/10.jpg",
+          "range": [
+            3142845440,
+            3142956005
+          ],
+          "bytes": 110566,
+          "sha256": "db50f918630c456668dda2c907aecd67301495fb9f6a12fa09ca83f62f89a126"
         },
         {
-          "frame_index": 11,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0011.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0011.jpg",
-          "size_bytes": 261854,
-          "sha256": "211b257be4744ce395c1f8e12360d7b43f429f6a1905c560de7852199f4eb416",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 11,
+          "file": "assets/episodes/outdoor-grass-arc/11.jpg",
+          "position": [
+            76.96746459734975,
+            31.25775758518265
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/11.jpg",
+          "range": [
+            3142957568,
+            3143068856
+          ],
+          "bytes": 111289,
+          "sha256": "d25515917242ebe0d5c3860c7faaaa9f8fbde82d160d272b23ee6728bb90a272"
         },
         {
-          "frame_index": 12,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0012.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0012.jpg",
-          "size_bytes": 260829,
-          "sha256": "51e0775349c7328fed0b6e7a0553b7de9d234a71446d672e7ce0edb17c8f4768",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 12,
+          "file": "assets/episodes/outdoor-grass-arc/12.jpg",
+          "position": [
+            76.7218739123952,
+            31.153748064007626
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/12.jpg",
+          "range": [
+            3143070720,
+            3143169641
+          ],
+          "bytes": 98922,
+          "sha256": "fa548c9689a88984df059a45e3381797a2db0d79cf9a82a6b2370cd269777136"
         },
         {
-          "frame_index": 13,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0013.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0013.jpg",
-          "size_bytes": 261877,
-          "sha256": "5c0aee736c3d886d2d8ca08df62093e3904d12c1a068466b2772134527a59727",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 13,
+          "file": "assets/episodes/outdoor-grass-arc/13.jpg",
+          "position": [
+            76.53236953847174,
+            31.03058198199273
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/13.jpg",
+          "range": [
+            3143171584,
+            3143281465
+          ],
+          "bytes": 109882,
+          "sha256": "9f667b64a9adb05438e991dff60b03d4f2cfee98c257d14e0514df66f0da11dc"
         },
         {
-          "frame_index": 14,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0014.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0014.jpg",
-          "size_bytes": 261983,
-          "sha256": "79453c65ec2ba586e06572635ebabcbc9fb085e9f4681b16f31565f6fb067057",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 14,
+          "file": "assets/episodes/outdoor-grass-arc/14.jpg",
+          "position": [
+            76.3180217311304,
+            30.89283498407276
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/14.jpg",
+          "range": [
+            3143283200,
+            3143390046
+          ],
+          "bytes": 106847,
+          "sha256": "428e3034a90588726bbcdcc1c86162cceef17e63503677eb43492f11cd83a725"
         },
         {
-          "frame_index": 15,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0015.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0015.jpg",
-          "size_bytes": 260361,
-          "sha256": "9370e89677d21be7ad2100ebe711ed7bc3c31aa35fb0be8212015a011bc7247b",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 15,
+          "file": "assets/episodes/outdoor-grass-arc/15.jpg",
+          "position": [
+            76.06979247827184,
+            30.764695016834764
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/15.jpg",
+          "range": [
+            3143391744,
+            3143500167
+          ],
+          "bytes": 108424,
+          "sha256": "34368f334bfac8c6f6b90fa62dfbcc23b1135ad06303b53fbb1275a4428532c2"
         },
         {
-          "frame_index": 16,
-          "file": "assets/samples/val_unseen/20210826_40_0001_02_0/0016.jpg",
-          "archive_member": "val_unseen/20210826_40_0001_02_0/0016.jpg",
-          "size_bytes": 256771,
-          "sha256": "b13a0ce38b6ff1f5d7a5f87f79cf4a0acf39ac103a922de0d2084958a4c9a054",
-          "dimensions": [
-            1024,
-            544
-          ]
+          "index": 16,
+          "file": "assets/episodes/outdoor-grass-arc/16.jpg",
+          "position": [
+            75.84304576727438,
+            30.658727910793115
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/16.jpg",
+          "range": [
+            3143501824,
+            3143609404
+          ],
+          "bytes": 107581,
+          "sha256": "18421eafbdb873773f973a25bfdb9c232849446f7f8865af4beea32f14de7fe4"
+        },
+        {
+          "index": 17,
+          "file": "assets/episodes/outdoor-grass-arc/17.jpg",
+          "position": [
+            75.62141110590645,
+            30.56110431975125
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/17.jpg",
+          "range": [
+            3143611392,
+            3143719894
+          ],
+          "bytes": 108503,
+          "sha256": "f55cb9ea180c0f524d9c099e9a5668b435cc4d72f7a4fb134c73aad95762b6dc"
+        },
+        {
+          "index": 18,
+          "file": "assets/episodes/outdoor-grass-arc/18.jpg",
+          "position": [
+            75.40955220417892,
+            30.473022943599343
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/18.jpg",
+          "range": [
+            3143721472,
+            3143827342
+          ],
+          "bytes": 105871,
+          "sha256": "5bf4f2d58fdf73eb214b2ee48399aeab9602a8f3faf5b82e44961236fd17ab9f"
+        },
+        {
+          "index": 19,
+          "file": "assets/episodes/outdoor-grass-arc/19.jpg",
+          "position": [
+            75.20201928922052,
+            30.3845846891794
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/19.jpg",
+          "range": [
+            3143828992,
+            3143934583
+          ],
+          "bytes": 105592,
+          "sha256": "ceedc4ba889e80b25e57b1e08e0f61123778d3e71f18df7b77151399a644fe25"
+        },
+        {
+          "index": 20,
+          "file": "assets/episodes/outdoor-grass-arc/20.jpg",
+          "position": [
+            74.95695418058156,
+            30.24408220588044
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/20.jpg",
+          "range": [
+            3143936512,
+            3144044375
+          ],
+          "bytes": 107864,
+          "sha256": "852e4717be2e4e3e766212f62e37e94183573ee9bde882568ed1444fedc055e6"
+        },
+        {
+          "index": 21,
+          "file": "assets/episodes/outdoor-grass-arc/21.jpg",
+          "position": [
+            74.7437119546138,
+            30.07836083600431
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/21.jpg",
+          "range": [
+            3144046080,
+            3144157165
+          ],
+          "bytes": 111086,
+          "sha256": "d79fdbc7f111908b79205ec6315a8cbe492d53a1709bcfe1a6051a661a656378"
+        },
+        {
+          "index": 22,
+          "file": "assets/episodes/outdoor-grass-arc/22.jpg",
+          "position": [
+            74.57850489895162,
+            29.889074226483697
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/22.jpg",
+          "range": [
+            3144158720,
+            3144267313
+          ],
+          "bytes": 108594,
+          "sha256": "040d769f84f7ad72e18fda628f0bea5bdf90349357f29a72675f78e8fb6cdd6f"
+        },
+        {
+          "index": 23,
+          "file": "assets/episodes/outdoor-grass-arc/23.jpg",
+          "position": [
+            74.45697445973806,
+            29.674296373126644
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/23.jpg",
+          "range": [
+            3144269312,
+            3144382000
+          ],
+          "bytes": 112689,
+          "sha256": "1444e7b1869908303703d9dfa9be557185c58f6624a382bae82347aa9136f879"
+        },
+        {
+          "index": 24,
+          "file": "assets/episodes/outdoor-grass-arc/24.jpg",
+          "position": [
+            74.36441494172215,
+            29.41436129119157
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/24.jpg",
+          "range": [
+            3144384000,
+            3144487654
+          ],
+          "bytes": 103655,
+          "sha256": "e28a257264f455e29febfe79548c144070189324aee54836c0eac27499e17685"
+        },
+        {
+          "index": 25,
+          "file": "assets/episodes/outdoor-grass-arc/25.jpg",
+          "position": [
+            74.31168798689534,
+            29.13637956196033
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/25.jpg",
+          "range": [
+            3144489472,
+            3144585015
+          ],
+          "bytes": 95544,
+          "sha256": "f31d819154af31e3e8f11ece0dbd47cd521f7e351134d2690e689a2c01cb4a0d"
+        },
+        {
+          "index": 26,
+          "file": "assets/episodes/outdoor-grass-arc/26.jpg",
+          "position": [
+            74.29546850937238,
+            28.897752458806877
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/26.jpg",
+          "range": [
+            3144586752,
+            3144679472
+          ],
+          "bytes": 92721,
+          "sha256": "7b776c659db86b27615a66e78def0fae85c89b1952764f0123f42888fd4e9816"
         }
-      ]
+      ],
+      "instructions": {
+        "concise": {
+          "text": "Walk straight across the grassy field, then turn left and stop near the white building.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_0/traj_data.pkl",
+          "range": [
+            3144681472,
+            3144683127
+          ],
+          "bytes": 1656,
+          "sha256": "5c7f197387ed8d15d1b070e3dd66f620352e41eff902fab33633b9de4319748a"
+        },
+        "intricate": {
+          "text": "Start by walking straight across the open grassy field, heading towards the white building with a brown roof. As you approach the building, turn left and continue walking along the side of the building until you reach the end of the grassy area, then stop.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_1/traj_data.pkl",
+          "range": [
+            3147564544,
+            3147566371
+          ],
+          "bytes": 1828,
+          "sha256": "fb29cb115a48a7c4deabddc1940f85310b509c7a93e7442a9a11b08276e778ec"
+        },
+        "landmark": {
+          "text": "Walk straight across the grassy field towards the white building with a brown roof. Turn left at the building and stop near the corner.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-09-09-14-20-39_0_r01_0_0_2/traj_data.pkl",
+          "range": [
+            3150447616,
+            3150449319
+          ],
+          "bytes": 1704,
+          "sha256": "7b88a4c2e40cf32d3fac4d72115343ab40fb19cbd88c3f2e9cbf67c2c34a207f"
+        }
+      }
     },
     {
-      "id": "indoor",
-      "source_archive": "val_seen.tar",
-      "source_archive_lfs_sha256": "ea4098d7126b3fe90cf00e6508e60879651fee36c5db37b11b5a42e0f061d5e1",
-      "frames_count": 30,
-      "instructions": {
-        "concise": {
-          "style": "concise",
-          "suffix": "_0",
-          "archive_member_pkl": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/traj_data.pkl",
-          "raw_field_name": "instruction",
-          "sha256": "cdc3e7e3fbbddf5da7d33111facc19b5d8410ab414a24396da7f4266ec4401c6",
-          "text": "Walk straight down the hallway, turn left at the corner, and stop near the end of the corridor."
-        },
-        "intricate": {
-          "style": "intricate",
-          "suffix": "_1",
-          "archive_member_pkl": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_1/traj_data.pkl",
-          "raw_field_name": "instruction",
-          "sha256": "770e4712ce8421d26ddd605a218c77192b9f9a9455afaa8798c744fed9e1a671",
-          "text": "Start by walking straight down a long, carpeted hallway with large windows on the right and white walls on the left. As you proceed, you will pass several office-like structures and a blue recycling bin on the right. Continue forward until you reach a distinct corner where the hallway bends. Turn left at this corner and walk a short distance further down the new section of the hallway, then stop."
-        },
-        "landmark": {
-          "style": "landmark",
-          "suffix": "_2",
-          "archive_member_pkl": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_2/traj_data.pkl",
-          "raw_field_name": "instruction",
-          "sha256": "2ef10fe437e1d7d04ed2d0828839a804c357dac07654ed1cc817f3ac0885a3ab",
-          "text": "Walk straight down the hallway, passing a blue recycling bin on your right. Continue until you reach the corner where the hallway turns, then turn left and stop near the end of the corridor."
-        }
+      "id": "outdoor-tree-walk",
+      "name": "Campus walkway",
+      "category": "outdoor",
+      "split": "val_seen",
+      "trajectory": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0",
+      "native_dimensions": {
+        "width": 320,
+        "height": 240
       },
-      "position_source": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/traj_data.pkl",
-      "position_field": "position",
-      "positions": [
-        [
-          4.010645389556885,
-          -6.9892048835754395
-        ],
-        [
-          4.1192193031311035,
-          -6.8702006340026855
-        ],
-        [
-          4.2266340255737305,
-          -6.703389644622803
-        ],
-        [
-          4.374752998352051,
-          -6.494469165802002
-        ],
-        [
-          4.492917060852051,
-          -6.306358337402344
-        ],
-        [
-          4.593562126159668,
-          -6.139938831329346
-        ],
-        [
-          4.664331912994385,
-          -5.89121150970459
-        ],
-        [
-          4.725629806518555,
-          -5.6842875480651855
-        ],
-        [
-          4.733676433563232,
-          -5.41004753112793
-        ],
-        [
-          4.680199146270752,
-          -5.260918617248535
-        ],
-        [
-          4.544586658477783,
-          -5.068394184112549
-        ],
-        [
-          4.334335803985596,
-          -4.908846855163574
-        ],
-        [
-          4.171571254730225,
-          -4.763747215270996
-        ],
-        [
-          4.016472339630127,
-          -4.638472557067871
-        ],
-        [
-          3.781209945678711,
-          -4.475179195404053
-        ],
-        [
-          3.614645004272461,
-          -4.381838798522949
-        ],
-        [
-          3.3630261421203613,
-          -4.251852989196777
-        ],
-        [
-          3.1508796215057373,
-          -4.108814239501953
-        ],
-        [
-          3.0315639972686768,
-          -3.9547970294952393
-        ],
-        [
-          2.849694013595581,
-          -3.7685329914093018
-        ],
-        [
-          2.690786123275757,
-          -3.6241042613983154
-        ],
-        [
-          2.5228540897369385,
-          -3.4378762245178223
-        ],
-        [
-          2.317046880722046,
-          -3.255671739578247
-        ],
-        [
-          2.1518707275390625,
-          -3.0584774017333984
-        ],
-        [
-          1.951698899269104,
-          -2.879188060760498
-        ],
-        [
-          1.7571582794189453,
-          -2.7335000038146973
-        ],
-        [
-          1.5967018604278564,
-          -2.6179358959198
-        ],
-        [
-          1.3670530319213867,
-          -2.420020818710327
-        ],
-        [
-          1.2212673425674438,
-          -2.288504123687744
-        ],
-        [
-          1.0944942235946655,
-          -2.1484477519989014
-        ]
-      ],
-      "display_transform": "Preserve both coordinate axes and aspect ratio; translate and scale to fit the route canvas; invert screen y. No rotation or interpolation.",
-      "position_units": "Not established from metadata; no metric units claimed.",
+      "frame_count": 30,
       "frames": [
         {
-          "frame_index": 0,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/00.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/0.jpg",
-          "size_bytes": 7195,
-          "sha256": "9efa0f4088330fd0149f4dfcc84049813fd48cfc7e34a6a47de3e5dee41a9654",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 0,
+          "file": "assets/episodes/outdoor-tree-walk/0.jpg",
+          "position": [
+            -132.5382166341005,
+            46.352668837668695
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/0.jpg",
+          "range": [
+            7028920320,
+            7028954869
+          ],
+          "bytes": 34550,
+          "sha256": "bec845c23cb6553d3b4c762950accdc1e65b45184e2e314e4e16b8a1e5af699e"
         },
         {
-          "frame_index": 1,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/01.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/1.jpg",
-          "size_bytes": 7927,
-          "sha256": "c40bdb770a2e681db8709edf2f10d5cfdbdc2ab3f5fdab2a2bd9a2bdec62befe",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 1,
+          "file": "assets/episodes/outdoor-tree-walk/1.jpg",
+          "position": [
+            -132.4141062927819,
+            46.67175143831935
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/1.jpg",
+          "range": [
+            7028956672,
+            7028995118
+          ],
+          "bytes": 38447,
+          "sha256": "248bb556949757a2da8cbf3e67db31bbed94321bd85d6b9fcc4f69d046d9ca79"
         },
         {
-          "frame_index": 2,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/02.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/2.jpg",
-          "size_bytes": 8132,
-          "sha256": "7bce8fccee2b0fb1013a57594cf98053981839df7e328d89194165f3da4165f4",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 2,
+          "file": "assets/episodes/outdoor-tree-walk/2.jpg",
+          "position": [
+            -132.29962492936502,
+            47.08302475824293
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/2.jpg",
+          "range": [
+            7028997120,
+            7029036183
+          ],
+          "bytes": 39064,
+          "sha256": "ae8d9745eccf6bd0011ba59d696997776d763d9c8051b45d60039102d511cc8c"
         },
         {
-          "frame_index": 3,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/03.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/3.jpg",
-          "size_bytes": 8017,
-          "sha256": "7aca8c9a60c3ff4760c615646602d480720e9ca40e46c30efa7e7a4f7860915f",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 3,
+          "file": "assets/episodes/outdoor-tree-walk/3.jpg",
+          "position": [
+            -132.20975823374292,
+            47.40281125932306
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/3.jpg",
+          "range": [
+            7029038080,
+            7029075525
+          ],
+          "bytes": 37446,
+          "sha256": "a9674667d98a86013442a6ed1754cc8da8615e7b0ddd2b8693aa6146bb65afb0"
         },
         {
-          "frame_index": 4,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/04.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/4.jpg",
-          "size_bytes": 7896,
-          "sha256": "180517f2ff0ae270b14d61505ef3fc464e028beaacfe9a4852344afc4158c935",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 4,
+          "file": "assets/episodes/outdoor-tree-walk/4.jpg",
+          "position": [
+            -132.161983370423,
+            47.7496619234135
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/4.jpg",
+          "range": [
+            7029077504,
+            7029117691
+          ],
+          "bytes": 40188,
+          "sha256": "d44b9b501d84538c6c8add98fb546e373ade12e11e97d5ad39a5afd95b3ff297"
         },
         {
-          "frame_index": 5,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/05.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/5.jpg",
-          "size_bytes": 7956,
-          "sha256": "b7edf2cf36ab0377f5c1d6433cc0658d059fe425e3555b635e1c749590e1a381",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 5,
+          "file": "assets/episodes/outdoor-tree-walk/5.jpg",
+          "position": [
+            -132.26599280111355,
+            48.136998934991254
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/5.jpg",
+          "range": [
+            7029119488,
+            7029160044
+          ],
+          "bytes": 40557,
+          "sha256": "1655c0a48b0e795c24433276b11408d187638dcdc5ef02bd04e1d33e76ac7771"
         },
         {
-          "frame_index": 6,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/06.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/6.jpg",
-          "size_bytes": 8072,
-          "sha256": "03dc83790ee11405f9370d95d06dd11a8348ad566d273325e277f88bfe336ee8",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 6,
+          "file": "assets/episodes/outdoor-tree-walk/6.jpg",
+          "position": [
+            -132.47780515362123,
+            48.429051208183495
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/6.jpg",
+          "range": [
+            7029161984,
+            7029204787
+          ],
+          "bytes": 42804,
+          "sha256": "033329d69aab403952d6e9f872953ea47814df48f793b443c37b87fcdfa5c233"
         },
         {
-          "frame_index": 7,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/07.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/7.jpg",
-          "size_bytes": 8056,
-          "sha256": "1bb42332c14e47cfc293c9ca21dba42420ce9296264ab03c39664e39735e27e8",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 7,
+          "file": "assets/episodes/outdoor-tree-walk/7.jpg",
+          "position": [
+            -132.72842626153522,
+            48.64836768395299
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/7.jpg",
+          "range": [
+            7029206528,
+            7029251801
+          ],
+          "bytes": 45274,
+          "sha256": "1f46795302f0fbda615951a231faa872838723f86fcd1a5447162d60072509fb"
         },
         {
-          "frame_index": 8,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/08.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/8.jpg",
-          "size_bytes": 7951,
-          "sha256": "5b4319c45efee662ee11321320556a8a8664803768e5c593b11859f72063f04a",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 8,
+          "file": "assets/episodes/outdoor-tree-walk/8.jpg",
+          "position": [
+            -133.09347701884548,
+            48.88718785769384
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/8.jpg",
+          "range": [
+            7029253632,
+            7029301085
+          ],
+          "bytes": 47454,
+          "sha256": "a648821d5cf68334e1a07b82ad40a486d7401a1bbcd37fce96c7593dd7d4710d"
         },
         {
-          "frame_index": 9,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/09.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/9.jpg",
-          "size_bytes": 7391,
-          "sha256": "e5b57f2f14ebc86276045bc9b482bfba409d374d069fd9af153c3543551cbce3",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 9,
+          "file": "assets/episodes/outdoor-tree-walk/9.jpg",
+          "position": [
+            -133.34729133729817,
+            49.08237328502575
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/9.jpg",
+          "range": [
+            7029302784,
+            7029350163
+          ],
+          "bytes": 47380,
+          "sha256": "c808730591c61ea033ee78faaf159962d100de0dbfcab9953ee4df619bbf4fec"
         },
         {
-          "frame_index": 10,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/10.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/10.jpg",
-          "size_bytes": 7212,
-          "sha256": "84875b044af931724f7739f1d9913ea11d90fc7dd0da137e22bdb217761063c8",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 10,
+          "file": "assets/episodes/outdoor-tree-walk/10.jpg",
+          "position": [
+            -133.6831324430155,
+            49.36641268180409
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/10.jpg",
+          "range": [
+            7029351936,
+            7029398089
+          ],
+          "bytes": 46154,
+          "sha256": "f9ef450f4692e2dbdcdf00dcf926f642c48e6cc4f4ba93f92a39a5ee73dd240d"
         },
         {
-          "frame_index": 11,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/11.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/11.jpg",
-          "size_bytes": 6483,
-          "sha256": "63bc5fad11db63478242aaf729d7a55c40c43c9e47b4d9a6527dc69e7aadb2a7",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 11,
+          "file": "assets/episodes/outdoor-tree-walk/11.jpg",
+          "position": [
+            -134.00584832447257,
+            49.57285994761341
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/11.jpg",
+          "range": [
+            7029400064,
+            7029444084
+          ],
+          "bytes": 44021,
+          "sha256": "71c6d84b26fc1cecccb54692bde2153d62ca3f9fe3facdd2164565dd90dea246"
         },
         {
-          "frame_index": 12,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/12.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/12.jpg",
-          "size_bytes": 5625,
-          "sha256": "57855b78796f28d77532b847dbd4d8ecc9e7bad9d3462f86eb25405b42cf677d",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 12,
+          "file": "assets/episodes/outdoor-tree-walk/12.jpg",
+          "position": [
+            -134.25965921112987,
+            49.7395601181977
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/12.jpg",
+          "range": [
+            7029445632,
+            7029489041
+          ],
+          "bytes": 43410,
+          "sha256": "9894f2d341c24ddfa3a3d86c2c4a90a5b99bf0d9cac097cd229bbeeaf6259048"
         },
         {
-          "frame_index": 13,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/13.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/13.jpg",
-          "size_bytes": 6408,
-          "sha256": "52a7f0766c267fe02ecb43b5e743847c5374c5588ee5169f939ae0664d4a71cb",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 13,
+          "file": "assets/episodes/outdoor-tree-walk/13.jpg",
+          "position": [
+            -134.62373491902804,
+            50.00369784042572
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/13.jpg",
+          "range": [
+            7029490688,
+            7029536716
+          ],
+          "bytes": 46029,
+          "sha256": "d91d59c85c8392c6a640ae274308de143f8cd9cd47717882d614aaea1a86e1f9"
         },
         {
-          "frame_index": 14,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/14.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/14.jpg",
-          "size_bytes": 6415,
-          "sha256": "01905fb015ebbc33613b05404b37c1dabcca2ec607b51071353d7eff59440195",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 14,
+          "file": "assets/episodes/outdoor-tree-walk/14.jpg",
+          "position": [
+            -134.87991382975366,
+            50.219113539303294
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/14.jpg",
+          "range": [
+            7029538304,
+            7029585045
+          ],
+          "bytes": 46742,
+          "sha256": "a59212f119ae5fb2e4d784b944dc884102b8a0bef002a60565b0329950a1c31c"
         },
         {
-          "frame_index": 15,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/15.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/15.jpg",
-          "size_bytes": 6612,
-          "sha256": "023cdbc9d59fa159d26c0ad1690e08e1290056d2e365e6c5fe43d69c6d2fb8bf",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 15,
+          "file": "assets/episodes/outdoor-tree-walk/15.jpg",
+          "position": [
+            -135.22304934215913,
+            50.46990865779014
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/15.jpg",
+          "range": [
+            7029586944,
+            7029634047
+          ],
+          "bytes": 47104,
+          "sha256": "a2a27644ce58bdaa2c1cbd7ca433d9929b64d288c8d05fc8e369427989b8a042"
         },
         {
-          "frame_index": 16,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/16.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/16.jpg",
-          "size_bytes": 6518,
-          "sha256": "e463535ea8803fe21abb9472a7b8374c8ad6796792ae648e903f32352eb22943",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 16,
+          "file": "assets/episodes/outdoor-tree-walk/16.jpg",
+          "position": [
+            -135.46900926199808,
+            50.633947283517394
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/16.jpg",
+          "range": [
+            7029635584,
+            7029682498
+          ],
+          "bytes": 46915,
+          "sha256": "df64351063e59fcfb0a7ced942ad3592d288c2fef77227f04759ba6f0766255b"
         },
         {
-          "frame_index": 17,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/17.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/17.jpg",
-          "size_bytes": 6493,
-          "sha256": "0411b6f8f466cb3c0877f6e25505a236788e8dc1df9959719dae8a086f04031f",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 17,
+          "file": "assets/episodes/outdoor-tree-walk/17.jpg",
+          "position": [
+            -135.83358478067268,
+            50.895471731578084
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/17.jpg",
+          "range": [
+            7029684224,
+            7029731842
+          ],
+          "bytes": 47619,
+          "sha256": "20d60c76c3e491d1ec174a185717042e0e48f374b1548de04431b12a281e64c8"
         },
         {
-          "frame_index": 18,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/18.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/18.jpg",
-          "size_bytes": 6926,
-          "sha256": "caa089630d9a3e8751554d2168d128185d85048ac94a970ab53f997d4880fe55",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 18,
+          "file": "assets/episodes/outdoor-tree-walk/18.jpg",
+          "position": [
+            -136.10207719820698,
+            51.08741176180207
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/18.jpg",
+          "range": [
+            7029733888,
+            7029778536
+          ],
+          "bytes": 44649,
+          "sha256": "79dcd6c4f904f17471037d7d3845bfc4d4bc755766d25db30ca90898c0bc62e4"
         },
         {
-          "frame_index": 19,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/19.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/19.jpg",
-          "size_bytes": 6773,
-          "sha256": "8facb4441f094aa875d268d319c1e9ea0fd871f770539cc79edd5a59121f7c9e",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 19,
+          "file": "assets/episodes/outdoor-tree-walk/19.jpg",
+          "position": [
+            -136.49072043469656,
+            51.27625399026054
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/19.jpg",
+          "range": [
+            7029780480,
+            7029825789
+          ],
+          "bytes": 45310,
+          "sha256": "558617b2bba8e435dd51f2363acf274e6bca438dcc56886a65f5a2004b696c04"
         },
         {
-          "frame_index": 20,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/20.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/20.jpg",
-          "size_bytes": 7162,
-          "sha256": "fc62778c894d4282151b5437e8212f373b03d322764ef41b460712f310d66234",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 20,
+          "file": "assets/episodes/outdoor-tree-walk/20.jpg",
+          "position": [
+            -136.7961970683888,
+            51.416535338768554
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/20.jpg",
+          "range": [
+            7029827584,
+            7029873067
+          ],
+          "bytes": 45484,
+          "sha256": "7532998d7c8e2d7956b590dd7f4df32243c79b24e88e61b0da95995578603330"
         },
         {
-          "frame_index": 21,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/21.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/21.jpg",
-          "size_bytes": 6983,
-          "sha256": "02d78b5a26c1986f3b895d4602e8ab9be7e9ac0938cabccf5260b59ebca0480c",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 21,
+          "file": "assets/episodes/outdoor-tree-walk/21.jpg",
+          "position": [
+            -137.0840585781768,
+            51.57284542313469
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/21.jpg",
+          "range": [
+            7029874688,
+            7029919965
+          ],
+          "bytes": 45278,
+          "sha256": "c1c9a73f365d7de439dfd79b7dc9e212eb7a997a7ea93c23c6dcfb5d5537fd50"
         },
         {
-          "frame_index": 22,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/22.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/22.jpg",
-          "size_bytes": 6956,
-          "sha256": "a08ba370ea1b889faa91cb7b615fc88e947caa267f16934cab38806426d74f6e",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 22,
+          "file": "assets/episodes/outdoor-tree-walk/22.jpg",
+          "position": [
+            -137.4585416440113,
+            51.76019351067535
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/22.jpg",
+          "range": [
+            7029921792,
+            7029969120
+          ],
+          "bytes": 47329,
+          "sha256": "51047219d384df23f2581dd2b122653da95446165945c12c9bf21282344ac2fd"
         },
         {
-          "frame_index": 23,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/23.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/23.jpg",
-          "size_bytes": 6960,
-          "sha256": "012022d0f1ccd5ebeded9777336f75cf08bce0a5158ce3fe02b6174be182e9e2",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 23,
+          "file": "assets/episodes/outdoor-tree-walk/23.jpg",
+          "position": [
+            -137.79747614455252,
+            51.93617024088354
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/23.jpg",
+          "range": [
+            7029970944,
+            7030017898
+          ],
+          "bytes": 46955,
+          "sha256": "33184cd3cef2723e4a2cb794166d94619cac16b109148e560fae7a8f146ac35e"
         },
         {
-          "frame_index": 24,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/24.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/24.jpg",
-          "size_bytes": 5623,
-          "sha256": "e02bbff4fdd5d8abc95be492d5d4cb3f3c67499b902c3f91b6a1ff38fa50355f",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 24,
+          "file": "assets/episodes/outdoor-tree-walk/24.jpg",
+          "position": [
+            -138.13028425372903,
+            52.100306079190915
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/24.jpg",
+          "range": [
+            7030019584,
+            7030064047
+          ],
+          "bytes": 44464,
+          "sha256": "d8b791c5312caee16cc2c9173a95a14fa5f7105345a033746f90ad4840f7902e"
         },
         {
-          "frame_index": 25,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/25.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/25.jpg",
-          "size_bytes": 6876,
-          "sha256": "31c576b3d183651c03f6b970bef75c992e41de8cd736287224f705da5a664157",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 25,
+          "file": "assets/episodes/outdoor-tree-walk/25.jpg",
+          "position": [
+            -138.45011801583348,
+            52.266966359421936
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/25.jpg",
+          "range": [
+            7030065664,
+            7030112917
+          ],
+          "bytes": 47254,
+          "sha256": "68fa5f9137284b8edae2331b4487088beac60196632a4328e09729facf9051fd"
         },
         {
-          "frame_index": 26,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/26.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/26.jpg",
-          "size_bytes": 7163,
-          "sha256": "d594590e1a26eaee074b0beb65cbf7b84a9bacc162a525b167b4ecccf2f14ca5",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 26,
+          "file": "assets/episodes/outdoor-tree-walk/26.jpg",
+          "position": [
+            -138.75236321974467,
+            52.42529305853199
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/26.jpg",
+          "range": [
+            7030114816,
+            7030161336
+          ],
+          "bytes": 46521,
+          "sha256": "aec13be2b430cd397de4ae8dd2095e079be9fc689958f3c64b5900fe4be4ce0d"
         },
         {
-          "frame_index": 27,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/27.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/27.jpg",
-          "size_bytes": 7099,
-          "sha256": "3eed2a6c2c23a138e7ba5dc8fc74b02d21b0f7acf8381fada3a637c6640edf1d",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 27,
+          "file": "assets/episodes/outdoor-tree-walk/27.jpg",
+          "position": [
+            -139.14122098878858,
+            52.610515920290595
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/27.jpg",
+          "range": [
+            7030162944,
+            7030208206
+          ],
+          "bytes": 45263,
+          "sha256": "9ffe62dccc9583bdc73d3417e831a8eb498230d1a05999dbd73680ec7342a8a4"
         },
         {
-          "frame_index": 28,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/28.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/28.jpg",
-          "size_bytes": 7238,
-          "sha256": "febe019651ff31687ffb6d9e507493165333aa6505d5e87c71f54eebf8d53e83",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 28,
+          "file": "assets/episodes/outdoor-tree-walk/28.jpg",
+          "position": [
+            -139.40130511713355,
+            52.73758036074771
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/28.jpg",
+          "range": [
+            7030210048,
+            7030254740
+          ],
+          "bytes": 44693,
+          "sha256": "203a96e94838c5c5a3bda804db189903bd4c51f7644123443e7817b729c6de87"
         },
         {
-          "frame_index": 29,
-          "file": "assets/samples/val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/29.jpg",
-          "archive_member": "val_seen/Dec-06-2022-bww8_00000001_2_3_0_0/29.jpg",
-          "size_bytes": 7163,
-          "sha256": "ae6122c50d17132b651caeb266213c9da7c7c1f724336d982e62bb991ec062c7",
-          "dimensions": [
-            160,
-            120
-          ]
+          "index": 29,
+          "file": "assets/episodes/outdoor-tree-walk/29.jpg",
+          "position": [
+            -139.7112932303058,
+            52.87436393782267
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/29.jpg",
+          "range": [
+            7030256640,
+            7030301206
+          ],
+          "bytes": 44567,
+          "sha256": "f5476e7e763e4a5fd01f6fa5bcd1290e387ba9c22460a3577f37cd559be9f1b5"
         }
-      ]
+      ],
+      "instructions": {
+        "concise": {
+          "text": "Walk straight, turn left, and stop near the blue bin.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_0/traj_data.pkl",
+          "range": [
+            7030303232,
+            7030304997
+          ],
+          "bytes": 1766,
+          "sha256": "d5c03ac23586c6219102d8c85e0a43c9856635a8f580c560127a49b18eb1aa7d"
+        },
+        "intricate": {
+          "text": "Start by walking straight along the paved path, passing a large tree on your left and a brick building with arched windows on your right. As you continue, you'll see bicycles parked near the building. Then, turn left onto the path that leads under the shade of large trees. Continue walking straight until you reach a blue recycling bin positioned on the right side of the path, and stop there.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_1/traj_data.pkl",
+          "range": [
+            7031691264,
+            7031693373
+          ],
+          "bytes": 2110,
+          "sha256": "8a8e1d004a6d5c4d06c8762fbeeecd2a6ef1c7c53b933b8e97dd3cda19656400"
+        },
+        "landmark": {
+          "text": "Walk straight past the brick building and the large tree. Turn left at the intersection near the parked bicycles. Continue straight along the tree-lined path and stop near the blue recycling bin.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/random_mdps_B_Spot_Library_Greg_Thu_Nov_11_77_0_9_0_2/traj_data.pkl",
+          "range": [
+            7033079808,
+            7033081715
+          ],
+          "bytes": 1908,
+          "sha256": "af70f97125030305b968bb8643324bb3481f1ab446180a130b9055c500c5c3b8"
+        }
+      }
+    },
+    {
+      "id": "outdoor-sidewalk-scurve",
+      "name": "Two bends on the sidewalk",
+      "category": "outdoor",
+      "split": "val_seen",
+      "trajectory": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0",
+      "native_dimensions": {
+        "width": 640,
+        "height": 480
+      },
+      "frame_count": 24,
+      "frames": [
+        {
+          "index": 0,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/0.jpg",
+          "position": [
+            -135.32791452951656,
+            37.614864576983926
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/0.jpg",
+          "range": [
+            2093231104,
+            2093293974
+          ],
+          "bytes": 62871,
+          "sha256": "1246b0e5c5b5dbab4a113b1969aef414bceabdcb5894f372057240d7bb044f8b"
+        },
+        {
+          "index": 1,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/1.jpg",
+          "position": [
+            -135.04593128579864,
+            37.626624735635446
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/1.jpg",
+          "range": [
+            2093295616,
+            2093383080
+          ],
+          "bytes": 87465,
+          "sha256": "4b8b63ac7583a984d1a945cbb31e31b4dc2365f1245c874a53e9597efac02e49"
+        },
+        {
+          "index": 2,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/2.jpg",
+          "position": [
+            -134.75919780126426,
+            37.568120684374726
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/2.jpg",
+          "range": [
+            2093384704,
+            2093486784
+          ],
+          "bytes": 102081,
+          "sha256": "e222ba1d1708cc4f9d2733bf34631609cefba4c5e4b8c0c457e339e29233f056"
+        },
+        {
+          "index": 3,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/3.jpg",
+          "position": [
+            -134.5395791356191,
+            37.48251862387678
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/3.jpg",
+          "range": [
+            2093488640,
+            2093594117
+          ],
+          "bytes": 105478,
+          "sha256": "9cc19d23fe22b563840d5f18eed57ce57d4e559ef8b5bdc568aba0d7a832d20f"
+        },
+        {
+          "index": 4,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/4.jpg",
+          "position": [
+            -134.33042289399336,
+            37.3572804715201
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/4.jpg",
+          "range": [
+            2093596160,
+            2093701834
+          ],
+          "bytes": 105675,
+          "sha256": "53cd5222dedefd616f659713db10436a369ee7518caa9c6cae9570313c5f670e"
+        },
+        {
+          "index": 5,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/5.jpg",
+          "position": [
+            -134.10644191581906,
+            37.176310526975946
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/5.jpg",
+          "range": [
+            2093703680,
+            2093803174
+          ],
+          "bytes": 99495,
+          "sha256": "ce91473fed89f59639310036f3f019dd77bff1dddfd9ea3bb1db5c1c7e50e555"
+        },
+        {
+          "index": 6,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/6.jpg",
+          "position": [
+            -133.9082739446591,
+            36.98390558105336
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/6.jpg",
+          "range": [
+            2093805056,
+            2093908061
+          ],
+          "bytes": 103006,
+          "sha256": "cd44fbcd2027351e13e601ef2613c5222bc5ce3226411aa5431e8ddbffba3162"
+        },
+        {
+          "index": 7,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/7.jpg",
+          "position": [
+            -133.73486781306474,
+            36.795803705059996
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/7.jpg",
+          "range": [
+            2093910016,
+            2094014783
+          ],
+          "bytes": 104768,
+          "sha256": "d598229f94cfc4a733f0c03e1e24a0873989afe083e338f44ce231d47c35b57f"
+        },
+        {
+          "index": 8,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/8.jpg",
+          "position": [
+            -133.5637634043191,
+            36.60338350333301
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/8.jpg",
+          "range": [
+            2094016512,
+            2094118575
+          ],
+          "bytes": 102064,
+          "sha256": "68a86708767a588e7ade35327a134fcbe8d37f1b0660bdfd7a4ce408738825cd"
+        },
+        {
+          "index": 9,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/9.jpg",
+          "position": [
+            -133.40537316545675,
+            36.43035996370963
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/9.jpg",
+          "range": [
+            2094120448,
+            2094222898
+          ],
+          "bytes": 102451,
+          "sha256": "6db879a45b609e12dd52f2ed7773efb6b76cd887e10c6d233b071557344293dd"
+        },
+        {
+          "index": 10,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/10.jpg",
+          "position": [
+            -133.21337529448175,
+            36.24272600218675
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/10.jpg",
+          "range": [
+            2094224896,
+            2094314008
+          ],
+          "bytes": 89113,
+          "sha256": "43585d10f878541b5a8dcbd5dfcaea624f88836376436bf219429e87ea980d0c"
+        },
+        {
+          "index": 11,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/11.jpg",
+          "position": [
+            -133.0200195824647,
+            36.07048118360824
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/11.jpg",
+          "range": [
+            2094316032,
+            2094401971
+          ],
+          "bytes": 85940,
+          "sha256": "866431613239088464fd20774db5b0a593f76c995a71e099d5ec4d7dc0f01020"
+        },
+        {
+          "index": 12,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/12.jpg",
+          "position": [
+            -132.8295725080927,
+            35.92498369995341
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/12.jpg",
+          "range": [
+            2094403584,
+            2094474438
+          ],
+          "bytes": 70855,
+          "sha256": "e00674d9557e563269722157643e0a74bc2bbbd5aea429e07db3e29525e1a062"
+        },
+        {
+          "index": 13,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/13.jpg",
+          "position": [
+            -132.6189393990346,
+            35.784120067415174
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/13.jpg",
+          "range": [
+            2094476288,
+            2094553706
+          ],
+          "bytes": 77419,
+          "sha256": "5edf1f21c78fb2029bf4708a71998d5318f1f603e2fdf0039c7aea86c68adffb"
+        },
+        {
+          "index": 14,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/14.jpg",
+          "position": [
+            -132.39728814338397,
+            35.64943924933613
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/14.jpg",
+          "range": [
+            2094555648,
+            2094634098
+          ],
+          "bytes": 78451,
+          "sha256": "f00619bf0abd2ae30446d61b74d7fe0a13a0be930a8166e8b005562d43d6ca1f"
+        },
+        {
+          "index": 15,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/15.jpg",
+          "position": [
+            -132.1733928961363,
+            35.53846763943743
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/15.jpg",
+          "range": [
+            2094636032,
+            2094716186
+          ],
+          "bytes": 80155,
+          "sha256": "01ff2694da9dacc18fa764cd8cb211c62f95b1997e78a255c1c68bb8150b5d76"
+        },
+        {
+          "index": 16,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/16.jpg",
+          "position": [
+            -131.92208469073586,
+            35.452076307732725
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/16.jpg",
+          "range": [
+            2094717952,
+            2094800154
+          ],
+          "bytes": 82203,
+          "sha256": "c263be8862435f6966d465bbf3add371776fe4386d019b57c678ed79a913454f"
+        },
+        {
+          "index": 17,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/17.jpg",
+          "position": [
+            -131.65831287575742,
+            35.40049223606484
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/17.jpg",
+          "range": [
+            2094801920,
+            2094887046
+          ],
+          "bytes": 85127,
+          "sha256": "6d292a1c4f7998e9bf6d257e3c726de5933892a0a53f35d33c94e6fb74590c81"
+        },
+        {
+          "index": 18,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/18.jpg",
+          "position": [
+            -131.41083357522945,
+            35.3846894147526
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/18.jpg",
+          "range": [
+            2094888960,
+            2094975667
+          ],
+          "bytes": 86708,
+          "sha256": "8d504b569b68b561219f3a508054ad06eee5ab5bf968a11c3fb9dc998e6e9366"
+        },
+        {
+          "index": 19,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/19.jpg",
+          "position": [
+            -131.1386759755474,
+            35.40926048295177
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/19.jpg",
+          "range": [
+            2094977536,
+            2095064810
+          ],
+          "bytes": 87275,
+          "sha256": "a02ab179feceac0c5d76fdf6b998b7c2d39d7e91bdcba612c4af33294dab9968"
+        },
+        {
+          "index": 20,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/20.jpg",
+          "position": [
+            -130.8622727784182,
+            35.470161756869985
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/20.jpg",
+          "range": [
+            2095066624,
+            2095154173
+          ],
+          "bytes": 87550,
+          "sha256": "90cbf014398e5ab37acf6db65e602cb5369553d89b60bd9423f00069e9ddad9a"
+        },
+        {
+          "index": 21,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/21.jpg",
+          "position": [
+            -130.58900364400853,
+            35.55625646740637
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/21.jpg",
+          "range": [
+            2095155712,
+            2095246800
+          ],
+          "bytes": 91089,
+          "sha256": "ed8d59ef65207f972a05ee4f16bd21e0e223bcb3fcf23e1384f293e80f8ac225"
+        },
+        {
+          "index": 22,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/22.jpg",
+          "position": [
+            -130.34258726256004,
+            35.64758863826303
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/22.jpg",
+          "range": [
+            2095248384,
+            2095339344
+          ],
+          "bytes": 90961,
+          "sha256": "b179bbe7df57df178985142f1714c6a0ed7d85d00a4d855a2376c64e1f45474a"
+        },
+        {
+          "index": 23,
+          "file": "assets/episodes/outdoor-sidewalk-scurve/23.jpg",
+          "position": [
+            -130.098594211921,
+            35.74853668221478
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/23.jpg",
+          "range": [
+            2095341056,
+            2095433254
+          ],
+          "bytes": 92199,
+          "sha256": "6f1fb70679c56c9c54dfca51ddefbf95d64696a4b403003ac0309ee8bcc9044b"
+        }
+      ],
+      "instructions": {
+        "concise": {
+          "text": "Turn left and walk straight along the sidewalk, then stop near the end of the path.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_0/traj_data.pkl",
+          "range": [
+            2095435264,
+            2095436771
+          ],
+          "bytes": 1508,
+          "sha256": "517b1d2e15a3816e75b070e6e87ae5305d022321faf4a6ce6d9dbd435301c8b9"
+        },
+        "intricate": {
+          "text": "Start by turning left onto a concrete sidewalk that runs alongside a grassy area. Walk straight ahead, keeping a long, single-story building with multiple windows on your left and a smaller white structure on your right. Continue forward along the path as it curves slightly, passing a utility pole and some trees. Stop near the end of the sidewalk where the path appears to end or turn.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_1/traj_data.pkl",
+          "range": [
+            2097644032,
+            2097645846
+          ],
+          "bytes": 1815,
+          "sha256": "d75faff8f1aa92b7b95338c3b61a9600f5945f40ad52b395b5bc402d060c29a0"
+        },
+        "landmark": {
+          "text": "Turn left onto the sidewalk. Walk straight past the long building with multiple windows on your left and the white structure on your right. Continue along the path until you reach the end near the trees, then stop.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/jackal_2019-08-18-16-22-56_13_r00_8_0_2/traj_data.pkl",
+          "range": [
+            2099853312,
+            2099854950
+          ],
+          "bytes": 1639,
+          "sha256": "4e53e0dcb8a56f20d26328e58d6009e37011cbdd5ea59e24ae731605c3f9e813"
+        }
+      }
+    },
+    {
+      "id": "indoor-glass-atrium",
+      "name": "Glass atrium",
+      "category": "indoor",
+      "split": "val_seen",
+      "trajectory": "val_seen/Dec-06-2022-bww8_00000000_0_8_0",
+      "native_dimensions": {
+        "width": 160,
+        "height": 120
+      },
+      "frame_count": 30,
+      "frames": [
+        {
+          "index": 0,
+          "file": "assets/episodes/indoor-glass-atrium/0.jpg",
+          "position": [
+            7.486584663391113,
+            17.30222511291504
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/0.jpg",
+          "range": [
+            311808,
+            319988
+          ],
+          "bytes": 8181,
+          "sha256": "a38bf7671f21f7a392b6213f8fb919d7f3969679dda61449030765028d64b177"
+        },
+        {
+          "index": 1,
+          "file": "assets/episodes/indoor-glass-atrium/1.jpg",
+          "position": [
+            7.316609859466553,
+            17.44847297668457
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/1.jpg",
+          "range": [
+            321536,
+            330452
+          ],
+          "bytes": 8917,
+          "sha256": "892db67c5cb721fb9b12ad499c272b8cd7c201ab26814d78182237b25ea3c2d5"
+        },
+        {
+          "index": 2,
+          "file": "assets/episodes/indoor-glass-atrium/2.jpg",
+          "position": [
+            7.1140007972717285,
+            17.60722541809082
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/2.jpg",
+          "range": [
+            332288,
+            341277
+          ],
+          "bytes": 8990,
+          "sha256": "633c926ca941c7ecb3a9102cc6cecec24fb970aa528efd2c3079273578a65479"
+        },
+        {
+          "index": 3,
+          "file": "assets/episodes/indoor-glass-atrium/3.jpg",
+          "position": [
+            6.974759101867676,
+            17.7432918548584
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/3.jpg",
+          "range": [
+            343040,
+            352077
+          ],
+          "bytes": 9038,
+          "sha256": "e05c4cd75138d9509bf32f11008c7239480237e56748f3be97f92cf7191d77e3"
+        },
+        {
+          "index": 4,
+          "file": "assets/episodes/indoor-glass-atrium/4.jpg",
+          "position": [
+            6.883189678192139,
+            17.94046401977539
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/4.jpg",
+          "range": [
+            353792,
+            362799
+          ],
+          "bytes": 9008,
+          "sha256": "e9a8d9315a76cabf089d344da6c53c8347236b5ba38c4626ae965a94deb9771a"
+        },
+        {
+          "index": 5,
+          "file": "assets/episodes/indoor-glass-atrium/5.jpg",
+          "position": [
+            6.8274335861206055,
+            18.125423431396484
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/5.jpg",
+          "range": [
+            364544,
+            374009
+          ],
+          "bytes": 9466,
+          "sha256": "f22b52965e9210b8301ee92bd69e26b7a09eadbb3becc3e6eafbc03de3f99a9a"
+        },
+        {
+          "index": 6,
+          "file": "assets/episodes/indoor-glass-atrium/6.jpg",
+          "position": [
+            6.764919281005859,
+            18.328948974609375
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/6.jpg",
+          "range": [
+            375808,
+            385241
+          ],
+          "bytes": 9434,
+          "sha256": "ba07692ebcf3cb07afaf27e0ff8844349cdf5dbbe237ce6a86ee468c4499aabd"
+        },
+        {
+          "index": 7,
+          "file": "assets/episodes/indoor-glass-atrium/7.jpg",
+          "position": [
+            6.678581714630127,
+            18.509496688842773
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/7.jpg",
+          "range": [
+            387072,
+            396175
+          ],
+          "bytes": 9104,
+          "sha256": "69882f29b735071f9a0fcf27e67452420bd100c0ca245b47f366642f6d6dd2d1"
+        },
+        {
+          "index": 8,
+          "file": "assets/episodes/indoor-glass-atrium/8.jpg",
+          "position": [
+            6.626857280731201,
+            18.6392765045166
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/8.jpg",
+          "range": [
+            397824,
+            407026
+          ],
+          "bytes": 9203,
+          "sha256": "3a609fae7fcae1f7ace30030fbd4b57bb1808bda13d38182433000b1ffb35ee3"
+        },
+        {
+          "index": 9,
+          "file": "assets/episodes/indoor-glass-atrium/9.jpg",
+          "position": [
+            6.603412628173828,
+            18.835742950439453
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/9.jpg",
+          "range": [
+            408576,
+            417717
+          ],
+          "bytes": 9142,
+          "sha256": "beceadcf4187f81cf4308ee9f8dabd055149b055d0839b46d4360dec6cd22e25"
+        },
+        {
+          "index": 10,
+          "file": "assets/episodes/indoor-glass-atrium/10.jpg",
+          "position": [
+            6.589044570922852,
+            18.862258911132812
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/10.jpg",
+          "range": [
+            419328,
+            428385
+          ],
+          "bytes": 9058,
+          "sha256": "7eec6da3fbc2c2ac301de4eae7ff7275634142dfce18637292621594e7674652"
+        },
+        {
+          "index": 11,
+          "file": "assets/episodes/indoor-glass-atrium/11.jpg",
+          "position": [
+            6.526313781738281,
+            19.013139724731445
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/11.jpg",
+          "range": [
+            430080,
+            439325
+          ],
+          "bytes": 9246,
+          "sha256": "a32e862669621a5ed52efcc3818caf075e69c92126bc08990417c77696ca5c48"
+        },
+        {
+          "index": 12,
+          "file": "assets/episodes/indoor-glass-atrium/12.jpg",
+          "position": [
+            6.524618625640869,
+            19.182065963745117
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/12.jpg",
+          "range": [
+            441344,
+            449555
+          ],
+          "bytes": 8212,
+          "sha256": "a9030b57250a8d0f3abebedf328bd7a2ed4884f0c0e67efaafe040e41addd11f"
+        },
+        {
+          "index": 13,
+          "file": "assets/episodes/indoor-glass-atrium/13.jpg",
+          "position": [
+            6.579086780548096,
+            19.38055419921875
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/13.jpg",
+          "range": [
+            451584,
+            460676
+          ],
+          "bytes": 9093,
+          "sha256": "167b01633b18873d88f969c6e39ced59b4c17110d31f636b3dcfc16ed734b195"
+        },
+        {
+          "index": 14,
+          "file": "assets/episodes/indoor-glass-atrium/14.jpg",
+          "position": [
+            6.660980224609375,
+            19.6715145111084
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/14.jpg",
+          "range": [
+            462336,
+            471361
+          ],
+          "bytes": 9026,
+          "sha256": "78449619619501401929da7bcacab216906a8f6089e3eff0beea3b62f3d9fa56"
+        },
+        {
+          "index": 15,
+          "file": "assets/episodes/indoor-glass-atrium/15.jpg",
+          "position": [
+            6.705431938171387,
+            19.86632537841797
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/15.jpg",
+          "range": [
+            473088,
+            482067
+          ],
+          "bytes": 8980,
+          "sha256": "af3ee2d375469156ddae5c414ee599f5f3282800d5bd34da45d3f22021bd7b47"
+        },
+        {
+          "index": 16,
+          "file": "assets/episodes/indoor-glass-atrium/16.jpg",
+          "position": [
+            6.803406238555908,
+            20.107418060302734
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/16.jpg",
+          "range": [
+            483840,
+            492558
+          ],
+          "bytes": 8719,
+          "sha256": "c1ca95406a75929cdc161fd4362464111d313433c5e1c8bf222893dbc55b02b9"
+        },
+        {
+          "index": 17,
+          "file": "assets/episodes/indoor-glass-atrium/17.jpg",
+          "position": [
+            6.899413585662842,
+            20.29970359802246
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/17.jpg",
+          "range": [
+            494592,
+            503511
+          ],
+          "bytes": 8920,
+          "sha256": "f3ba203a88e127d7ea6d9a8c15ce8f5b90e6735dceb619fb4a1b6760d2151ee5"
+        },
+        {
+          "index": 18,
+          "file": "assets/episodes/indoor-glass-atrium/18.jpg",
+          "position": [
+            6.987497329711914,
+            20.475025177001953
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/18.jpg",
+          "range": [
+            505344,
+            514324
+          ],
+          "bytes": 8981,
+          "sha256": "e5030b21dfdf793d91658cdd39f05654c6811038b06b675c5312ff740e49f1a3"
+        },
+        {
+          "index": 19,
+          "file": "assets/episodes/indoor-glass-atrium/19.jpg",
+          "position": [
+            7.089143753051758,
+            20.722900390625
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/19.jpg",
+          "range": [
+            516096,
+            525201
+          ],
+          "bytes": 9106,
+          "sha256": "a47526b23dc6535b5b9feb459ba4971ac786a32098e9a4b427ef011448497234"
+        },
+        {
+          "index": 20,
+          "file": "assets/episodes/indoor-glass-atrium/20.jpg",
+          "position": [
+            7.1875457763671875,
+            20.93671226501465
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/20.jpg",
+          "range": [
+            526848,
+            535653
+          ],
+          "bytes": 8806,
+          "sha256": "9235626cdc73219d9a9c7105615f51fa2ac99c05cac665f8c2ddf95b8ba1e3c5"
+        },
+        {
+          "index": 21,
+          "file": "assets/episodes/indoor-glass-atrium/21.jpg",
+          "position": [
+            7.247004508972168,
+            21.105562210083008
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/21.jpg",
+          "range": [
+            537600,
+            546438
+          ],
+          "bytes": 8839,
+          "sha256": "154c07e3040c101ffddf5d2beceef16936532a153f436d4369f5a020ca1547c1"
+        },
+        {
+          "index": 22,
+          "file": "assets/episodes/indoor-glass-atrium/22.jpg",
+          "position": [
+            7.367068290710449,
+            21.321636199951172
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/22.jpg",
+          "range": [
+            548352,
+            557308
+          ],
+          "bytes": 8957,
+          "sha256": "c7a1b35346286a816b0b3f783e1261ea27cbe47b3641405ba225ade506fe5b58"
+        },
+        {
+          "index": 23,
+          "file": "assets/episodes/indoor-glass-atrium/23.jpg",
+          "position": [
+            7.425554275512695,
+            21.48188018798828
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/23.jpg",
+          "range": [
+            559104,
+            568173
+          ],
+          "bytes": 9070,
+          "sha256": "e9fcbae8a79de6586b5e9738dc23745bb6df1426e97f532b373d4bff2c187964"
+        },
+        {
+          "index": 24,
+          "file": "assets/episodes/indoor-glass-atrium/24.jpg",
+          "position": [
+            7.51124906539917,
+            21.671846389770508
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/24.jpg",
+          "range": [
+            569856,
+            578256
+          ],
+          "bytes": 8401,
+          "sha256": "2bfdeba01136cea0512682d197125a8ec3e9412ff59ae9be635a875143beb157"
+        },
+        {
+          "index": 25,
+          "file": "assets/episodes/indoor-glass-atrium/25.jpg",
+          "position": [
+            7.626098155975342,
+            21.839563369750977
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/25.jpg",
+          "range": [
+            580096,
+            588788
+          ],
+          "bytes": 8693,
+          "sha256": "502101fa311b27f010571c2269b8f18b989a3e11f123515d8b960f3d7df1e829"
+        },
+        {
+          "index": 26,
+          "file": "assets/episodes/indoor-glass-atrium/26.jpg",
+          "position": [
+            7.7441816329956055,
+            21.99370765686035
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/26.jpg",
+          "range": [
+            590336,
+            599306
+          ],
+          "bytes": 8971,
+          "sha256": "93acfa227e115c054b94d0526c556aea1e5a59209586f51b8ad671f0150a57af"
+        },
+        {
+          "index": 27,
+          "file": "assets/episodes/indoor-glass-atrium/27.jpg",
+          "position": [
+            7.836363792419434,
+            22.18987464904785
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/27.jpg",
+          "range": [
+            601088,
+            610217
+          ],
+          "bytes": 9130,
+          "sha256": "dc86dfdf0d56d47d48337d1c9f3a82845f63175ac2d44a28a1eaf01a73d121c0"
+        },
+        {
+          "index": 28,
+          "file": "assets/episodes/indoor-glass-atrium/28.jpg",
+          "position": [
+            7.953945159912109,
+            22.371213912963867
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/28.jpg",
+          "range": [
+            611840,
+            620924
+          ],
+          "bytes": 9085,
+          "sha256": "37a50c1b3c3d70cff3b17a3b98047bbc22029525e4d6d4385a5819bf40c90a17"
+        },
+        {
+          "index": 29,
+          "file": "assets/episodes/indoor-glass-atrium/29.jpg",
+          "position": [
+            8.00518798828125,
+            22.527584075927734
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/29.jpg",
+          "range": [
+            622592,
+            631783
+          ],
+          "bytes": 9192,
+          "sha256": "57f60a09e468921da96936c9e3b73871291956e720df501d8869d24ede1643c2"
+        }
+      ],
+      "instructions": {
+        "concise": {
+          "text": "Walk straight down the hallway. Continue forward past a blue recycling bin and stop near the end of the corridor.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_0/traj_data.pkl",
+          "range": [
+            633344,
+            635132
+          ],
+          "bytes": 1789,
+          "sha256": "ae960d60a7db9f35dd2bc5c35f38010a4372b0cb682dd10878e04ef5419ee67f"
+        },
+        "intricate": {
+          "text": "Start by walking straight down a wide, well-lit hallway with large windows on the left. As you proceed, you will pass a large blue beanbag chair situated on the left side of the path. Continue moving forward, keeping the windows to your left and office-like structures to your right. Further along, you will pass a blue recycling bin on the left. Keep walking straight until you reach the end of this section of the corridor, where the path seems to open up or end, and stop there.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_1/traj_data.pkl",
+          "range": [
+            960000,
+            962196
+          ],
+          "bytes": 2197,
+          "sha256": "029b7e624d4d8f02bdfb11cad0e907f6b622fbbd93dfbccf40db11cf4a91c084"
+        },
+        "landmark": {
+          "text": "Walk straight down the hallway, passing the large blue beanbag chair on your left. Continue forward past the blue recycling bin and stop near the end of the corridor.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Dec-06-2022-bww8_00000000_0_8_0_2/traj_data.pkl",
+          "range": [
+            1287168,
+            1289046
+          ],
+          "bytes": 1879,
+          "sha256": "312186257a0c035cbef8399df0b88b3a3289a669a97f9d073077a185a82f40ba"
+        }
+      }
+    },
+    {
+      "id": "indoor-orange-corridor",
+      "name": "Orange corridor",
+      "category": "indoor",
+      "split": "val_seen",
+      "trajectory": "val_seen/Feb-17-2023-soda3_00000008_0_10_0",
+      "native_dimensions": {
+        "width": 160,
+        "height": 120
+      },
+      "frame_count": 26,
+      "frames": [
+        {
+          "index": 0,
+          "file": "assets/episodes/indoor-orange-corridor/0.jpg",
+          "position": [
+            7.297292232513428,
+            -8.85848331451416
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/0.jpg",
+          "range": [
+            317442048,
+            317448047
+          ],
+          "bytes": 6000,
+          "sha256": "e425e02d9d5363db14645e79f23a6bc36e1ec52974cae226e0b8fb331a2fe066"
+        },
+        {
+          "index": 1,
+          "file": "assets/episodes/indoor-orange-corridor/1.jpg",
+          "position": [
+            7.362953186035156,
+            -9.141411781311035
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/1.jpg",
+          "range": [
+            317449728,
+            317456586
+          ],
+          "bytes": 6859,
+          "sha256": "f7964beadc1ce65fdc4c5a4a2f62eba8367d148b0ff170193d342d5aa8069b22"
+        },
+        {
+          "index": 2,
+          "file": "assets/episodes/indoor-orange-corridor/2.jpg",
+          "position": [
+            7.390275955200195,
+            -9.406015396118164
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/2.jpg",
+          "range": [
+            317458432,
+            317465411
+          ],
+          "bytes": 6980,
+          "sha256": "660b8754c630e568b5a61143acdf59b8706b3e163585d66956d4ed26ac934f80"
+        },
+        {
+          "index": 3,
+          "file": "assets/episodes/indoor-orange-corridor/3.jpg",
+          "position": [
+            7.395305633544922,
+            -9.66969108581543
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/3.jpg",
+          "range": [
+            317467136,
+            317474194
+          ],
+          "bytes": 7059,
+          "sha256": "11886dde67e12e848fedbce44808e8cf6320aa6ff4013cd1948154d501f6fc86"
+        },
+        {
+          "index": 4,
+          "file": "assets/episodes/indoor-orange-corridor/4.jpg",
+          "position": [
+            7.363754749298096,
+            -9.97891616821289
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/4.jpg",
+          "range": [
+            317475840,
+            317482979
+          ],
+          "bytes": 7140,
+          "sha256": "33ce22c48ca3299bba6a71a1dc392a71d4099890631ff10bf735d2d630ee0b29"
+        },
+        {
+          "index": 5,
+          "file": "assets/episodes/indoor-orange-corridor/5.jpg",
+          "position": [
+            7.353015422821045,
+            -10.254040718078613
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/5.jpg",
+          "range": [
+            317484544,
+            317491818
+          ],
+          "bytes": 7275,
+          "sha256": "857978e2056c683633c768d92068d39f67d4f908735d96f479ddf1678509cdc0"
+        },
+        {
+          "index": 6,
+          "file": "assets/episodes/indoor-orange-corridor/6.jpg",
+          "position": [
+            7.358619689941406,
+            -10.53513240814209
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/6.jpg",
+          "range": [
+            317493760,
+            317501226
+          ],
+          "bytes": 7467,
+          "sha256": "a49121e29b4ad14cc7c198a8a40f5e08b50ea0186ad3a43f479a094cf6c9d16b"
+        },
+        {
+          "index": 7,
+          "file": "assets/episodes/indoor-orange-corridor/7.jpg",
+          "position": [
+            7.373290538787842,
+            -10.748452186584473
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/7.jpg",
+          "range": [
+            317502976,
+            317510585
+          ],
+          "bytes": 7610,
+          "sha256": "1e1115adea45ab2b322874be7cf2d3e1cf46615d62eed7aaa0924f7441c573c7"
+        },
+        {
+          "index": 8,
+          "file": "assets/episodes/indoor-orange-corridor/8.jpg",
+          "position": [
+            7.413365840911865,
+            -11.073563575744629
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/8.jpg",
+          "range": [
+            317512192,
+            317519615
+          ],
+          "bytes": 7424,
+          "sha256": "7a0933a778f9fb50a0c732de5c0f0881cafbc6ed373f3db13c1274d239c6e995"
+        },
+        {
+          "index": 9,
+          "file": "assets/episodes/indoor-orange-corridor/9.jpg",
+          "position": [
+            7.463536739349365,
+            -11.346585273742676
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/9.jpg",
+          "range": [
+            317521408,
+            317528795
+          ],
+          "bytes": 7388,
+          "sha256": "e88727128167999a7c39718ff8f6675d7a3538e782ed5507b74508484cc40125"
+        },
+        {
+          "index": 10,
+          "file": "assets/episodes/indoor-orange-corridor/10.jpg",
+          "position": [
+            7.516284942626953,
+            -11.610702514648438
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/10.jpg",
+          "range": [
+            317530624,
+            317538265
+          ],
+          "bytes": 7642,
+          "sha256": "05fd2b63c7b15ed9bcd5bc06286b975a4aefbf5c7656a6ebd309958630035bf0"
+        },
+        {
+          "index": 11,
+          "file": "assets/episodes/indoor-orange-corridor/11.jpg",
+          "position": [
+            7.539693355560303,
+            -11.874289512634277
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/11.jpg",
+          "range": [
+            317539840,
+            317547549
+          ],
+          "bytes": 7710,
+          "sha256": "5eb9624ab2ac5615ead1382164eaab82d759d59ed966ef5c4c427dca3c9cc29a"
+        },
+        {
+          "index": 12,
+          "file": "assets/episodes/indoor-orange-corridor/12.jpg",
+          "position": [
+            7.543351173400879,
+            -12.148077964782715
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/12.jpg",
+          "range": [
+            317549568,
+            317556215
+          ],
+          "bytes": 6648,
+          "sha256": "6f8f3f7469049c8df1a012228c6a8203e83d2c1c41470b5d6f4a049927832668"
+        },
+        {
+          "index": 13,
+          "file": "assets/episodes/indoor-orange-corridor/13.jpg",
+          "position": [
+            7.533290386199951,
+            -12.399231910705566
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/13.jpg",
+          "range": [
+            317557760,
+            317565356
+          ],
+          "bytes": 7597,
+          "sha256": "0d8c881b6ab45716e3a32573671e24733d422a2c24f5602e4cd14246d2bef1f9"
+        },
+        {
+          "index": 14,
+          "file": "assets/episodes/indoor-orange-corridor/14.jpg",
+          "position": [
+            7.499637126922607,
+            -12.666171073913574
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/14.jpg",
+          "range": [
+            317566976,
+            317574824
+          ],
+          "bytes": 7849,
+          "sha256": "94123a036dd35e09d2c3ba31145bb4f74bc41999b9af29ceef7e7c003609bc0d"
+        },
+        {
+          "index": 15,
+          "file": "assets/episodes/indoor-orange-corridor/15.jpg",
+          "position": [
+            7.459987163543701,
+            -12.856986999511719
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/15.jpg",
+          "range": [
+            317576704,
+            317584669
+          ],
+          "bytes": 7966,
+          "sha256": "c43a560cbff8e5dc9c87b012ecc5231563d9d81259efad4d1d37b62d1189fa54"
+        },
+        {
+          "index": 16,
+          "file": "assets/episodes/indoor-orange-corridor/16.jpg",
+          "position": [
+            7.382628440856934,
+            -13.107766151428223
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/16.jpg",
+          "range": [
+            317586432,
+            317594220
+          ],
+          "bytes": 7789,
+          "sha256": "40fbd67c6ed022c8ebb6374803d2061151fae3416a101a877e24e1c2a5ca1e86"
+        },
+        {
+          "index": 17,
+          "file": "assets/episodes/indoor-orange-corridor/17.jpg",
+          "position": [
+            7.297317981719971,
+            -13.376150131225586
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/17.jpg",
+          "range": [
+            317596160,
+            317603951
+          ],
+          "bytes": 7792,
+          "sha256": "9e9a2680161de9bf42c183b344ad53ff376299a60148280cdb5b4b3b7903c87a"
+        },
+        {
+          "index": 18,
+          "file": "assets/episodes/indoor-orange-corridor/18.jpg",
+          "position": [
+            7.241987705230713,
+            -13.575775146484375
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/18.jpg",
+          "range": [
+            317605888,
+            317613605
+          ],
+          "bytes": 7718,
+          "sha256": "9aa16b4f1124216d15895b29c74a1efdfc0b17ad741f01b08c2d9af21c9a48d7"
+        },
+        {
+          "index": 19,
+          "file": "assets/episodes/indoor-orange-corridor/19.jpg",
+          "position": [
+            7.166754245758057,
+            -13.86254596710205
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/19.jpg",
+          "range": [
+            317615616,
+            317622598
+          ],
+          "bytes": 6983,
+          "sha256": "af64b7746b67a8438cabf3983bfe1785447d70ca971742fc09318ca1c317b05d"
+        },
+        {
+          "index": 20,
+          "file": "assets/episodes/indoor-orange-corridor/20.jpg",
+          "position": [
+            7.066493034362793,
+            -14.132702827453613
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/20.jpg",
+          "range": [
+            317624320,
+            317630698
+          ],
+          "bytes": 6379,
+          "sha256": "f26a9a2f35aa82b7f28aada0e4d2c4d9c8be4264114aba818c1b69abdb463be6"
+        },
+        {
+          "index": 21,
+          "file": "assets/episodes/indoor-orange-corridor/21.jpg",
+          "position": [
+            6.928544998168945,
+            -14.37251091003418
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/21.jpg",
+          "range": [
+            317632512,
+            317638694
+          ],
+          "bytes": 6183,
+          "sha256": "eb956b2f28f1f1aa991e4cd288d260ab51dea71a1d80818e6b17bf84b2d30d33"
+        },
+        {
+          "index": 22,
+          "file": "assets/episodes/indoor-orange-corridor/22.jpg",
+          "position": [
+            6.729067802429199,
+            -14.56340217590332
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/22.jpg",
+          "range": [
+            317640704,
+            317646614
+          ],
+          "bytes": 5911,
+          "sha256": "8a87157f7f2ab6d8f7e8383d5ceec91ca81475fe9a9f3da073315dda488587a3"
+        },
+        {
+          "index": 23,
+          "file": "assets/episodes/indoor-orange-corridor/23.jpg",
+          "position": [
+            6.509785175323486,
+            -14.676994323730469
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/23.jpg",
+          "range": [
+            317648384,
+            317654719
+          ],
+          "bytes": 6336,
+          "sha256": "f7a741b748b2a0af8f952fb78208c8b4df95ecd1ab6ea7b35a495f7195e34f2f"
+        },
+        {
+          "index": 24,
+          "file": "assets/episodes/indoor-orange-corridor/24.jpg",
+          "position": [
+            6.255383014678955,
+            -14.766849517822266
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/24.jpg",
+          "range": [
+            317656576,
+            317661758
+          ],
+          "bytes": 5183,
+          "sha256": "eff6121bfb15d476af616cbb2e882c7fa8ffdbd6b188f3eb7063d656b3609110"
+        },
+        {
+          "index": 25,
+          "file": "assets/episodes/indoor-orange-corridor/25.jpg",
+          "position": [
+            5.987201690673828,
+            -14.839289665222168
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/25.jpg",
+          "range": [
+            317663744,
+            317669835
+          ],
+          "bytes": 6092,
+          "sha256": "58e327254cea499b9865089d07ef291374cca0f3f389426bed48a100512a4ba9"
+        }
+      ],
+      "instructions": {
+        "concise": {
+          "text": "Walk straight down the hallway, then turn right and stop.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_0/traj_data.pkl",
+          "range": [
+            317671424,
+            317673001
+          ],
+          "bytes": 1578,
+          "sha256": "9792fcb7709bec7ccb6644b677eccde99706e27104b315cc1022b4d193678d98"
+        },
+        "intricate": {
+          "text": "Start by walking straight down a long hallway with orange walls on the left and white walls on the right. The floor is covered in green carpet. As you proceed, you will pass several framed pictures or posters on the walls. Continue straight until you reach the end of this corridor section where the path curves. Then, make a distinct right turn into the next section of the hallway and stop.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_1/traj_data.pkl",
+          "range": [
+            317905920,
+            317907835
+          ],
+          "bytes": 1916,
+          "sha256": "2be0c0f3994ab6aaa01334dc35d1043e25e38fd9bd10063e845de5fb9a477d2e"
+        },
+        "landmark": {
+          "text": "Walk straight down the hallway with orange walls on the left. Continue past the framed pictures on the walls until you reach the curve at the end of the corridor. Turn right at this curve and stop.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/Feb-17-2023-soda3_00000008_0_10_0_2/traj_data.pkl",
+          "range": [
+            318140416,
+            318142133
+          ],
+          "bytes": 1718,
+          "sha256": "ac264bef5c38b7f205aecee655d2d77345210ecf9232fab097b8394c8694cf71"
+        }
+      }
+    },
+    {
+      "id": "indoor-pale-interior",
+      "name": "Through the rooms",
+      "category": "indoor",
+      "split": "val_seen",
+      "trajectory": "val_seen/sim22hF_0_4_6_0",
+      "native_dimensions": {
+        "width": 160,
+        "height": 120
+      },
+      "frame_count": 27,
+      "frames": [
+        {
+          "index": 0,
+          "file": "assets/episodes/indoor-pale-interior/0.jpg",
+          "position": [
+            3.870253271106808,
+            3.0719637470630725
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/0.jpg",
+          "range": [
+            7301170688,
+            7301177615
+          ],
+          "bytes": 6928,
+          "sha256": "47832709aab29929546afe7af94aaf049d539cab3720b28fce0a3129b36e3a0b"
+        },
+        {
+          "index": 1,
+          "file": "assets/episodes/indoor-pale-interior/1.jpg",
+          "position": [
+            3.9901825272258975,
+            2.959408978047982
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/1.jpg",
+          "range": [
+            7301179392,
+            7301187165
+          ],
+          "bytes": 7774,
+          "sha256": "7ecb0d34221949a201fef67a934d2addb070747ca86e125539d65c0c086ccbb7"
+        },
+        {
+          "index": 2,
+          "file": "assets/episodes/indoor-pale-interior/2.jpg",
+          "position": [
+            4.069898962734452,
+            2.8130962183374844
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/2.jpg",
+          "range": [
+            7301189120,
+            7301196766
+          ],
+          "bytes": 7647,
+          "sha256": "6a84ac9fc48ccec5bdfd92154eb8d6058b3a9a79029838aabfd5c36560d730e5"
+        },
+        {
+          "index": 3,
+          "file": "assets/episodes/indoor-pale-interior/3.jpg",
+          "position": [
+            4.133188059690073,
+            2.6589195063106867
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/3.jpg",
+          "range": [
+            7301198336,
+            7301205907
+          ],
+          "bytes": 7572,
+          "sha256": "66ae5e5f20eb7d86ada2a3c86be7a64254a2af6486b146da4994d91bf418fd49"
+        },
+        {
+          "index": 4,
+          "file": "assets/episodes/indoor-pale-interior/4.jpg",
+          "position": [
+            4.191719654679458,
+            2.502872541600821
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/4.jpg",
+          "range": [
+            7301207552,
+            7301214981
+          ],
+          "bytes": 7430,
+          "sha256": "cd821585a7d29bbd37ecbf647b277f9c3c55bef54f67a44dced2eb74654c34be"
+        },
+        {
+          "index": 5,
+          "file": "assets/episodes/indoor-pale-interior/5.jpg",
+          "position": [
+            4.251375458096766,
+            2.347298382876029
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/5.jpg",
+          "range": [
+            7301216768,
+            7301224309
+          ],
+          "bytes": 7542,
+          "sha256": "a647c260520fcfa2c7c66bd5bbd0c4aa4e0a763c94740a76aab962baa8dfba3c"
+        },
+        {
+          "index": 6,
+          "file": "assets/episodes/indoor-pale-interior/6.jpg",
+          "position": [
+            4.309523596223798,
+            2.191491818427405
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/6.jpg",
+          "range": [
+            7301225984,
+            7301233704
+          ],
+          "bytes": 7721,
+          "sha256": "e49ce4d0c9f1cc1cdba74ca2f15e8ecdb7b0274eaa376c72095440de24a19495"
+        },
+        {
+          "index": 7,
+          "file": "assets/episodes/indoor-pale-interior/7.jpg",
+          "position": [
+            4.33083079684341,
+            2.0265588178038816
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/7.jpg",
+          "range": [
+            7301235712,
+            7301243464
+          ],
+          "bytes": 7753,
+          "sha256": "48786f0924a43c1d574640f86a60579a0ab24b7c6acfc79e6d0e976ef7b57ad2"
+        },
+        {
+          "index": 8,
+          "file": "assets/episodes/indoor-pale-interior/8.jpg",
+          "position": [
+            4.306092985838147,
+            1.8618588238202223
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/8.jpg",
+          "range": [
+            7301245440,
+            7301253251
+          ],
+          "bytes": 7812,
+          "sha256": "bffe6a2e7e84329044c1241374ffdf03f0667c408f7684f60d23451a36c081b4"
+        },
+        {
+          "index": 9,
+          "file": "assets/episodes/indoor-pale-interior/9.jpg",
+          "position": [
+            4.249624041493907,
+            1.7050499079307713
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/9.jpg",
+          "range": [
+            7301255168,
+            7301262844
+          ],
+          "bytes": 7677,
+          "sha256": "76d7bbb20ca4bdf19c4903ca6afbdda84b262ffc3f440115dd5972124a91701a"
+        },
+        {
+          "index": 10,
+          "file": "assets/episodes/indoor-pale-interior/10.jpg",
+          "position": [
+            4.204012693114478,
+            1.5448802969012063
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/10.jpg",
+          "range": [
+            7301264384,
+            7301271749
+          ],
+          "bytes": 7366,
+          "sha256": "55a01cebe7e46a954aa0974ed5753b6e3e8d6f4e6749eb8a665bf61905ad968c"
+        },
+        {
+          "index": 11,
+          "file": "assets/episodes/indoor-pale-interior/11.jpg",
+          "position": [
+            4.1828602632684015,
+            1.3797486535613641
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/11.jpg",
+          "range": [
+            7301273600,
+            7301280815
+          ],
+          "bytes": 7216,
+          "sha256": "457adadc02cc95259a707d4fe6f171271ace1dce62b34d65bdccb39434a94347"
+        },
+        {
+          "index": 12,
+          "file": "assets/episodes/indoor-pale-interior/12.jpg",
+          "position": [
+            4.197217088347176,
+            1.2214511957888583
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/12.jpg",
+          "range": [
+            7301282816,
+            7301288763
+          ],
+          "bytes": 5948,
+          "sha256": "f92ee717759988b85ad55d05bf97a3d2ab9832e6368a51e04f2d89e2196839f4"
+        },
+        {
+          "index": 13,
+          "file": "assets/episodes/indoor-pale-interior/13.jpg",
+          "position": [
+            4.254381579298343,
+            1.073182108298049
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/13.jpg",
+          "range": [
+            7301290496,
+            7301297427
+          ],
+          "bytes": 6932,
+          "sha256": "71ac3757be6962467332091ab37dd5381bfe64383b5ac5643c7fc37c04a6faef"
+        },
+        {
+          "index": 14,
+          "file": "assets/episodes/indoor-pale-interior/14.jpg",
+          "position": [
+            4.3506700856773985,
+            0.9467699851833972
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/14.jpg",
+          "range": [
+            7301299200,
+            7301306107
+          ],
+          "bytes": 6908,
+          "sha256": "1f693eef8dd0b8ee672a3ae8f7a4c5b54c057d5853b0f487b646645daf83f074"
+        },
+        {
+          "index": 15,
+          "file": "assets/episodes/indoor-pale-interior/15.jpg",
+          "position": [
+            4.478424158834682,
+            0.8522692014681988
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/15.jpg",
+          "range": [
+            7301307904,
+            7301315050
+          ],
+          "bytes": 7147,
+          "sha256": "12c5dfe71842c96b1d08a5fc3f203d5a8edb1651f68f2c7b573c40d460e0c033"
+        },
+        {
+          "index": 16,
+          "file": "assets/episodes/indoor-pale-interior/16.jpg",
+          "position": [
+            4.627482689767128,
+            0.7971960166381543
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/16.jpg",
+          "range": [
+            7301316608,
+            7301324293
+          ],
+          "bytes": 7686,
+          "sha256": "b30a0b543a627c450e4cfba6dd8e9c43c08c9b023b69d4c8d102119963acbcb5"
+        },
+        {
+          "index": 17,
+          "file": "assets/episodes/indoor-pale-interior/17.jpg",
+          "position": [
+            4.79040278799133,
+            0.76205601987671
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/17.jpg",
+          "range": [
+            7301326336,
+            7301334451
+          ],
+          "bytes": 8116,
+          "sha256": "4627f37ed79b730cfed623c31279be8540f40337eae371970d9934c05f7caaf3"
+        },
+        {
+          "index": 18,
+          "file": "assets/episodes/indoor-pale-interior/18.jpg",
+          "position": [
+            4.954721717101654,
+            0.734541904889284
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/18.jpg",
+          "range": [
+            7301336064,
+            7301344100
+          ],
+          "bytes": 8037,
+          "sha256": "e365812a876f09e45c695b2752abf534452132d5f0335face6ff956f677a736c"
+        },
+        {
+          "index": 19,
+          "file": "assets/episodes/indoor-pale-interior/19.jpg",
+          "position": [
+            5.117311934862884,
+            0.6989415937731281
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/19.jpg",
+          "range": [
+            7301345792,
+            7301353658
+          ],
+          "bytes": 7867,
+          "sha256": "afa14edd901a74ce6fbaf49a61d7eab80702a1a3e8e1d6d7009f10c736a584ef"
+        },
+        {
+          "index": 20,
+          "file": "assets/episodes/indoor-pale-interior/20.jpg",
+          "position": [
+            5.263647183754502,
+            0.6469854191588434
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/20.jpg",
+          "range": [
+            7301355520,
+            7301362884
+          ],
+          "bytes": 7365,
+          "sha256": "64b13610feb730383a14591562c0a5ffb000c382ff98b53900bfb0fed196596d"
+        },
+        {
+          "index": 21,
+          "file": "assets/episodes/indoor-pale-interior/21.jpg",
+          "position": [
+            5.3891605582851945,
+            0.5555532477822434
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/21.jpg",
+          "range": [
+            7301364736,
+            7301371352
+          ],
+          "bytes": 6617,
+          "sha256": "493112c5373608310b01d5d1af4ac14df5f0a5696e800895b03e9c06433388e4"
+        },
+        {
+          "index": 22,
+          "file": "assets/episodes/indoor-pale-interior/22.jpg",
+          "position": [
+            5.4834839568959195,
+            0.43219788461045433
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/22.jpg",
+          "range": [
+            7301372928,
+            7301378620
+          ],
+          "bytes": 5693,
+          "sha256": "679b6392f4db76f81e845baec2af89d19b5ad703542545248735da00253308c1"
+        },
+        {
+          "index": 23,
+          "file": "assets/episodes/indoor-pale-interior/23.jpg",
+          "position": [
+            5.538825743198552,
+            0.28710916748346493
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/23.jpg",
+          "range": [
+            7301380608,
+            7301386571
+          ],
+          "bytes": 5964,
+          "sha256": "b07fe7d941ed20b9d2ce0568bc3c68366c5d44c3ec22dd845ba19380cf899881"
+        },
+        {
+          "index": 24,
+          "file": "assets/episodes/indoor-pale-interior/24.jpg",
+          "position": [
+            5.532952895684423,
+            0.12057620734014307
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/24.jpg",
+          "range": [
+            7301388288,
+            7301393927
+          ],
+          "bytes": 5640,
+          "sha256": "1291363401137ae4fd5e937667f4643c7783076b6662130e75156dbff9bdfcca"
+        },
+        {
+          "index": 25,
+          "file": "assets/episodes/indoor-pale-interior/25.jpg",
+          "position": [
+            5.510662158223356,
+            -0.044593102161409215
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/25.jpg",
+          "range": [
+            7301395968,
+            7301403073
+          ],
+          "bytes": 7106,
+          "sha256": "d600c8deb101fe193d96ce87d37374946ff072a23d50cf56810521aa19459e50"
+        },
+        {
+          "index": 26,
+          "file": "assets/episodes/indoor-pale-interior/26.jpg",
+          "position": [
+            5.4987183728837845,
+            -0.1998735044514847
+          ],
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/26.jpg",
+          "range": [
+            7301404672,
+            7301412082
+          ],
+          "bytes": 7411,
+          "sha256": "42daaa48c8b6dc1c96cdbeeac2c94588f097f79674557dc462bf1c6f34284c0f"
+        }
+      ],
+      "instructions": {
+        "concise": {
+          "text": "Walk straight down the hallway, turn left at the corner, continue straight, then turn right and stop.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_0/traj_data.pkl",
+          "range": [
+            7301413888,
+            7301417637
+          ],
+          "bytes": 3750,
+          "sha256": "45d15678231dcc620791cf02b081382add5755254383721e757229c907601c96"
+        },
+        "intricate": {
+          "text": "Start by walking straight down a long hallway with white walls and dark flooring. As you proceed, you will pass a dark console table on your left. Continue forward until you reach a corner, then turn left into a new section of the hallway. Walk straight for a short distance, then turn right into another corridor and stop.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_1/traj_data.pkl",
+          "range": [
+            7301664256,
+            7301668230
+          ],
+          "bytes": 3975,
+          "sha256": "b862bfa7b124b96f230856f978a74c2d9db9a1598308501bc87eba3fbe760841"
+        },
+        "landmark": {
+          "text": "Walk straight down the hallway, passing a dark console table on your left. Turn left at the corner, continue straight for a bit, then turn right and stop.",
+          "url": "https://huggingface.co/datasets/fly1113/LCVN/resolve/ecf02ef425398b3cf5bd76a729fae1edd928ed98/val_seen.tar",
+          "member": "val_seen/sim22hF_0_4_6_0_2/traj_data.pkl",
+          "range": [
+            7301914624,
+            7301918426
+          ],
+          "bytes": 3803,
+          "sha256": "18353c70f7579e1374f0fa21067a47104215b41b446277b2c761c621fd0f1645"
+        }
+      }
     }
   ]
 }

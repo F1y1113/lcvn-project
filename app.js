@@ -2,9 +2,37 @@
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const sourceRoot='assets/samples/';
 const scenes={outdoor:{path:sourceRoot+'val_unseen/20210826_40_0001_02_0/',frames:Array.from({length:17},(_,i)=>String(i).padStart(4,'0')+'.jpg'),name:'TartanDrive / val unseen',instruction:'Drive straight along the dirt path, and stop at the end of the path.',alt:'Recorded dirt-path validation trajectory'},indoor:{path:sourceRoot+'val_seen/Dec-06-2022-bww8_00000000_0_16_0_0/',frames:Array.from({length:10},(_,i)=>i+'.jpg'),name:'Hallway / val seen',instruction:'Walk straight down the hallway and stop near the end.',alt:'Recorded hallway validation trajectory'}};
-const styles=window.LCVN_EPISODES.indoor.instructions;
+const firstIndoor=Array.isArray(window.LCVN_EPISODES.indoor)?window.LCVN_EPISODES.indoor[0]:window.LCVN_EPISODES.indoor;
+const styles=firstIndoor.instructions;
+$('#style-example').textContent=styles.concise;
 const images=window.LCVN_HERO_IMAGES||Array.from({length:18},(_,i)=>({src:scenes[i%2?'indoor':'outdoor'].path+scenes[i%2?'indoor':'outdoor'].frames[i%(i%2?10:17)],label:i%2?'Indoor navigation':'Off-road navigation'}));
-for(let row=0;row<3;row++){const track=document.createElement('div');track.className='hm-row';const group=images.filter((_,i)=>i%3===row);for(let copy=0;copy<2;copy++){const segment=document.createElement('div');segment.className='hm-segment';for(const item of group){const tile=document.createElement('span');tile.className='hm-tile';const img=document.createElement('img');img.src=item.src;img.alt='';img.decoding='async';tile.append(img);segment.append(tile);}track.append(segment);}$('#hero-mosaic').append(track);}
+// Identical, gap-inclusive groups keep the image tracks continuous.
+function buildMosaic() {
+  const mosaic=$('#hero-mosaic');
+  const requiredWidth=Math.ceil(window.innerWidth*1.45);
+  mosaic.replaceChildren();
+  for(let row=0;row<3;row++) {
+    const track=document.createElement('div');track.className='hm-row';
+    const segment=document.createElement('div');segment.className='hm-segment';
+    const group=images.filter((_,i)=>i%3===row);
+    const appendGroup=()=>{for(const item of group){
+      const tile=document.createElement('span');tile.className='hm-tile';
+      const img=document.createElement('img');img.src=item.src;img.alt='';img.decoding='async';
+      tile.append(img);segment.append(tile);
+    }};
+    appendGroup();track.append(segment);mosaic.append(track);
+    while(segment.offsetWidth<requiredWidth)appendGroup();
+    track.style.setProperty('--pan-duration',(segment.offsetWidth/[18,31,20][row])+'s');
+    track.append(segment.cloneNode(true));
+  }
+}
+buildMosaic();
+let mosaicWidth=innerWidth, mosaicHeight=innerHeight, mosaicResize;
+window.addEventListener('resize',()=>{
+  clearTimeout(mosaicResize);mosaicResize=setTimeout(()=>{
+    if(mosaicWidth!==innerWidth||Math.abs(mosaicHeight-innerHeight)>100){mosaicWidth=innerWidth;mosaicHeight=innerHeight;buildMosaic();}
+  },180);
+},{passive:true});
 const gallery=window.LCVN_GALLERY_IMAGES||[images[0],images[1],images[6],images[7]];
 for(const item of gallery){const fig=document.createElement('figure'),img=document.createElement('img'),caption=document.createElement('figcaption');img.src=item.src;img.alt=item.label;img.loading='lazy';caption.textContent=item.label;fig.append(img,caption);$('#challenge-gallery').append(fig);}
 let motionPaused=matchMedia('(prefers-reduced-motion: reduce)').matches,heroInView=true;

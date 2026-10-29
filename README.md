@@ -2,7 +2,7 @@
 
 Project page for **Language-Conditioned World Modeling for Visual Navigation** — NeurIPS 2026 Oral.
 
-[Website](https://aautomataa.github.io/lcvn-project/) · [Paper](https://arxiv.org/abs/2603.26741) · [Code](https://github.com/UWMILab/LCVN) · [Dataset](https://huggingface.co/datasets/fly1113/LCVN)
+[Website](https://f1y1113.github.io/lcvn-project/) · [Paper](https://arxiv.org/abs/2603.26741) · [Code](https://github.com/UWMILab/LCVN) · [Dataset](https://huggingface.co/datasets/fly1113/LCVN)
 
 The page includes recorded navigation episodes, method diagrams, and the qualitative and quantitative results reported in the paper. The visual comparisons use published figures; they do not run model inference in the browser.
 

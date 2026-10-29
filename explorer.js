@@ -2,16 +2,19 @@
   'use strict';
   const $ = s => document.querySelector(s);
   const $$ = s => [...document.querySelectorAll(s)];
-  const episodes = window.LCVN_EPISODES;
+  const episodes = Object.fromEntries(Object.entries(window.LCVN_EPISODES).map(([key,value])=>[key,Array.isArray(value)?value:[value]]));
+  const episodeIndex = {outdoor:0,indoor:0};
   let scene = 'outdoor', frame = 0, revealed = false, comparing = false, wording = 'concise', timer = null, points = [];
   const styleNames = {concise: 'Concise', intricate: 'Intricate', landmark: 'Landmark-based'};
   const ns = 'http://www.w3.org/2000/svg';
   const svgNode = (tag, attrs = {}) => {const e = document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);return e;};
-  const data = () => episodes[scene];
+  const data = () => episodes[scene][episodeIndex[scene]];
   const imageURL = i => data().base + data().frames[i];
   function stop() { clearInterval(timer); timer = null; $('#episode-play').textContent = '▶'; $('#episode-play').setAttribute('aria-label','Play recorded route'); $('#episode-play').setAttribute('aria-pressed','false'); }
   function setComparison(on) {
+    const wasComparing = comparing;
     comparing = on && revealed && frame > 0;
+    if(comparing&&!wasComparing) setComparisonPosition(50);
     $('#episode').dataset.comparing = String(comparing);
     $('#comparison-layer').hidden = !comparing;
     $('#compare-toggle').setAttribute('aria-pressed',String(comparing));
@@ -77,10 +80,16 @@
     $('#episode-instruction').textContent=data().instructions[wording];
     $('#episode-instruction').dataset.style=wording;
     $('#episode-instruction').scrollTop=0;
-    $('#episode-instruction').tabIndex=wording==='intricate'?0:-1;
-    requestAnimationFrame(()=>{$('#instruction-scroll-hint').hidden=$('#episode-instruction').scrollHeight<=$('#episode-instruction').clientHeight+2;});
+    requestAnimationFrame(updateInstructionOverflow);
     $$('#episode-styles button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.wording===wording)));
   }
+  function updateInstructionOverflow() {
+    const instruction=$('#episode-instruction');
+    const scrollable=instruction.scrollHeight>instruction.clientHeight+2;
+    instruction.tabIndex=scrollable?0:-1;
+    $('#instruction-scroll-hint').hidden=!scrollable;
+  }
+  new ResizeObserver(updateInstructionOverflow).observe($('#episode-instruction'));
   function renderWording() {
     $('#episode-styles').replaceChildren();
     for(const key of Object.keys(data().instructions)){
@@ -108,20 +117,58 @@
       $('#episode-live').textContent='Recorded future revealed. Playing one observation per second; use Pause to stop.';
     }
   }
-  function selectScene(key) {
+  function selectScene(key, index = episodeIndex[key]) {
     stop();scene=key;wording='concise';
+    episodeIndex[key]=(index+episodes[key].length)%episodes[key].length;
     $$('[data-episode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.episode===key)));
-    $('#episode-source').textContent=data().source;
+    const split=data().split||(/unseen/i.test(data().source)?'val_unseen':'val_seen');
+    const splitName={val_seen:'Validation seen',val_unseen:'Validation unseen',train:'Training',test:'Test'}[split]||split;
+    $('#episode-source').textContent=splitName+' · '+(data().frames.length-1)+' recorded steps';
+    $('#episode-select').replaceChildren(...episodes[key].map((entry,i)=>{
+      const option=document.createElement('option');option.value=i;option.textContent=entry.name;return option;
+    }));
+    $('#episode-select').value=episodeIndex[key];
+    $('#episode-number').textContent=(episodeIndex[key]+1)+' / '+episodes[key].length;
+    $('#episode-prev').disabled=$('#episode-next').disabled=episodes[key].length<2;
+    const nativeWidth=data().nativeDimensions?.width||data().native_dimensions?.width;
+    $('#episode').dataset.resolution=nativeWidth&&nativeWidth<300?'compact':'standard';
     $('#episode-start').src=imageURL(0);
     $('#episode-start').alt=data().name+' — initial observation for comparison';
     $('#episode-range').max=data().frames.length-1;
+    setComparisonPosition(50);
     renderWording();renderMap();renderFilmstrip();setRevealed(false);
-    $('#episode-live').textContent=data().name+' selected. Initial observation displayed.';
+    $('#episode-live').textContent=data().name+', episode '+(episodeIndex[key]+1)+' of '+episodes[key].length+'. Initial observation displayed.';
   }
   $$('[data-episode]').forEach(b=>b.addEventListener('click',()=>selectScene(b.dataset.episode)));
+  $('#episode-prev').addEventListener('click',()=>selectScene(scene,episodeIndex[scene]-1));
+  $('#episode-next').addEventListener('click',()=>selectScene(scene,episodeIndex[scene]+1));
+  $('#episode-select').addEventListener('change',e=>selectScene(scene,Number(e.target.value)));
+  function setComparisonPosition(value) {
+    const position=Math.max(0,Math.min(100,Number(value)));
+    $('#comparison-range').value=position;
+    $('#comparison-range').setAttribute('aria-valuetext',Math.round(position)+' percent initial view');
+    $('#comparison-layer').style.setProperty('--comparison',position+'%');
+  }
+  // Use the full image width for both touch dragging and mouse dragging.
+  const comparisonInput=$('#comparison-range');
+  let comparisonPointer=null;
+  function moveComparison(e) {
+    const bounds=comparisonInput.getBoundingClientRect();
+    setComparisonPosition((e.clientX-bounds.left)/bounds.width*100);
+  }
+  comparisonInput.addEventListener('pointerdown',e=>{
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    comparisonPointer=e.pointerId;comparisonInput.setPointerCapture(e.pointerId);
+    comparisonInput.focus({preventScroll:true});moveComparison(e);e.preventDefault();
+  });
+  comparisonInput.addEventListener('pointermove',e=>{if(e.pointerId===comparisonPointer)moveComparison(e);});
+  const releaseComparison=()=>{comparisonPointer=null;};
+  comparisonInput.addEventListener('pointerup',releaseComparison);
+  comparisonInput.addEventListener('pointercancel',releaseComparison);
+  comparisonInput.addEventListener('lostpointercapture',releaseComparison);
   $('#reveal-future').addEventListener('click',()=>setRevealed(!revealed));
   $('#compare-toggle').addEventListener('click',()=>{stop();setComparison(!comparing);});
-  $('#comparison-range').addEventListener('input',e=>$('#comparison-layer').style.setProperty('--comparison',Math.max(0,Math.min(100,Number(e.target.value)))+'%'));
+  comparisonInput.addEventListener('input',e=>setComparisonPosition(e.target.value));
   $('#episode-range').addEventListener('input',e=>{stop();showFrame(Number(e.target.value));});
   $('#route-milestones').addEventListener('click',e=>{const point=e.target.closest('.route-point');if(point){stop();showFrame(Number(point.dataset.frame));}});
   $('#route-milestones').addEventListener('keydown',e=>{const point=e.target.closest('.route-point');if(!point)return;let n=Number(point.dataset.frame);if(['ArrowRight','ArrowUp','ArrowLeft','ArrowDown','Home','End','Enter',' '].includes(e.key)){e.preventDefault();if(e.key==='Home')n=0;else if(e.key==='End')n=data().frames.length-1;else if(e.key==='ArrowRight'||e.key==='ArrowUp')n++;else if(e.key==='ArrowLeft'||e.key==='ArrowDown')n--;stop();showFrame(n);$('#route-milestones .route-point[data-frame="'+frame+'"]').focus();}});
@@ -133,5 +180,6 @@
   $('#episode-play').addEventListener('click',()=>{if(timer)stop();else startPlayback();});
   document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
   new IntersectionObserver(([e])=>{if(!e.isIntersecting)stop();},{threshold:0}).observe($('#episode'));
+  $('#episode-current').addEventListener('load',()=>{$('#episode').dataset.resolution=$('#episode-current').naturalWidth<300?'compact':'standard';});
   selectScene('outdoor');
 })();
