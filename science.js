@@ -8,46 +8,6 @@
     b.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const i=buttons.indexOf(b),n=e.key==='Home'?0:e.key==='End'?buttons.length-1:(i+(e.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;change(buttons[n]);buttons[n].focus();});
   });
 
-  // Display-only viewports into unchanged, published figures. No frames are synthesized.
-  const cases={
-    glass:{figure:4,asset:'visual.png',size:[2029,782],source:'S5.F4',tag:'Figure 4 · validation seen',
-      instruction:'Walk on the right with glass windows to your left. Then take two lefts along the curved glass wall.',
-      reading:'Follow the two left turns and the curved glass wall. The published comparison highlights how the LCVN agents respond to direction changes while retaining the window landmark.',
-      x:[79,326,575,821],y:[114,331,549],w:207,h:207},
-    door:{figure:4,asset:'visual.png',size:[2029,782],source:'S5.F4',tag:'Figure 4 · validation seen',
-      instruction:'Follow the green sign on the left, then turn right towards the white door.',
-      reading:'A correct turn is only part of the task. The paper notes that LCVN-Uni turns right but fails to synthesize the subsequent corridor and white door; LCVN-WM + LCVN-AC preserves that landmark more successfully in this example.',
-      x:[1079,1327,1574,1818],y:[115,333,550],w:207,h:207},
-    language:{figure:5,asset:'visual_compare2.png',size:[2048,1833],source:'S5.F5',tag:'Figure 5 · language ablation',
-      instruction:'Follow the hallway until you see the orange wall on your right.',
-      reading:'Compare the orange wall as the sequence advances. In this published example, language-conditioned predictions preserve the instructed landmark more clearly. For LCVN-Uni, “w/o ins” removes language only from the observation-prediction substep.',
-      x:[375,791,1208,1626],y:[130,537,944,1356],w:389,h:390}
-  };
-  let caseKey='glass',sample=0,evidenceModel='uni';
-  const caseTabs=$$('[data-case]');
-  function renderEvidence(){
-    const c=cases[caseKey],language=caseKey==='language';
-    $('#evidence-source-tag').textContent=c.tag;
-    $('#evidence-instruction').textContent=c.instruction;
-    $('#evidence-reading').textContent=c.reading;
-    $('#evidence-model-select').hidden=!language;
-    const models=language?(evidenceModel==='uni'?[{name:'LCVN-Uni',sub:'Without instruction',row:0,kind:'uni'},{name:'LCVN-Uni',sub:'With instruction',row:1,kind:'uni'}]:[{name:'LCVN-WM',sub:'Without instruction',row:2,kind:'wm'},{name:'LCVN-WM',sub:'With instruction',row:3,kind:'wm'}]):[{name:'NWM + LCVN-AC',sub:'Baseline',row:0,kind:'baseline'},{name:'LCVN-Uni',sub:'Unified prediction',row:1,kind:'uni'},{name:'LCVN-WM + LCVN-AC',sub:'Latent imagination',row:2,kind:'wm'}];
-    $('#evidence-frames').dataset.columns=models.length;
-    $('#evidence-frames').innerHTML=models.map(m=>`<figure class="published-sample ${m.kind}"><figcaption><strong>${esc(m.name)}</strong><span>${esc(m.sub)}</span></figcaption><svg role="img" aria-label="${esc(m.name+' · '+m.sub+' · '+(language?['t − 1','t','t + 1','t + 2'][sample]:'published sample '+(sample+1)))}" viewBox="${c.x[sample]} ${c.y[m.row]} ${c.w} ${c.h}"><image href="assets/paper/${c.asset}" width="${c.size[0]}" height="${c.size[1]}"/></svg></figure>`).join('');
-    $('#evidence-moment').textContent=language?['t − 1','t','t + 1','t + 2'][sample]:`Sample ${sample+1} of 4`;
-    $('#evidence-steps').innerHTML=Array.from({length:4},(_,i)=>`<button data-evidence-step="${i}" aria-pressed="${i===sample}" aria-label="${language?'Show '+['t minus 1','t','t plus 1','t plus 2'][i]:'Show published sample '+(i+1)}">${language?['t − 1','t','t + 1','t + 2'][i]:String(i+1).padStart(2,'0')}</button>`).join('');
-    $('#evidence-original-image').src='assets/paper/'+c.asset;
-    $('#evidence-zoom').dataset.zoomSrc='assets/paper/'+c.asset;
-    $('#evidence-zoom').dataset.figureTitle='Published qualitative comparison · Figure '+c.figure;
-    $('#evidence-paper-link').href='https://arxiv.org/html/2603.26741v2#'+c.source;
-  }
-  wireTabs(caseTabs,b=>{caseKey=b.dataset.case;sample=0;selectTabs(caseTabs,b);$('#evidence-panel').setAttribute('aria-labelledby',b.id);renderEvidence();});
-  $('#evidence-steps').addEventListener('click',e=>{const b=e.target.closest('[data-evidence-step]');if(b){sample=Number(b.dataset.evidenceStep);renderEvidence();$('#evidence-steps').querySelector(`[data-evidence-step="${sample}"]`).focus();}});
-  $('#evidence-steps').addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();sample=e.key==='Home'?0:e.key==='End'?3:Math.max(0,Math.min(3,sample+(e.key==='ArrowRight'?1:-1)));renderEvidence();$('#evidence-steps').querySelector(`[data-evidence-step="${sample}"]`).focus();});
-  $$('[data-evidence-model]').forEach(b=>b.addEventListener('click',()=>{evidenceModel=b.dataset.evidenceModel;$$('[data-evidence-model]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderEvidence();}));
-  $('#evidence-original-toggle').addEventListener('click',()=>{const b=$('#evidence-original-toggle'),open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));b.querySelector('span').textContent=open?'−':'＋';$('#evidence-original').hidden=!open;});
-  renderEvidence();
-
   const tables=window.LCVN_PAPER_RESULTS.tables;
   const metrics=[
     {key:'sr',name:'Success rate',label:'SR',higher:true,group:'Planning',note:'Fraction of episodes whose final predicted position satisfies the endpoint criterion.'},
