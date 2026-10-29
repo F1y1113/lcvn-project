@@ -155,7 +155,7 @@ body svg text{fill:#333!important}
 .episode-visual>.reveal-future,.episode-visual>.reveal-future *,
 .episode-image-foot,.episode-image-foot *,
 .comparison-hint,.episode-visual>.timeline-toolbar,.episode-visual>.timeline-toolbar *,
-#citation .citation-panel pre,#citation .citation-panel button,#citation #copy-status,
+#citation .citation-panel button,
 .lb-download,.lb-download *{color:#eee!important}
 .episode-visual .timeline-toolbar>button{color:#222!important}
 .site-header nav a{font-size:16px}.conference-link{font-size:16px}.conference-link b{font-size:14px}
