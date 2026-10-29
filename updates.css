@@ -13,7 +13,21 @@
 /* Deep indigo-to-teal wordmark, distinct from the reference palette. */
 .hero h1{background:linear-gradient(112deg,#232b58 5%,#253e65 42%,#17616b 78%,#174c52 100%);background-clip:text;-webkit-background-clip:text;color:transparent}.hero h1 span{background:none;color:inherit}
 .hero-authors{color:#182e3b;font-weight:600}.hero-affiliations{color:#243e4b;font-weight:600}.hero-authors sup,.hero-affiliations sup{color:#385465}
-#citation .citation-panel{background:#101e26!important;border-color:#263b46!important;border-radius:18px!important;padding:64px 28px 28px!important;min-width:0}#citation .citation-panel pre{font:13px/1.85 var(--mono)!important;color:#d5e0e5;white-space:pre;overflow-wrap:normal;overflow-x:scroll;padding-bottom:16px;max-width:100%;scrollbar-color:#849da9 #233742;scrollbar-width:auto}#citation .citation-panel pre::-webkit-scrollbar{height:11px}#citation .citation-panel pre::-webkit-scrollbar-track{background:#233742;border-radius:6px}#citation .citation-panel pre::-webkit-scrollbar-thumb{background:#849da9;border:2px solid #233742;border-radius:6px}#citation .citation-panel button{top:16px;right:22px;background:#ffffff0a;border:1px solid #73899766;color:#dbe7eb;font-size:12px;padding:8px 12px;border-radius:7px}#citation .citation-panel button:hover{background:#ffffff16}#copy-status{display:block;font-size:12px;color:#c8dce4;margin-top:8px}#copy-status:empty{display:none}@media(max-width:600px){#citation .citation-panel{padding:62px 18px 20px!important}#citation .citation-panel pre{font-size:12px!important}}
+#citation .citation-panel{background:#f5f8f6!important;border:1px solid #d7e4dd!important;border-radius:16px!important;padding:0!important;min-width:0;overflow:hidden;box-shadow:none}
+.citation-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 24px;border-bottom:1px solid #dce6e0;background:#edf3ef}
+.citation-format{font-size:16px;font-weight:700;color:#31584e}
+.citation-actions{display:flex;align-items:center;gap:18px}
+.citation-actions a{font-size:13px;color:#42695e;text-decoration:none}
+.citation-actions a:hover{text-decoration:underline}
+#citation .citation-panel button{position:static;inset:auto;background:#3d7b73;border:1px solid #3d7b73;color:#fff;font-size:13px;line-height:1.3;padding:9px 14px;border-radius:7px;white-space:nowrap}
+#citation .citation-panel button:hover{background:#2f625c;border-color:#2f625c}
+#citation .citation-panel pre,#citation .citation-panel pre *{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+#citation .citation-panel pre{font-size:13.5px!important;line-height:1.8!important;color:#314b48;white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:auto;padding:23px 25px!important;margin:0;max-width:100%;background:transparent;tab-size:2;scrollbar-width:thin;scrollbar-color:#bdcfc5 transparent}
+#citation .bib-type{color:#2c6d60;font-weight:600}
+#citation .bib-key{color:#567e71}
+#copy-status{display:block;font-size:12px;color:#356d5c;padding:0 25px 18px;margin:0}
+#copy-status:empty{display:none}
+@media(max-width:600px){.citation-toolbar{padding:15px 17px}.citation-actions{gap:12px}.citation-actions a{font-size:12px}#citation .citation-panel button{font-size:12px;padding:8px 10px}#citation .citation-panel pre{font-size:12px!important;padding:18px!important}#copy-status{padding:0 18px 16px}}
 
 .qualitative-figure{margin:0}.qualitative-figure .figure-zoom{display:block;width:100%;padding:0;border:0;background:white;cursor:zoom-in}.qualitative-figure img{width:100%;height:auto}.qualitative-figure figcaption{margin-top:14px;font-size:12px;color:var(--ink-3)}
 
@@ -27,11 +41,12 @@
 
 .episode-shell[data-revealed="false"] #episode-timeline{display:none}.episode-shell[data-revealed="true"] #episode-timeline{display:grid}
 
-.hero h1,.hero h1 span{background:none;color:#000;-webkit-text-fill-color:#000}
+.hero h1{background:none;color:#234653;-webkit-text-fill-color:currentColor}
+.hero h1 span{background:none;color:#3d7b73;-webkit-text-fill-color:currentColor}
 
-/* Times-style typography throughout; retain every existing size and color. */
+/* Serif page typography; BibTeX uses a compact code face. */
 :root{--site-font:"Times New Roman",Times,"Nimbus Roman",serif;--sans:var(--site-font);--serif:var(--site-font);--mono:var(--site-font)}
-body,body *,body *::before,body *::after,#citation .citation-panel pre{font-family:var(--site-font)!important}
+body,body *,body *::before,body *::after{font-family:var(--site-font)!important}
 
 /* A restrained accent shared by navigation, controls and dataset details. */
 :root{--c-self:#356976;--line:#dce5e8;--accent-soft:#eaf1f2}
@@ -101,3 +116,87 @@ body,body *,body *::before,body *::after,#citation .citation-panel pre{font-fami
 @media(max-width:620px){.episode-shell[data-resolution="compact"] .episode-visual{max-width:100%}}
 .episode-visual>.compare-toggle{top:16px;right:16px;bottom:auto}
 @media(max-width:620px){.episode-visual>.compare-toggle{top:12px;right:12px;bottom:auto}.episode-shell[data-revealed=true] .episode-view-label{max-width:calc(100% - 155px);font-size:11px;line-height:1.35}}
+
+/* Shared palette for the page's interactive surfaces. */
+:root{--c-self:#3d7b73;--accent-soft:#edf4f0;--line:#dce6e2}
+.hero-eyebrow{color:#376b62;background:#eff6f2e8;border-color:#96b7a973}
+.hero-eyebrow i{background:#659582;box-shadow:none}
+.site-header nav a.active{color:#315f55;background:#edf4f0}
+.episode-toolbar,.episode-stage{background:#f7faf8}
+.episode-scenes{background:#edf3ef;border-color:#dce6df}
+.episode-scenes button{color:#607c73}
+.episode-scenes button[aria-pressed=true]{color:#315f55}
+#episode-styles button[aria-pressed=true]{color:#315f55;border-color:#c0d6ca;background:#fff}
+.episode-visual>.reveal-future{background:#315f59;border-color:#c4ddd3a6;box-shadow:0 8px 32px #193f3352,0 0 0 6px #ffffff25}
+.episode-visual>.reveal-future:hover{background:#264d48;box-shadow:0 10px 36px #193f3366,0 0 0 8px #ffffff38}
+.episode-context>.reveal-future{color:#35665c;border-color:#c0d5ca;background:#fff}
+.episode-context>.reveal-future:hover{background:#edf4f0}
+.episode-visual>.timeline-toolbar{background:#183635d9}
+.episode-visual #episode-range{accent-color:#a3d1c2}
+.episode-visual .timeline-toolbar>button{color:#315f59}
+#route-full{stroke:#c2d7cd}
+#route-travelled{stroke:#3d7b73}
+#route-current{fill:#3d7b73}
+#route-halo{fill:#3d7b7317;stroke:#3d7b7326}
+#route-milestones .route-dot{fill:#f7faf8;stroke:#91b2a4}
+#route-labels rect{stroke:#d6e3db}
+#route-labels text{fill:#526f62}
+.filmstrip-frame[aria-current=true] img{border-color:#589480}
+.lb-download{background:#edf4f0;color:#356b5d;border:1px solid #d4e4db}
+.lb-top-1{background:#deede4;color:#2f6251}
+.lb-top-2{background:#edf2f3;color:#536d78}
+.lb-top-3{background:#f4f5ef;color:#6a735f}
+.lb-legend .first{background:#a4c8b3}
+.lb-legend .second{background:#bdccd1}
+.lb-legend .third{background:#d7deca}
+.lb-table th[aria-sort="ascending"],.lb-table th[aria-sort="descending"]{color:#315f55;border-bottom-color:#3d7b73}
+.site-footer{background:#f6f9f7}
+.lb-group-head th{background:#f3f7f4!important}
+.results-tabs button[aria-selected=true]{color:#315f55;border-color:#3d7b73}
+#results-table{scroll-margin-top:88px}
+
+/* Read matched language ablations before inspecting the full results. */
+.language-ablation{margin:22px 24px 4px;padding:25px 27px 20px;border:1px solid #dce6df;border-radius:12px;background:#f7faf7}
+.ablation-heading{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.ablation-eyebrow{font-size:12px;color:#668075;margin:0 0 7px}
+.ablation-heading h3{font-size:23px;line-height:1.25;color:#294a44;margin:0;letter-spacing:-.015em}
+.ablation-model{display:flex;flex-direction:column;flex:none;gap:7px;color:#708578;font-size:11px}
+.ablation-model select{max-width:100%;min-height:39px;padding:9px 28px 9px 11px;border:1px solid #cfdfd5;border-radius:7px;background:white;color:#35594c;font:inherit;font-size:14px}
+.ablation-legend{display:flex;gap:20px;align-items:center;margin:23px 0 22px;color:#597268;font-size:12px;flex-wrap:wrap}
+.ablation-legend>span{display:flex;align-items:center;gap:7px}
+.ablation-legend small{font-size:11px;color:#7b8c81}
+.ablation-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.ablation-legend-without{background:#f7faf7;border:1.6px solid #8a9f95}
+.ablation-legend-full{background:#3d7b73;border:1.6px solid #3d7b73}
+.ablation-legend .ablation-delta-label{margin-left:auto;font-size:11px;color:#718477}
+.ablation-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.ablation-metric{min-width:0;padding:0 28px;border-right:1px solid #dce6df}
+.ablation-metric:first-child{padding-left:0}
+.ablation-metric:last-child{padding-right:0;border:0}
+.ablation-metric h4{font-size:19px;line-height:1.2;margin:0;color:#2b4e43}
+.ablation-metric h4>span{font-size:15px;font-weight:400;color:#719082}
+.ablation-metric-name{margin:5px 0 0;font-size:12px;color:#697e71}
+.ablation-plot{position:relative;height:102px;margin:4px 5px 0}
+.ablation-baseline{position:absolute;left:0;right:0;top:45px;height:1px;background:#ccdcd2}
+.ablation-interval{position:absolute;top:44px;height:3px;background:#72a596;border-radius:3px}
+.ablation-point{position:absolute;top:0;width:0;height:86px}
+.ablation-point i{position:absolute;left:-5px;top:40px;width:10px;height:10px;border-radius:50%;z-index:1}
+.ablation-without i{background:#f7faf7;border:2px solid #8a9f95}
+.ablation-full i{background:#3d7b73;border:2px solid #3d7b73}
+.ablation-point b{position:absolute;left:0;transform:translateX(-50%);font-size:16px;line-height:1.2;font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ablation-without b{top:15px;color:#6c7f73}
+.ablation-full b{top:58px;color:#315f50;font-weight:700}
+.ablation-axis{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;font-size:10px;color:#87988d}
+.ablation-change{display:flex;align-items:baseline;gap:8px;color:#315f50;font-size:25px;font-weight:600;line-height:1.2;margin:12px 0 1px;font-variant-numeric:tabular-nums}
+.ablation-change span{font-size:10px;font-weight:400;color:#75877b}
+.ablation-scope{border-top:1px solid #dce6df;padding-top:17px;margin:20px 0 10px;color:#566f61;font-size:13px;line-height:1.55}
+.ablation-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;color:#7a8c80;font-size:11px;line-height:1.5}
+.ablation-foot>div{display:flex;align-items:center;gap:19px;flex:none}
+.ablation-foot button{border:0;padding:0;color:#356c5b;background:none;cursor:pointer;font-size:12px;text-decoration:underline;text-underline-offset:3px}
+.ablation-foot a{color:#356c5b;font-size:12px;text-decoration:none}
+.ablation-foot a:hover{text-decoration:underline}
+.ablation-unreported{font-size:25px;color:#657c70;min-height:140px;margin:16px 0}
+.ablation-unreported small{display:block;font-size:12px;margin-top:10px}
+.language-ablation :focus-visible{outline:2px solid #3d7b73;outline-offset:4px}
+@media(max-width:800px){.language-ablation{padding:21px;margin:18px 18px 0}.ablation-heading{align-items:flex-start;gap:20px}.ablation-heading h3{font-size:21px}.ablation-model select{font-size:13px;max-width:230px}.ablation-metric{padding-inline:18px}.ablation-foot{align-items:flex-start;flex-direction:column;gap:12px}.ablation-change{display:block}.ablation-change span{display:block;margin-top:5px}}
+@media(max-width:620px){.language-ablation{padding:19px 17px;margin:14px 12px 0}.ablation-heading{flex-direction:column;gap:17px}.ablation-heading h3{font-size:22px}.ablation-model{width:100%;font-size:12px}.ablation-model select{max-width:none;width:100%;font-size:14px;min-height:42px}.ablation-legend{gap:10px 15px;margin:20px 0}.ablation-legend .ablation-delta-label{margin-left:0;width:100%}.ablation-metrics{grid-template-columns:1fr}.ablation-metric,.ablation-metric:first-child,.ablation-metric:last-child{padding:17px 0;border-right:0;border-bottom:1px solid #dce6df;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;align-items:baseline}.ablation-metric:first-child{padding-top:0}.ablation-metric:last-child{border-bottom:0;padding-bottom:0}.ablation-metric h4{grid-column:1;grid-row:1}.ablation-metric-name{grid-column:1;grid-row:2;font-size:12px}.ablation-plot{grid-column:1/-1;grid-row:3;margin:0 7px;height:99px}.ablation-change{grid-column:2;grid-row:1/3;font-size:23px;text-align:right;margin:0}.ablation-change span{font-size:10px}.ablation-scope{font-size:12px;margin-top:17px;padding-top:15px}.ablation-foot{font-size:10px;gap:13px}.ablation-foot>div{gap:22px}.ablation-foot a,.ablation-foot button{font-size:12px}}
