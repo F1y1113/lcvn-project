@@ -144,3 +144,30 @@ body,body *,body *::before,body *::after,#citation .citation-panel pre{font-fami
 /* Keep the original Leaderboard styling. */
 #benchmark{--line:#dce5ea;--c-self:#376f92}
 #benchmark>.head-row{align-items:start}
+
+/* Uniform upright Times typography, neutral text, and larger supporting copy. */
+body,body *,body *::before,body *::after,#citation .citation-panel pre{font-style:normal!important;color:#333!important}
+h1,h2,h3,h4,strong,b,.hero-authors,.hero-affiliations{color:#111!important}
+.site-header .conference-link b{color:#9a6418!important}
+body ::placeholder{color:#666!important}
+body svg text{fill:#333!important}
+.hero h1,.hero h1 span{color:#000!important}
+.episode-visual>.reveal-future,.episode-visual>.reveal-future *,
+.episode-image-foot,.episode-image-foot *,
+.comparison-hint,.episode-visual>.timeline-toolbar,.episode-visual>.timeline-toolbar *,
+#citation .citation-panel pre,#citation .citation-panel button,#citation #copy-status,
+.lb-download,.lb-download *{color:#eee!important}
+.episode-visual .timeline-toolbar>button{color:#222!important}
+.site-header nav a{font-size:16px}.conference-link{font-size:16px}.conference-link b{font-size:14px}
+.hero-authors{font-size:16px}.hero-affiliations{font-size:15px}.hero-authors sup,.hero-affiliations sup{font-size:11px}
+.hero-eyebrow,.hero-credit{font-size:14px}
+.ov-card em,.benchmark-stats small,.composition-row small,.composition-summary span small,.composition-summary>small,.overview-metric>small,.overview-metric header span,.overview-metric h4,.overview-metric p,.language-panel small{font-size:14px}
+.composition-note{font-size:14px!important}.dataset-process-note,.dataset-process-body>a{font-size:14px}
+.episode-source-label,.episode-view-label,.episode-scenes button,.context-label,.instruction-styles button,.instruction-scroll-hint,.route-caption,.route-heading span:last-child,.episode-footnote,.episode-footnote button,.filmstrip-frame span,.comparison-hint,.comparison-start-label,.comparison-future-label,.compare-toggle,.recorded-badge{font-size:14px}
+.episode-image-foot{font-size:14px}.episode-image-foot>span:first-child{max-width:70%}.episode-visual .timeline-copy strong,.episode-visual #episode-progress{font-size:14px}
+.science-kicker,.method-source,.method-algorithm a,.qualitative-figure figcaption,.inline-paper-figure figcaption,.figure-enlarge{font-size:14px}
+.lb-table{font-size:15px}.lb-table thead th button{font-size:14px}.lb-table th small,.lb-group-head th{font-size:13px}.lb-filter,.lb-filter select,.lb-submit,.lb-download,.lb-selection,.lb-selection button,.lb-legend,.lb-legend p,.lb-detail,.leaderboard-note,.leaderboard-metrics>p,#leaderboard-metric-definitions p{font-size:14px}
+.gallery-caption,.challenge-links a,.challenge-sub,.footer-affiliations,.footer-note,.footer-bottom,.footer-links a,.dialog-figure-note,.dialog-figure-bar button{font-size:14px}
+#citation .citation-panel pre{font-size:15px!important}#citation .citation-panel button,#copy-status{font-size:14px}
+@media(max-width:760px){.hero-authors{font-size:14px}.hero-affiliations{font-size:13px}.hero-eyebrow{font-size:12px;letter-spacing:.06em}.hero-credit{font-size:12px}.episode-source-label,.episode-source strong,.episode-scenes button{font-size:13px}.episode-image-foot,.recorded-badge,.episode-image-foot .recorded-badge,.compare-toggle{font-size:12px}.episode-visual>.timeline-toolbar{grid-template-columns:32px 49px minmax(0,1fr) 47px}.episode-visual .timeline-copy strong,.episode-visual #episode-progress{font-size:13px}.lb-table{font-size:14px}.lb-submit,.lb-download{font-size:14px}#citation .citation-panel pre{font-size:14px!important}.footer-names{font-size:14px}}
+#worldnav .challenge-sub{color:#555!important}

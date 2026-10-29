@@ -10,7 +10,7 @@
   const svgNode = (tag, attrs = {}) => {const e = document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);return e;};
   const data = () => episodes[scene][episodeIndex[scene]];
   const imageURL = i => data().base + data().frames[i];
-  function stop() { clearInterval(timer); timer = null; $('#episode-play').textContent = '▶'; $('#episode-play').setAttribute('aria-label','Play recorded route'); $('#episode-play').setAttribute('aria-pressed','false'); }
+  function stop() { clearInterval(timer); timer = null; $('#episode-play').textContent = '►'; $('#episode-play').setAttribute('aria-label','Play recorded route'); $('#episode-play').setAttribute('aria-pressed','false'); }
   function setComparison(on) {
     const wasComparing = comparing;
     comparing = on && revealed && frame > 0;
