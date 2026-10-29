@@ -28,3 +28,7 @@
 .episode-shell[data-revealed="false"] #episode-timeline{display:none}.episode-shell[data-revealed="true"] #episode-timeline{display:grid}
 
 .hero h1,.hero h1 span{background:none;color:#000;-webkit-text-fill-color:#000}
+
+/* Times-style typography throughout; retain every existing size and color. */
+:root{--site-font:"Times New Roman",Times,"Nimbus Roman",serif;--sans:var(--site-font);--serif:var(--site-font);--mono:var(--site-font)}
+body,body *,body *::before,body *::after,#citation .citation-panel pre{font-family:var(--site-font)!important}
