@@ -93,6 +93,7 @@
     stop();revealed=on;setComparison(false);
     $('#episode').dataset.revealed=String(on);
     $('#episode-future').hidden=!on;
+    $('#episode-timeline').hidden=!on;
     $('#episode-route').hidden=!on||!points.length;
     $('#episode-input-story').hidden=on&&points.length>0;
     const revealButton=$('#reveal-future'), restoreFocus=document.activeElement===revealButton;
