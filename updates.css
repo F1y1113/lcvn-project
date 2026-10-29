@@ -175,3 +175,5 @@ body svg text{fill:#333!important}
 .paper-method>.figure-zoom[data-zoom-src="assets/wm-ac.png"]{width:calc(100% + 32px);margin-inline:-16px;padding:0}@media(max-width:760px){.paper-method>.figure-zoom[data-zoom-src="assets/wm-ac.png"]{width:calc(100% + 16px);margin-inline:-8px}}
 
 .challenge-links{gap:12px;flex-wrap:wrap;margin-top:20px}.challenge-links a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border:1px solid #96b5a8;border-radius:9px;background:#e5efe9;box-shadow:0 2px 5px #20372b12;font-size:16px;font-weight:700;text-decoration:none;transition:background .18s,box-shadow .18s}.challenge-links a:hover{background:#d6e6dd;box-shadow:0 4px 10px #20372b20}.challenge-links a:focus-visible{outline:2px solid #333;outline-offset:4px}@media(max-width:480px){.challenge-links{display:grid;grid-template-columns:1fr}.challenge-links a{width:100%}}
+
+.site-header .wordmark{gap:8px}.site-header .robot-logo{display:block;width:44px;height:44px;object-fit:contain;flex-shrink:0}@media(max-width:620px){.site-header .robot-logo{width:40px;height:40px}}

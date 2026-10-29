@@ -20,3 +20,7 @@ Mulish, Inter and Source Serif 4 are bundled under the SIL Open Font License.
 See the corresponding notices in assets/fonts/.
 
 Paper figures and dataset media retain their respective source rights.
+
+Robot website mark:
+Generated adaptations of the robot reference supplied by the site owner,
+with separate header and simplified favicon assets.
