@@ -95,6 +95,9 @@
     $('#episode-future').hidden=!on;
     $('#episode-route').hidden=!on||!points.length;
     $('#episode-input-story').hidden=on&&points.length>0;
+    const revealButton=$('#reveal-future'), restoreFocus=document.activeElement===revealButton;
+    $(on?'.episode-context':'#episode-visual').append(revealButton);
+    if(restoreFocus)revealButton.focus({preventScroll:true});
     $('#reveal-future').setAttribute('aria-expanded',String(on));
     $('#reveal-future span').textContent=on?'Return to the initial view':'Reveal the recorded future';
     showFrame(on?data().frames.length-1:0);
