@@ -100,7 +100,7 @@
     if(restoreFocus)revealButton.focus({preventScroll:true});
     $('#reveal-future').setAttribute('aria-expanded',String(on));
     $('#reveal-future span').textContent=on?'Return to the initial view':'Reveal the recorded future';
-    showFrame(on?data().frames.length-1:0);
+    showFrame(on?1:0);
     $('#episode-live').textContent=on?'Recorded future revealed. Explore the timeline, path or start-view comparison.':'Only the initial camera view is shown.';
     if(on)data().frames.forEach((_,i)=>{const img=new Image();img.src=imageURL(i);});
   }
