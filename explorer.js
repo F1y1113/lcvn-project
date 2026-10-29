@@ -102,7 +102,11 @@
     $('#reveal-future span').textContent=on?'Return to the initial view':'Reveal the recorded future';
     showFrame(on?1:0);
     $('#episode-live').textContent=on?'Recorded future revealed. Explore the timeline, path or start-view comparison.':'Only the initial camera view is shown.';
-    if(on)data().frames.forEach((_,i)=>{const img=new Image();img.src=imageURL(i);});
+    if(on){
+      data().frames.forEach((_,i)=>{const img=new Image();img.src=imageURL(i);});
+      startPlayback();
+      $('#episode-live').textContent='Recorded future revealed. Playing one observation per second; use Pause to stop.';
+    }
   }
   function selectScene(key) {
     stop();scene=key;wording='concise';
@@ -121,11 +125,12 @@
   $('#episode-range').addEventListener('input',e=>{stop();showFrame(Number(e.target.value));});
   $('#route-milestones').addEventListener('click',e=>{const point=e.target.closest('.route-point');if(point){stop();showFrame(Number(point.dataset.frame));}});
   $('#route-milestones').addEventListener('keydown',e=>{const point=e.target.closest('.route-point');if(!point)return;let n=Number(point.dataset.frame);if(['ArrowRight','ArrowUp','ArrowLeft','ArrowDown','Home','End','Enter',' '].includes(e.key)){e.preventDefault();if(e.key==='Home')n=0;else if(e.key==='End')n=data().frames.length-1;else if(e.key==='ArrowRight'||e.key==='ArrowUp')n++;else if(e.key==='ArrowLeft'||e.key==='ArrowDown')n--;stop();showFrame(n);$('#route-milestones .route-point[data-frame="'+frame+'"]').focus();}});
-  $('#episode-play').addEventListener('click',()=>{
-    if(timer){stop();return;}setComparison(false);if(frame===data().frames.length-1)showFrame(0);
+  function startPlayback() {
+    stop();setComparison(false);if(frame===data().frames.length-1)showFrame(0);
     $('#episode-play').textContent='Ⅱ';$('#episode-play').setAttribute('aria-label','Pause recorded route');$('#episode-play').setAttribute('aria-pressed','true');
-    timer=setInterval(()=>{showFrame(frame+1);if(frame===data().frames.length-1){stop();$('#episode-live').textContent='Recorded route playback complete.';}},400);
-  });
+    timer=setInterval(()=>{showFrame(frame+1);if(frame===data().frames.length-1){stop();$('#episode-live').textContent='Recorded route playback complete.';}},1000);
+  }
+  $('#episode-play').addEventListener('click',()=>{if(timer)stop();else startPlayback();});
   document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
   new IntersectionObserver(([e])=>{if(!e.isIntersecting)stop();},{threshold:0}).observe($('#episode'));
   selectScene('outdoor');
