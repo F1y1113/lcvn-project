@@ -40,8 +40,7 @@
 
 .episode-shell[data-revealed="false"] #episode-timeline{display:none}.episode-shell[data-revealed="true"] #episode-timeline{display:grid}
 
-.hero h1{background:none;color:#234653;-webkit-text-fill-color:currentColor}
-.hero h1 span{background:none;color:#3d7b73;-webkit-text-fill-color:currentColor}
+.hero h1,.hero h1 span{background:none;color:#000;-webkit-text-fill-color:#000}
 
 /* Times-style typography throughout the page. */
 :root{--site-font:"Times New Roman",Times,"Nimbus Roman",serif;--sans:var(--site-font);--serif:var(--site-font);--mono:var(--site-font)}
@@ -53,7 +52,7 @@ body,body *,body *::before,body *::after,#citation .citation-panel pre{font-fami
 .hero-eyebrow i{background:#588c8c;box-shadow:0 0 10px #588c8c35}
 .site-header nav a.active{background:var(--accent-soft);color:#264e59}
 .head-row{align-items:baseline}
-.head-row h2{max-width:none}
+:not(#benchmark)>.head-row h2{max-width:none}
 @media(min-width:901px){#methods>.head-row{grid-template-columns:minmax(240px,4fr) minmax(0,7fr);gap:42px}#methods>.head-row h2{white-space:normal}}
 .paper-methods{align-items:stretch}
 .paper-method{display:flex;flex-direction:column}
@@ -68,7 +67,6 @@ body,body *,body *::before,body *::after,#citation .citation-panel pre{font-fami
 .composition-summary span:last-child b,.overview-metric header span{color:#356976}
 .overview-metric{border-top-color:#57828d}
 .ov-more[aria-expanded="true"]{border-color:#57828d!important;box-shadow:0 0 0 1px #57828d,0 16px 36px -28px #13232b35}
-.lb-table th[aria-sort="ascending"],.lb-table th[aria-sort="descending"]{color:#245a67;border-bottom-color:#356976}
 
 /* Two identical groups per track; the middle row moves more quickly. */
 .hm-row,.hm-row:nth-child(2){animation-duration:var(--pan-duration,180s);gap:0;will-change:transform}
@@ -141,14 +139,8 @@ body,body *,body *::before,body *::after,#citation .citation-panel pre{font-fami
 #route-labels rect{stroke:#d6e3db}
 #route-labels text{fill:#526f62}
 .filmstrip-frame[aria-current=true] img{border-color:#589480}
-.lb-download{background:#edf4f0;color:#356b5d;border:1px solid #d4e4db}
-.lb-top-1{background:#deede4;color:#2f6251}
-.lb-top-2{background:#edf2f3;color:#536d78}
-.lb-top-3{background:#f4f5ef;color:#6a735f}
-.lb-legend .first{background:#a4c8b3}
-.lb-legend .second{background:#bdccd1}
-.lb-legend .third{background:#d7deca}
-.lb-table th[aria-sort="ascending"],.lb-table th[aria-sort="descending"]{color:#315f55;border-bottom-color:#3d7b73}
 .site-footer{background:#f6f9f7}
-.lb-group-head th{background:#f3f7f4!important}
-.results-tabs button[aria-selected=true]{color:#315f55;border-color:#3d7b73}
+
+/* Keep the original Leaderboard styling. */
+#benchmark{--line:#dce5ea;--c-self:#376f92}
+#benchmark>.head-row{align-items:start}
