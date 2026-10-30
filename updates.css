@@ -269,3 +269,8 @@ body{font-size:18px;line-height:1.65}
 @media(max-width:1000px){.header-affiliation{display:none}}
 
 #worldnav .head-row>div>p+p{margin-top:16px}
+
+/* RoboWorld 2026 poster beneath the WorldNav heading. */
+.challenge-poster{display:block;width:100%;max-width:360px;margin-top:28px;border-radius:10px}
+.challenge-poster img{display:block;width:100%;height:auto;border-radius:10px;box-shadow:0 10px 30px rgba(24,38,44,.12)}
+.challenge-poster:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
