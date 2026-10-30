@@ -267,3 +267,5 @@ body{font-size:18px;line-height:1.65}
 .uw-link:focus-visible{outline:2px solid #4b2e83;outline-offset:5px}
 @media(max-width:1200px){.header-affiliation .conference-link{display:none}}
 @media(max-width:1000px){.header-affiliation{display:none}}
+
+#worldnav .head-row>div>p+p{margin-top:16px}
