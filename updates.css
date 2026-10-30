@@ -259,3 +259,10 @@ body{font-size:18px;line-height:1.65}
   .citation-actions{gap:12px}
   #citation .citation-panel pre{font-size:16px!important}
 }
+
+/* University affiliation beside the conference badge. */
+.header-affiliation{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.uw-link{display:flex;align-items:center;border-radius:3px}
+.uw-logo{display:block;width:36px;height:auto}
+.uw-link:focus-visible{outline:2px solid #4b2e83;outline-offset:5px}
+@media(max-width:760px){.header-affiliation{display:none}}

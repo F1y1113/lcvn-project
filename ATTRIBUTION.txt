@@ -24,3 +24,8 @@ Paper figures and dataset media retain their respective source rights.
 Robot website mark:
 Generated adaptations of the robot reference supplied by the site owner,
 with separate header and simplified favicon assets.
+
+University of Washington W mark:
+Geometry from the UW website theme SVG sprite, rendered in UW purple (#4b2e83).
+https://github.com/uweb/uw-2014/blob/master/assets/svg/uw-sprite.svg
+The University of Washington retains rights to its mark.
